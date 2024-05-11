@@ -61,6 +61,10 @@ texture_region_size = Vector2i(64, 64)
 10:3/0 = 0
 10:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 10:3/0/physics_layer_0/angular_velocity = 0.0
+0:6/0 = 0
+0:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:6/0/physics_layer_0/angular_velocity = 0.0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-33, 33.75, -32, -32, 32, -32, 32, 32)
 
 [sub_resource type="TileSet" id="TileSet_2fcbi"]
 tile_size = Vector2i(64, 64)
@@ -71,7 +75,7 @@ sources/0 = SubResource("TileSetAtlasSource_rndpx")
 
 [node name="Player" parent="." instance=ExtResource("2_pay8t")]
 z_index = 1
-position = Vector2(150, 318)
+position = Vector2(34, 383)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(16, 36)
@@ -109,12 +113,12 @@ format = 2
 [node name="RightTeleporter" type="TileMap" parent="Level" groups=["RightTeleporter"]]
 tile_set = SubResource("TileSet_2fcbi")
 format = 2
-layer_0/tile_data = PackedInt32Array(393237, 0, 5, 327701, 0, 5, 262165, 0, 5, 196629, 0, 5, 131093, 0, 5)
+layer_0/tile_data = PackedInt32Array(393237, 0, 6, 327701, 0, 6, 262165, 0, 6, 196629, 0, 6, 131093, 0, 6, 393238, 0, 6, 327702, 0, 6, 262166, 0, 6, 65557, 0, 6, 21, 0, 6)
 
 [node name="LeftTeleporter" type="TileMap" parent="Level" groups=["LeftTeleporter"]]
 tile_set = SubResource("TileSet_2fcbi")
 format = 2
-layer_0/tile_data = PackedInt32Array(458751, 0, 5, 393215, 0, 5, 327679, 0, 5, 262143, 0, 5, 196607, 0, 5)
+layer_0/tile_data = PackedInt32Array(458751, 0, 6, 393215, 0, 6, 327679, 0, 6, 262143, 0, 6, 196607, 0, 6, 131071, 0, 6)
 
 [node name="SpawnPoint" type="Marker2D" parent="Level"]
 unique_name_in_owner = true
