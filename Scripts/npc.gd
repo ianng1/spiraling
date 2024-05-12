@@ -3,7 +3,9 @@ extends CharacterBody2D
 # Reference: adaptedd from the tutorial from
 # - https://www.youtube.com/watch?v=LMSbPkNgnWA
 # - https://www.youtube.com/watch?v=qEwfi7_r9v8
-# - Dialogue: https://www.youtube.com/watch?v=UhPFk8FSbd8
+# Dialogue:
+# - https://www.youtube.com/watch?v=UhPFk8FSbd8
+# - doc: https://github.com/nathanhoad/godot_dialogue_manager
 
 # NPC identifiers
 # TODO: use param for different level so no need to recreate scripts

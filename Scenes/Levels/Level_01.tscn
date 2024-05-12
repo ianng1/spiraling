@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cjanwm3sy2x37"]
+[gd_scene load_steps=18 format=3 uid="uid://cjanwm3sy2x37"]
 
 [ext_resource type="PackedScene" uid="uid://bvkfp0ufwcrm" path="res://Scenes/npc/a_husband.tscn" id="2_irrk8"]
 [ext_resource type="PackedScene" uid="uid://w7m6tehvvy3g" path="res://Scenes/Prefabs/player.tscn" id="2_pay8t"]
@@ -9,6 +9,21 @@
 [ext_resource type="Script" path="res://Scripts/GameUI.gd" id="6_66mfc"]
 [ext_resource type="Texture2D" uid="uid://clreg520jah1j" path="res://Assets/platformPack_item008.png" id="7_j7jun"]
 [ext_resource type="FontFile" uid="uid://qgc4vi5osk7v" path="res://Assets/Fonts/Star Choco.ttf" id="8_gwcy2"]
+[ext_resource type="Texture2D" uid="uid://cssr3xx5j3dsl" path="res://Assets/Textures/godot_neutral_point_light.webp" id="10_23jwq"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4lnhe"]
+light_mode = 2
+
+[sub_resource type="Gradient" id="Gradient_y8247"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.595432, 0.995106)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_di8t3"]
+gradient = SubResource("Gradient_y8247")
+fill_from = Vector2(0.619658, 0)
+fill_to = Vector2(0.967949, 0.196581)
+metadata/_snap_count = 13
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s0osg"]
 texture = ExtResource("4_clgdb")
@@ -53,6 +68,13 @@ z_index = 1
 position = Vector2(55, 282)
 move_speed = 400.0
 
+[node name="PointLight2D" type="PointLight2D" parent="Player"]
+visible = false
+material = SubResource("CanvasItemMaterial_4lnhe")
+position = Vector2(3, 40)
+texture = ExtResource("10_23jwq")
+texture_scale = 1.5
+
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(180, 15)
 drag_horizontal_enabled = true
@@ -63,6 +85,13 @@ drag_right_margin = 0.0
 drag_bottom_margin = 0.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
+
+[node name="PointLight2D2" type="PointLight2D" parent="Player"]
+position = Vector2(-22, 11)
+scale = Vector2(0.172005, 0.236877)
+energy = 0.6
+texture = SubResource("GradientTexture2D_di8t3")
+texture_scale = 47.95
 
 [node name="Coins" type="Node2D" parent="."]
 visible = false
@@ -103,16 +132,22 @@ unique_name_in_owner = true
 visible = false
 position = Vector2(174, 383)
 
+[node name="RightEntry" type="Marker2D" parent="Level"]
+unique_name_in_owner = true
+position = Vector2(1280, 282)
+
+[node name="LeftEntry" type="Marker2D" parent="Level"]
+unique_name_in_owner = true
+position = Vector2(64, 282)
+
 [node name="GameManager" type="Node2D" parent="."]
 script = ExtResource("4_vgfkr")
 
-[node name="RightEntry" type="Marker2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(1293, 282)
+[node name="level_copy_two_side_Node2D" type="Node2D" parent="."]
 
-[node name="LeftEntry" type="Marker2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(40, 282)
+[node name="A_husband_copy_right" parent="level_copy_two_side_Node2D" instance=ExtResource("2_irrk8")]
+position = Vector2(1658, 282)
+up_direction = Vector2(0, 1)
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
 visible = false
@@ -158,3 +193,6 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("8_gwcy2")
 theme_override_font_sizes/font_size = 32
 text = "x 3"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.228511, 0.228511, 0.228511, 1)

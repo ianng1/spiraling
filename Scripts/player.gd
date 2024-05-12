@@ -14,6 +14,7 @@ extends CharacterBody2D
 
 # Indicator of movement direction to set animation.
 var move_right : bool = true
+var scene_width : int = 500
 
 @onready var player_sprite = $AnimatedSprite2D
 @onready var spawn_point = %SpawnPoint
@@ -89,7 +90,6 @@ func left_teleporter_tween():
 
 # Reset the player's position to the current level spawn point if collided with any trap
 func _on_collision_body_entered(_body):
-	#print(_body)
 	#if _body.is_in_group("Traps"):
 		#print("Trap")
 		#AudioManager.death_sfx.play()
