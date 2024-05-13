@@ -1,17 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://bvkfp0ufwcrm"]
+[gd_scene load_steps=7 format=3 uid="uid://b3lep270jdeyv"]
 
-[ext_resource type="Texture2D" uid="uid://rjyjoq4lc80c" path="res://Assets/Spritesheet/side_Sprite.png" id="1_0p2mo"]
-[ext_resource type="Script" path="res://Scripts/npc.gd" id="1_ekmsb"]
+[ext_resource type="Script" path="res://Scripts/npc.gd" id="1_v2j4p"]
+[ext_resource type="Texture2D" uid="uid://rjyjoq4lc80c" path="res://Assets/Spritesheet/side_Sprite.png" id="2_m0miu"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mqa2r"]
-atlas = ExtResource("1_0p2mo")
-region = Rect2(192, 1920, 192, 384)
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6jvb"]
+atlas = ExtResource("2_m0miu")
+region = Rect2(384, 2304, 192, 384)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rtgj3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mqa2r")
+"texture": SubResource("AtlasTexture_q6jvb")
 }],
 "loop": true,
 "name": &"Idle",
@@ -24,12 +24,13 @@ size = Vector2(148.886, 324.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_1u0f8"]
 radius = 38.9487
 
-[node name="A_husband" type="CharacterBody2D"]
-script = ExtResource("1_ekmsb")
-metadata/npcId = "A_husband"
+[node name="A_wife" type="CharacterBody2D"]
+script = ExtResource("1_v2j4p")
+metadata/npcId = "A_wife"
 metadata/level = "1"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.976477, 0.693503, 0.82396, 1)
 sprite_frames = SubResource("SpriteFrames_rtgj3")
 animation = &"Idle"
 

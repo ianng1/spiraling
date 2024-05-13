@@ -7,13 +7,13 @@ extends CharacterBody2D
 # - https://www.youtube.com/watch?v=UhPFk8FSbd8
 # - doc: https://github.com/nathanhoad/godot_dialogue_manager
 
-# NPC identifiers
-# TODO: use param for different level so no need to recreate scripts
-var level = "1"
-var npc = "A_husband"
+# NPC, level, and dialogue identifiers. These will be reset
+# based on the metadata to match the correct npc and level.
+var level
+var npcId
+var dialogue_file
+var dialogue_level
 
-var dialogue_file = "res://Dialogue/npc_" + npc + ".dialogue"
-var dialogue_level = "level" + level
 var cur_state = IDLE
 var is_mouse_hover = false
 # Special movement or iteration if any.
@@ -21,11 +21,17 @@ var is_special_movement = false
 
 enum {
 	IDLE,
-	SPECIAL_MOVE
+	SPECIAL_MOVE # Currently not in use.
 }
 
 func _ready():
 	randomize()
+	
+	# Set npc and level based on metadata.
+	level = get_meta("level")
+	npcId = get_meta("npcId")
+	dialogue_file = "res://Dialogue/npc_" + npcId + ".dialogue"
+	dialogue_level = "level" + level
 
 func _process(delta):
 	#print(get_viewport().get_mouse_position())
@@ -35,7 +41,7 @@ func _process(delta):
 		# TODO: add any special movement if needed.
 		pass
 
-	if Input.is_action_just_pressed("chat") and is_mouse_hover:
+	if Input.is_action_just_pressed("chat") and is_mouse_hover and level != null:
 		DialogueManager.show_example_dialogue_balloon(load(dialogue_file), dialogue_level)
 
 # --------- SIGNALS ---------- #
