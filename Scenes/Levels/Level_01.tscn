@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cjanwm3sy2x37"]
+[gd_scene load_steps=25 format=3 uid="uid://cjanwm3sy2x37"]
 
 [ext_resource type="PackedScene" uid="uid://bvkfp0ufwcrm" path="res://Scenes/npc/a_husband.tscn" id="2_irrk8"]
 [ext_resource type="PackedScene" uid="uid://w7m6tehvvy3g" path="res://Scenes/Prefabs/player.tscn" id="2_pay8t"]
@@ -15,6 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://dpq6pgox64htv" path="res://Scenes/puzzle_assets/lockbox.tscn" id="11_h7n2w"]
 [ext_resource type="PackedScene" uid="uid://c7r78oau0sqy2" path="res://Scenes/npc/c_kidnapped.tscn" id="13_ifglg"]
 [ext_resource type="PackedScene" uid="uid://cap0vf4rc5ks7" path="res://Scenes/npc/d_phych.tscn" id="14_rj8xu"]
+[ext_resource type="PackedScene" uid="uid://c3kkj0paj06i0" path="res://Scenes/Levels/chest.tscn" id="15_x4ydl"]
+[ext_resource type="Texture2D" uid="uid://kce0kr4wu0yr" path="res://Assets/Images/darkbackground.png" id="16_s0hr7"]
+[ext_resource type="Texture2D" uid="uid://bt4ch0h1fcup3" path="res://Assets/Images/finalfoor.png" id="17_tq01t"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4lnhe"]
 light_mode = 2
@@ -2047,7 +2050,7 @@ sources/0 = SubResource("TileSetAtlasSource_rndpx")
 [node name="Level_01" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_pay8t")]
-z_index = 1
+z_index = 7
 position = Vector2(55, 282)
 move_speed = 400.0
 
@@ -2215,5 +2218,17 @@ theme_override_fonts/font = ExtResource("8_gwcy2")
 theme_override_font_sizes/font_size = 32
 text = "x 3"
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.228511, 0.228511, 0.228511, 1)
+[node name="Chest" parent="." instance=ExtResource("15_x4ydl")]
+z_index = 1
+position = Vector2(552, 434)
+
+[node name="background" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(167, 191)
+scale = Vector2(0.538546, 0.302984)
+texture = ExtResource("16_s0hr7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(180, 549.868)
+scale = Vector2(11.8857, 4.84722)
+texture = ExtResource("17_tq01t")
