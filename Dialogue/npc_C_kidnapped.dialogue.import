@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://b2bex7dfdwrpp"
+path="res://.godot/imported/npc_C_kidnapped.dialogue-4b04e4c66b5e4901ae2018dc35f08258.tres"
+
+[deps]
+
+source_file="res://Dialogue/npc_C_kidnapped.dialogue"
+dest_files=["res://.godot/imported/npc_C_kidnapped.dialogue-4b04e4c66b5e4901ae2018dc35f08258.tres"]
+
+[params]
+
+defaults=true

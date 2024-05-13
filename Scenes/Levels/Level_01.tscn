@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cjanwm3sy2x37"]
+[gd_scene load_steps=22 format=3 uid="uid://cjanwm3sy2x37"]
 
 [ext_resource type="PackedScene" uid="uid://bvkfp0ufwcrm" path="res://Scenes/npc/a_husband.tscn" id="2_irrk8"]
 [ext_resource type="PackedScene" uid="uid://w7m6tehvvy3g" path="res://Scenes/Prefabs/player.tscn" id="2_pay8t"]
@@ -8,9 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://b3lep270jdeyv" path="res://Scenes/npc/a_wife.tscn" id="5_7cr6o"]
 [ext_resource type="Texture2D" uid="uid://jaegp53ccc7w" path="res://Assets/Spritesheet/platformPack_tilesheet.png" id="5_wqbaa"]
 [ext_resource type="Script" path="res://Scripts/GameUI.gd" id="6_66mfc"]
+[ext_resource type="PackedScene" uid="uid://3ycmmp474166" path="res://Scenes/npc/b_sibling.tscn" id="6_xye2r"]
 [ext_resource type="Texture2D" uid="uid://clreg520jah1j" path="res://Assets/platformPack_item008.png" id="7_j7jun"]
 [ext_resource type="FontFile" uid="uid://qgc4vi5osk7v" path="res://Assets/Fonts/Star Choco.ttf" id="8_gwcy2"]
 [ext_resource type="Texture2D" uid="uid://cssr3xx5j3dsl" path="res://Assets/Textures/godot_neutral_point_light.webp" id="10_23jwq"]
+[ext_resource type="PackedScene" uid="uid://c7r78oau0sqy2" path="res://Scenes/npc/c_kidnapped.tscn" id="13_ifglg"]
+[ext_resource type="PackedScene" uid="uid://cap0vf4rc5ks7" path="res://Scenes/npc/d_phych.tscn" id="14_rj8xu"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4lnhe"]
 light_mode = 2
@@ -111,11 +114,19 @@ position = Vector2(844, 408)
 [node name="A_husband" parent="Level" instance=ExtResource("2_irrk8")]
 position = Vector2(412, 282)
 up_direction = Vector2(0, 1)
-metadata/level = "1"
 
 [node name="A_wife" parent="Level" instance=ExtResource("5_7cr6o")]
 position = Vector2(284, 282)
-metadata/level = "1"
+
+[node name="b_sibling" parent="Level" instance=ExtResource("6_xye2r")]
+position = Vector2(694, 282)
+
+[node name="c_kidnapped" parent="Level" instance=ExtResource("13_ifglg")]
+position = Vector2(902, 282)
+
+[node name="d_phych" parent="Level" instance=ExtResource("14_rj8xu")]
+position = Vector2(1129, 282)
+metadata/npcId = "D_phych"
 
 [node name="Background" type="TileMap" parent="Level" groups=["Ground"]]
 tile_set = SubResource("TileSet_ywwrl")
@@ -151,14 +162,22 @@ script = ExtResource("4_vgfkr")
 
 [node name="level_copy_two_side_Node2D" type="Node2D" parent="."]
 
+[node name="d_phych_copy_left" parent="level_copy_two_side_Node2D" instance=ExtResource("14_rj8xu")]
+position = Vector2(-119, 282)
+metadata/npcId = "D_phych"
+
+[node name="c_kidnapped_copy_left" parent="level_copy_two_side_Node2D" instance=ExtResource("13_ifglg")]
+position = Vector2(-346, 282)
+
+[node name="b_sibling_copy_right" parent="level_copy_two_side_Node2D" instance=ExtResource("6_xye2r")]
+position = Vector2(1940, 282)
+
 [node name="A_wife_copy_right" parent="level_copy_two_side_Node2D" instance=ExtResource("5_7cr6o")]
 position = Vector2(1530, 282)
-metadata/level = "1"
 
 [node name="A_husband_copy_right" parent="level_copy_two_side_Node2D" instance=ExtResource("2_irrk8")]
 position = Vector2(1658, 282)
 up_direction = Vector2(0, 1)
-metadata/level = "1"
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
 visible = false

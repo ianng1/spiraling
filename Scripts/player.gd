@@ -49,7 +49,7 @@ func player_animations():
 	particle_trails.emitting = false
 	
 	if abs(velocity.x) > 0:
-		player_sprite.play("Walk", 2)
+		player_sprite.play("Walk", 1.5)
 	else:
 		player_sprite.play("Idle")
 
