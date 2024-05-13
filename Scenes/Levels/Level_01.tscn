@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cjanwm3sy2x37"]
+[gd_scene load_steps=23 format=3 uid="uid://cjanwm3sy2x37"]
 
 [ext_resource type="PackedScene" uid="uid://bvkfp0ufwcrm" path="res://Scenes/npc/a_husband.tscn" id="2_irrk8"]
 [ext_resource type="PackedScene" uid="uid://w7m6tehvvy3g" path="res://Scenes/Prefabs/player.tscn" id="2_pay8t"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://clreg520jah1j" path="res://Assets/platformPack_item008.png" id="7_j7jun"]
 [ext_resource type="FontFile" uid="uid://qgc4vi5osk7v" path="res://Assets/Fonts/Star Choco.ttf" id="8_gwcy2"]
 [ext_resource type="Texture2D" uid="uid://cssr3xx5j3dsl" path="res://Assets/Textures/godot_neutral_point_light.webp" id="10_23jwq"]
+[ext_resource type="PackedScene" uid="uid://dpq6pgox64htv" path="res://Scenes/puzzle_assets/lockbox.tscn" id="11_h7n2w"]
 [ext_resource type="PackedScene" uid="uid://c7r78oau0sqy2" path="res://Scenes/npc/c_kidnapped.tscn" id="13_ifglg"]
 [ext_resource type="PackedScene" uid="uid://cap0vf4rc5ks7" path="res://Scenes/npc/d_phych.tscn" id="14_rj8xu"]
 
@@ -126,7 +127,6 @@ position = Vector2(902, 282)
 
 [node name="d_phych" parent="Level" instance=ExtResource("14_rj8xu")]
 position = Vector2(1129, 282)
-metadata/npcId = "D_phych"
 
 [node name="Background" type="TileMap" parent="Level" groups=["Ground"]]
 tile_set = SubResource("TileSet_ywwrl")
@@ -157,6 +157,9 @@ position = Vector2(1280, 282)
 unique_name_in_owner = true
 position = Vector2(64, 282)
 
+[node name="Lockbox" parent="Level" instance=ExtResource("11_h7n2w")]
+position = Vector2(96, 189)
+
 [node name="GameManager" type="Node2D" parent="."]
 script = ExtResource("4_vgfkr")
 
@@ -164,7 +167,6 @@ script = ExtResource("4_vgfkr")
 
 [node name="d_phych_copy_left" parent="level_copy_two_side_Node2D" instance=ExtResource("14_rj8xu")]
 position = Vector2(-119, 282)
-metadata/npcId = "D_phych"
 
 [node name="c_kidnapped_copy_left" parent="level_copy_two_side_Node2D" instance=ExtResource("13_ifglg")]
 position = Vector2(-346, 282)
