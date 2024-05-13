@@ -126,7 +126,6 @@ position = Vector2(902, 282)
 
 [node name="d_phych" parent="Level" instance=ExtResource("14_rj8xu")]
 position = Vector2(1129, 282)
-metadata/npcId = "D_phych"
 
 [node name="Background" type="TileMap" parent="Level" groups=["Ground"]]
 tile_set = SubResource("TileSet_ywwrl")
@@ -164,7 +163,6 @@ script = ExtResource("4_vgfkr")
 
 [node name="d_phych_copy_left" parent="level_copy_two_side_Node2D" instance=ExtResource("14_rj8xu")]
 position = Vector2(-119, 282)
-metadata/npcId = "D_phych"
 
 [node name="c_kidnapped_copy_left" parent="level_copy_two_side_Node2D" instance=ExtResource("13_ifglg")]
 position = Vector2(-346, 282)
@@ -195,7 +193,6 @@ script = ExtResource("6_66mfc")
 
 [node name="Score" type="Control" parent="UserInterface/GameUI"]
 unique_name_in_owner = true
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
