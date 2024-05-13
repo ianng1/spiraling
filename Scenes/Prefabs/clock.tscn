@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://cfhgdldvpdf8m"]
+
+[ext_resource type="Texture2D" uid="uid://c88jyh2o1n8wc" path="res://Assets/Textures/clock_no_hand-removebg-preview.png" id="1_bg8wl"]
+[ext_resource type="Script" path="res://Scenes/Prefabs/clock.gd" id="1_jvf2d"]
+[ext_resource type="Texture2D" uid="uid://bark8145mxuyt" path="res://Assets/Textures/clock_hand_long.png" id="2_fgo0r"]
+[ext_resource type="Texture2D" uid="uid://do8ia4hcr86hs" path="res://Assets/Textures/clock_hand.png" id="3_lbfce"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8mfw3"]
+radius = 145.729
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yobni"]
+size = Vector2(244.102, 46.2499)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cqnl"]
+size = Vector2(204.379, 47.975)
+
+[node name="clock_node2D" type="Node2D"]
+position = Vector2(308, 300)
+script = ExtResource("1_jvf2d")
+
+[node name="clock_bg_no_hand" type="Sprite2D" parent="."]
+scale = Vector2(1.41, 1.41)
+texture = ExtResource("1_bg8wl")
+
+[node name="clock_Area2D" type="Area2D" parent="clock_bg_no_hand"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="clock_bg_no_hand/clock_Area2D"]
+shape = SubResource("CircleShape2D_8mfw3")
+
+[node name="clock_hand_long" type="Sprite2D" parent="."]
+position = Vector2(-1, -1.81899e-12)
+rotation = 0.698132
+scale = Vector2(0.75608, 0.540541)
+texture = ExtResource("2_fgo0r")
+centered = false
+offset = Vector2(-25, -25)
+
+[node name="hand_long_Area2D" type="Area2D" parent="clock_hand_long"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="clock_hand_long/hand_long_Area2D"]
+position = Vector2(102.793, -0.925049)
+shape = SubResource("RectangleShape2D_yobni")
+
+[node name="clock_hand_short" type="Sprite2D" parent="."]
+position = Vector2(1, -5.96047e-08)
+rotation = 1.74533
+scale = Vector2(0.540541, 0.540541)
+texture = ExtResource("3_lbfce")
+centered = false
+offset = Vector2(-38, -45)
+
+[node name="hand_short_Area2D" type="Area2D" parent="clock_hand_short"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="clock_hand_short/hand_short_Area2D"]
+position = Vector2(78.0875, 0.280762)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_2cqnl")
+
+[connection signal="mouse_entered" from="clock_bg_no_hand/clock_Area2D" to="." method="_on_clock_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="clock_bg_no_hand/clock_Area2D" to="." method="_on_clock_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="clock_hand_long/hand_long_Area2D" to="." method="_on_hand_long_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="clock_hand_long/hand_long_Area2D" to="." method="_on_hand_long_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="clock_hand_short/hand_short_Area2D" to="." method="_on_hand_short_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="clock_hand_short/hand_short_Area2D" to="." method="_on_hand_short_area_2d_mouse_exited"]
