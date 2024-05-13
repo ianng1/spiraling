@@ -74,9 +74,6 @@ func right_teleporter_tween():
 	global_position = left_entry.global_position
 	
 func left_teleporter_tween():
-	print(right_entry)
-	print(right_entry.global_position)
-	print(global_position)
 	global_position = right_entry.global_position
 
 #func respawn_tween():
