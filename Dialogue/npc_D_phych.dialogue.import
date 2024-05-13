@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://dcxf4aebxy3ts"
+path="res://.godot/imported/npc_D_phych.dialogue-d07fce412132602f67c9abfacdd07941.tres"
+
+[deps]
+
+source_file="res://Dialogue/npc_D_phych.dialogue"
+dest_files=["res://.godot/imported/npc_D_phych.dialogue-d07fce412132602f67c9abfacdd07941.tres"]
+
+[params]
+
+defaults=true

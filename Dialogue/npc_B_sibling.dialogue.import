@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://cnkuwlw728q22"
+path="res://.godot/imported/npc_B_sibling.dialogue-bddb609df1127e547849304fabc13a44.tres"
+
+[deps]
+
+source_file="res://Dialogue/npc_B_sibling.dialogue"
+dest_files=["res://.godot/imported/npc_B_sibling.dialogue-bddb609df1127e547849304fabc13a44.tres"]
+
+[params]
+
+defaults=true

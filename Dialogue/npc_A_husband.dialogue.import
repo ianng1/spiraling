@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://6ggkaiaf0u1p"
+path="res://.godot/imported/npc_A_husband.dialogue-f02975dbef3d19a2bb92f3500352d416.tres"
+
+[deps]
+
+source_file="res://Dialogue/npc_A_husband.dialogue"
+dest_files=["res://.godot/imported/npc_A_husband.dialogue-f02975dbef3d19a2bb92f3500352d416.tres"]
+
+[params]
+
+defaults=true

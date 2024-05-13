@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://61l70lx01044"
+path="res://.godot/imported/npc_A_wife.dialogue-eb26c8a8c3c7d993e5bbc1c6a28a1c79.tres"
+
+[deps]
+
+source_file="res://Dialogue/npc_A_wife.dialogue"
+dest_files=["res://.godot/imported/npc_A_wife.dialogue-eb26c8a8c3c7d993e5bbc1c6a28a1c79.tres"]
+
+[params]
+
+defaults=true
