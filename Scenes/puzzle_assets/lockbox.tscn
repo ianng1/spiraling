@@ -1,0 +1,131 @@
+[gd_scene load_steps=12 format=3 uid="uid://dpq6pgox64htv"]
+
+[ext_resource type="Script" path="res://Scripts/combination_lock_dial.gd" id="2_0a3qm"]
+[ext_resource type="Texture2D" uid="uid://b5bpj3yeu2hj6" path="res://Assets/Textures/lock_digits/0.png" id="2_18hti"]
+
+[sub_resource type="GDScript" id="GDScript_5365e"]
+script/source = "extends Node2D
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otna2"]
+size = Vector2(59, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_swmat"]
+size = Vector2(51.5, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4xpv"]
+size = Vector2(34, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wy8ci"]
+size = Vector2(34, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ei04w"]
+size = Vector2(34, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbhsi"]
+size = Vector2(34, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onc4s"]
+size = Vector2(37, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fadg6"]
+size = Vector2(36, 43)
+
+[node name="Lockbox" type="Node2D"]
+
+[node name="NumberPad" type="Node2D" parent="."]
+script = SubResource("GDScript_5365e")
+
+[node name="Number1" type="CharacterBody2D" parent="NumberPad"]
+position = Vector2(0, -37)
+script = ExtResource("2_0a3qm")
+
+[node name="Area2D" type="Area2D" parent="NumberPad/Number1"]
+position = Vector2(-1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPad/Number1/Area2D"]
+position = Vector2(2, 3)
+shape = SubResource("RectangleShape2D_otna2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPad/Number1"]
+position = Vector2(4.75, 4)
+shape = SubResource("RectangleShape2D_swmat")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="NumberPad/Number1"]
+position = Vector2(3, 8)
+scale = Vector2(1.035, 0.98)
+texture = ExtResource("2_18hti")
+
+[node name="Number2" type="CharacterBody2D" parent="NumberPad"]
+position = Vector2(61, -32)
+script = ExtResource("2_0a3qm")
+
+[node name="Area2D" type="Area2D" parent="NumberPad/Number2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPad/Number2/Area2D"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_k4xpv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPad/Number2"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_wy8ci")
+
+[node name="Sprite2D" type="Sprite2D" parent="NumberPad/Number2"]
+position = Vector2(-2, 1.5)
+scale = Vector2(1.05, 1.075)
+texture = ExtResource("2_18hti")
+
+[node name="Number3" type="CharacterBody2D" parent="NumberPad"]
+position = Vector2(113, -32)
+script = ExtResource("2_0a3qm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPad/Number3"]
+position = Vector2(-4, -3)
+shape = SubResource("RectangleShape2D_ei04w")
+
+[node name="Area2D" type="Area2D" parent="NumberPad/Number3"]
+position = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPad/Number3/Area2D"]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_vbhsi")
+
+[node name="Sprite2D" type="Sprite2D" parent="NumberPad/Number3"]
+texture = ExtResource("2_18hti")
+
+[node name="Number4" type="CharacterBody2D" parent="NumberPad"]
+position = Vector2(161, -35)
+script = ExtResource("2_0a3qm")
+
+[node name="Area2D" type="Area2D" parent="NumberPad/Number4"]
+position = Vector2(0, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPad/Number4/Area2D"]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_onc4s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPad/Number4"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_fadg6")
+
+[node name="Sprite2D" type="Sprite2D" parent="NumberPad/Number4"]
+texture = ExtResource("2_18hti")
+
+[connection signal="mouse_entered" from="NumberPad/Number1/Area2D" to="NumberPad/Number1" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="NumberPad/Number1/Area2D" to="NumberPad/Number1" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="NumberPad/Number2/Area2D" to="NumberPad/Number2" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="NumberPad/Number2/Area2D" to="NumberPad/Number2" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="NumberPad/Number3/Area2D" to="NumberPad/Number3" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="NumberPad/Number3/Area2D" to="NumberPad/Number3" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="NumberPad/Number4/Area2D" to="NumberPad/Number4" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="NumberPad/Number4/Area2D" to="NumberPad/Number4" method="_on_area_2d_mouse_exited"]
