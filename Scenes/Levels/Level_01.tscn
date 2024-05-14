@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cjanwm3sy2x37"]
+[gd_scene load_steps=32 format=3 uid="uid://cjanwm3sy2x37"]
 
 [ext_resource type="PackedScene" uid="uid://bvkfp0ufwcrm" path="res://Scenes/npc/a_husband.tscn" id="2_irrk8"]
 [ext_resource type="PackedScene" uid="uid://w7m6tehvvy3g" path="res://Scenes/Prefabs/player.tscn" id="2_pay8t"]
@@ -11,12 +11,14 @@
 [ext_resource type="PackedScene" uid="uid://3ycmmp474166" path="res://Scenes/npc/b_sibling.tscn" id="6_xye2r"]
 [ext_resource type="Texture2D" uid="uid://clreg520jah1j" path="res://Assets/platformPack_item008.png" id="7_j7jun"]
 [ext_resource type="FontFile" uid="uid://qgc4vi5osk7v" path="res://Assets/Fonts/Star Choco.ttf" id="8_gwcy2"]
+[ext_resource type="PackedScene" uid="uid://cfhgdldvpdf8m" path="res://Scenes/Prefabs/clock.tscn" id="9_0fim8"]
 [ext_resource type="Texture2D" uid="uid://cssr3xx5j3dsl" path="res://Assets/Textures/godot_neutral_point_light.webp" id="10_23jwq"]
 [ext_resource type="PackedScene" uid="uid://dpq6pgox64htv" path="res://Scenes/puzzle_assets/lockbox.tscn" id="11_h7n2w"]
 [ext_resource type="PackedScene" uid="uid://c7r78oau0sqy2" path="res://Scenes/npc/c_kidnapped.tscn" id="13_ifglg"]
 [ext_resource type="PackedScene" uid="uid://cap0vf4rc5ks7" path="res://Scenes/npc/d_phych.tscn" id="14_rj8xu"]
 [ext_resource type="PackedScene" uid="uid://c3kkj0paj06i0" path="res://Scenes/Levels/chest.tscn" id="15_x4ydl"]
 [ext_resource type="Texture2D" uid="uid://kce0kr4wu0yr" path="res://Assets/Images/darkbackground.png" id="16_s0hr7"]
+[ext_resource type="Texture2D" uid="uid://bpiagwfga4rr8" path="res://Assets/Textures/bang.png" id="17_aahwe"]
 [ext_resource type="Texture2D" uid="uid://bt4ch0h1fcup3" path="res://Assets/Images/finalfoor.png" id="17_tq01t"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4lnhe"]
@@ -2118,6 +2120,10 @@ tile_set = SubResource("TileSet_d4jtk")
 format = 2
 layer_0/tile_data = PackedInt32Array(7078137, 2424832, 22, 7143674, 2424832, 22, 7143672, 2424832, 22, 7536888, 2424832, 22, 7602425, 2424832, 22, 7667962, 2424832, 22, 7864569, 2424832, 22, 7864570, 2424832, 22, 7864571, 2424832, 22, 7864572, 2424832, 22, 8585462, 2424832, 22, 8650999, 2424832, 22, 8716536, 2424832, 22, 8716537, 2424832, 22, 8651002, 2424832, 22, 6226166, 2424832, 22, 6226167, 2424832, 22, 6160632, 2424832, 22, 6160633, 2424832, 22, 6160631, 2424832, 22, 5570809, 2424832, 22, 5636346, 2424832, 22, 5701883, 2424832, 22, 4260157, 2424832, 22, 4260158, 2424832, 22, 4260159, 2424832, 22, 4260160, 2424832, 22, 4260161, 2424832, 22, 4915519, 2424832, 22, 4915520, 2424832, 22, 4915521, 2424832, 22, 4915522, 2424832, 22, 5833021, 2424832, 22, 5767486, 2424832, 22, 5701950, 2424832, 22, 5636415, 2424832, 22, 6226241, 2424832, 22, 6291777, 2424832, 22, 6357314, 2424832, 22, 6422850, 2424832, 22, 6684988, 2424832, 22, 6750525, 2424832, 22, 6816062, 2424832, 22, 6750526, 2424832, 22, 7340351, 2424832, 22, 7340352, 2424832, 22, 7340353, 2424832, 22, 7340354, 2424832, 22, 7995708, 2424832, 22, 8061244, 2424832, 22, 8126780, 2424832, 22, 8192316, 2424832, 22, 8782142, 2424832, 22, 8782143, 2424832, 22, 8782144, 2424832, 22, 8782145, 2424832, 22, 8782146, 2424832, 22, 9240894, 2424832, 22, 9306431, 2424832, 22, 9371967, 2424832, 22, 9437504, 2424832, 22, 7799105, 2424832, 22, 7864642, 2424832, 22, 7930179, 2424832, 22, 4587836, 2424832, 22, 4587837, 2424832, 22, 4587838, 2424832, 22, 8388928, 2424832, 22, 8388929, 2424832, 22, 8388930, 2424832, 22, 8388931, 2424832, 22, 5243197, 2424832, 22, 5243198, 2424832, 22, 5308735, 2424832, 22, 6160700, 2424832, 22, 6226237, 2424832, 22, 6291774, 2424832, 22, 7536957, 2424832, 22, 7602493, 2424832, 22, 7668029, 2424832, 22, 7668028, 2424832, 22, 3670335, 2424832, 22, 3735872, 2424832, 22, 3735873, 2424832, 22, 3801410, 2424832, 22)
 
+[node name="clock_node2D" parent="Level" instance=ExtResource("9_0fim8")]
+position = Vector2(552, 113)
+scale = Vector2(0.5, 0.5)
+
 [node name="d_phych" parent="Level" instance=ExtResource("14_rj8xu")]
 position = Vector2(1129, 282)
 
@@ -2175,7 +2181,6 @@ position = Vector2(1658, 282)
 up_direction = Vector2(0, 1)
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="GameUI" type="Control" parent="UserInterface"]
 layout_mode = 3
@@ -2190,6 +2195,7 @@ script = ExtResource("6_66mfc")
 
 [node name="Score" type="Control" parent="UserInterface/GameUI"]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -2218,17 +2224,27 @@ theme_override_fonts/font = ExtResource("8_gwcy2")
 theme_override_font_sizes/font_size = 32
 text = "x 3"
 
+[node name="bang_Sprite2D" type="Sprite2D" parent="UserInterface/GameUI"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(981, 155)
+scale = Vector2(0.234642, 0.234642)
+texture = ExtResource("17_aahwe")
+
 [node name="Chest" parent="." instance=ExtResource("15_x4ydl")]
 z_index = 1
 position = Vector2(552, 434)
 
 [node name="background" type="Sprite2D" parent="."]
-z_index = -5
+z_index = -10
+z_as_relative = false
 position = Vector2(167, 191)
 scale = Vector2(0.538546, 0.302984)
 texture = ExtResource("16_s0hr7")
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(180, 549.868)
 scale = Vector2(11.8857, 4.84722)
 texture = ExtResource("17_tq01t")
+metadata/_edit_lock_ = true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8m3gr3g088b8"
-path="res://.godot/imported/clock_no_hand-removebg-preview.png-745f9e610aeb8d536683867f45310b74.ctex"
+uid="uid://bpiagwfga4rr8"
+path="res://.godot/imported/bang.png-2fbacb1ea47153e4ae36fff3e732ec1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/clock_no_hand-removebg-preview.png"
-dest_files=["res://.godot/imported/clock_no_hand-removebg-preview.png-745f9e610aeb8d536683867f45310b74.ctex"]
+source_file="res://Assets/Textures/bang.png"
+dest_files=["res://.godot/imported/bang.png-2fbacb1ea47153e4ae36fff3e732ec1c.ctex"]
 
 [params]
 
