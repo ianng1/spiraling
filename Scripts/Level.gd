@@ -1,46 +1,35 @@
 extends Node2D
 
 # Reference: 
-# - https://www.youtube.com/watch?v=3bENnUEa9mY
 # - https://www.reddit.com/r/godot/comments/16fy52m/check_whether_node_on_right_side_of_viewport/
 # - https://www.reddit.com/r/godot/comments/40cm3w/looping_through_all_children_and_subchildren_of_a/
-	
 
-@export var layer = 1
-var speed_offset = 0.5
-var position_offset
-
+# Default configs, need to change when scene width is changed.
 var canvas_size = 1625
-# Offset jail from tilemap position, and size.
+# Offset jail from tilemap position.
 var jail_offset = 905
-var jail_size = 300
 
-@onready var player = $"../Player"
-@onready var husband = $"A_husband"
 @onready var level = $"../Level"
 
 func _ready():
-	position_offset = position.x
+	pass
 
 func _process(_delta):
-	if player == null:
-		return
-
 	if level == null:
 		return
 	
+	# Move nodes to left and rights when they are outsides the scene.
 	for node in level.get_children():
 		var screen_pos = get_viewport().canvas_transform * node.global_position
 		var viewport_x = get_viewport().size.x
+		# Buffer to set when to move nodes arounds to avoid glitch.
 		var buffer = 200
 		
+		# The actual drawing of jail is offset from the position of tilemap.
 		if node.get_name() in ["c_Jail", "617wallmark"]:
 			screen_pos.x += jail_offset
 
 		if screen_pos.x < -buffer:
 			node.position.x += canvas_size
-		# Move the node to left if is to the right of viewport
-#		# Add 10 for buffer.
 		elif screen_pos.x> viewport_x + buffer:
 			node.position.x -= canvas_size
-
