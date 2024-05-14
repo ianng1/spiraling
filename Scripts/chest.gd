@@ -41,6 +41,7 @@ func _process(delta):
 	if get_node(number_path):
 		code_entered = get_node(number_path).current_code
 	if code_entered == 0111 and is_interface_open:
+	if code_entered == 0617 and is_interface_open:
 		_open_box()
 
 func _mouse_on_box():
