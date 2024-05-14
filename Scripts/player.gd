@@ -97,8 +97,8 @@ func _on_collision_body_entered(_body):
 		#death_tween()
 	if _body.is_in_group("RightTeleporter"):
 		print("Right")
-		right_teleporter_tween()
+		#right_teleporter_tween()
 		
 	elif _body.is_in_group("LeftTeleporter"):
 		print("Left")
-		left_teleporter_tween()
+		#left_teleporter_tween()
