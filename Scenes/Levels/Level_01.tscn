@@ -1,5 +1,6 @@
-[gd_scene load_steps=31 format=3 uid="uid://cjanwm3sy2x37"]
+[gd_scene load_steps=36 format=3 uid="uid://cjanwm3sy2x37"]
 
+[ext_resource type="Script" path="res://Scripts/Level_01.gd" id="1_iaili"]
 [ext_resource type="PackedScene" uid="uid://bvkfp0ufwcrm" path="res://Scenes/npc/a_husband.tscn" id="2_irrk8"]
 [ext_resource type="PackedScene" uid="uid://w7m6tehvvy3g" path="res://Scenes/Prefabs/player.tscn" id="2_pay8t"]
 [ext_resource type="PackedScene" uid="uid://bfmh3fm2de78o" path="res://Scenes/Prefabs/Coin.tscn" id="3_rrh80"]
@@ -21,20 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://kce0kr4wu0yr" path="res://Assets/Images/darkbackground.png" id="16_s0hr7"]
 [ext_resource type="Texture2D" uid="uid://bpiagwfga4rr8" path="res://Assets/Textures/bang.png" id="17_aahwe"]
 [ext_resource type="Texture2D" uid="uid://bt4ch0h1fcup3" path="res://Assets/Images/finalfoor.png" id="17_tq01t"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4lnhe"]
-light_mode = 2
-
-[sub_resource type="Gradient" id="Gradient_y8247"]
-interpolation_mode = 2
-offsets = PackedFloat32Array(0, 0.595432, 0.995106)
-colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_di8t3"]
-gradient = SubResource("Gradient_y8247")
-fill_from = Vector2(0.619658, 0)
-fill_to = Vector2(0.967949, 0.196581)
-metadata/_snap_count = 13
+[ext_resource type="Texture2D" uid="uid://cc6w2ybsx5yga" path="res://Assets/Images/chest_interface.jpeg" id="23_ay53m"]
+[ext_resource type="Texture2D" uid="uid://c843pqnxa3qyq" path="res://Assets/Images/closebutton.png" id="24_penh4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nnhrj"]
 texture = ExtResource("5_wqbaa")
@@ -2027,39 +2016,28 @@ tile_size = Vector2i(48, 48)
 physics_layer_0/collision_layer = 1
 sources/3 = SubResource("TileSetAtlasSource_s0osg")
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4lnhe"]
+light_mode = 2
+
+[sub_resource type="Gradient" id="Gradient_y8247"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.595432, 0.995106)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_di8t3"]
+gradient = SubResource("Gradient_y8247")
+fill_from = Vector2(0.619658, 0)
+fill_to = Vector2(0.967949, 0.196581)
+metadata/_snap_count = 13
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_alnvl"]
+size = Vector2(548.69, 521.071)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26wly"]
+size = Vector2(15.2, 9.2)
+
 [node name="Level_01" type="Node2D"]
-
-[node name="Player" parent="." instance=ExtResource("2_pay8t")]
-z_index = 7
-position = Vector2(55, 282)
-move_speed = 400.0
-metadata/_edit_lock_ = true
-
-[node name="PointLight2D" type="PointLight2D" parent="Player"]
-visible = false
-material = SubResource("CanvasItemMaterial_4lnhe")
-position = Vector2(3, 40)
-texture = ExtResource("10_23jwq")
-texture_scale = 1.5
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(180, 15)
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.0
-drag_top_margin = 0.0
-drag_right_margin = 0.0
-drag_bottom_margin = 0.0
-editor_draw_limits = true
-editor_draw_drag_margin = true
-
-[node name="PointLight2D2" type="PointLight2D" parent="Player"]
-position = Vector2(-22, 11)
-scale = Vector2(0.172005, 0.236877)
-energy = 1.92
-texture = SubResource("GradientTexture2D_di8t3")
-texture_scale = 47.95
-metadata/_edit_lock_ = true
+script = ExtResource("1_iaili")
 
 [node name="Coins" type="Node2D" parent="."]
 visible = false
@@ -2119,13 +2097,6 @@ tile_set = SubResource("TileSet_ywwrl")
 format = 2
 layer_0/z_index = -100
 layer_0/tile_data = PackedInt32Array(393242, 327683, 0, 393240, 262147, 0, 458726, 262147, 0)
-
-[node name="Lockbox" parent="Level" instance=ExtResource("11_h7n2w")]
-position = Vector2(721, 206)
-
-[node name="Chest" parent="Level" instance=ExtResource("15_x4ydl")]
-z_index = 1
-position = Vector2(832, 434)
 
 [node name="background" type="Sprite2D" parent="Level"]
 z_index = -10
@@ -2211,3 +2182,78 @@ visible = false
 position = Vector2(981, 155)
 scale = Vector2(0.234642, 0.234642)
 texture = ExtResource("17_aahwe")
+
+[node name="Player" parent="." instance=ExtResource("2_pay8t")]
+z_index = 7
+position = Vector2(55, 282)
+move_speed = 400.0
+metadata/_edit_lock_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="Player"]
+visible = false
+material = SubResource("CanvasItemMaterial_4lnhe")
+position = Vector2(3, 40)
+texture = ExtResource("10_23jwq")
+texture_scale = 1.5
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(180, 15)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.0
+drag_top_margin = 0.0
+drag_right_margin = 0.0
+drag_bottom_margin = 0.0
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="PointLight2D2" type="PointLight2D" parent="Player"]
+position = Vector2(-22, 11)
+scale = Vector2(0.172005, 0.236877)
+energy = 1.92
+texture = SubResource("GradientTexture2D_di8t3")
+texture_scale = 47.95
+metadata/_edit_lock_ = true
+
+[node name="Chest" parent="." instance=ExtResource("15_x4ydl")]
+z_index = 1
+position = Vector2(830, 431)
+
+[node name="ChestInterface" type="Sprite2D" parent="Chest"]
+visible = false
+z_index = 10
+position = Vector2(-16.3, -21.05)
+scale = Vector2(0.234, 0.132333)
+texture = ExtResource("23_ay53m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Chest/ChestInterface"]
+position = Vector2(105.76, -95.2174)
+scale = Vector2(0.0781083, 0.112644)
+texture = ExtResource("24_penh4")
+
+[node name="Area2D" type="Area2D" parent="Chest/ChestInterface/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest/ChestInterface/Sprite2D/Area2D"]
+position = Vector2(0.000488281, -5.78931)
+shape = SubResource("RectangleShape2D_alnvl")
+
+[node name="Area2D2" type="Area2D" parent="Chest"]
+
+[node name="MouseCollisionChest" type="CollisionShape2D" parent="Chest/Area2D2"]
+position = Vector2(7.62939e-06, 0.200001)
+shape = SubResource("RectangleShape2D_26wly")
+
+[node name="Lockbox" parent="Chest" instance=ExtResource("11_h7n2w")]
+visible = false
+z_index = 10
+position = Vector2(-40.8, -10.3)
+scale = Vector2(0.3, 0.3)
+
+[connection signal="input_event" from="Chest/ChestInterface/Sprite2D/Area2D" to="Chest" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Chest/ChestInterface/Sprite2D/Area2D" to="." method="change_to_action_cursor"]
+[connection signal="mouse_exited" from="Chest/ChestInterface/Sprite2D/Area2D" to="." method="change_to_idle_cursor"]
+[connection signal="input_event" from="Chest/Area2D2" to="Chest" method="_on_area_2d_2_input_event"]
+[connection signal="mouse_entered" from="Chest/Area2D2" to="." method="change_to_action_cursor"]
+[connection signal="mouse_entered" from="Chest/Area2D2" to="Chest" method="_mouse_on_box"]
+[connection signal="mouse_exited" from="Chest/Area2D2" to="." method="change_to_idle_cursor"]
+[connection signal="mouse_exited" from="Chest/Area2D2" to="Chest" method="_mouse_off_box"]

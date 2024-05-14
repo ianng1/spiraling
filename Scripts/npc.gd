@@ -41,8 +41,9 @@ func _process(delta):
 		# TODO: add any special movement if needed.
 		pass
 
-	if Input.is_action_just_pressed("click") and is_mouse_hover and level != null:
-		DialogueManager.show_example_dialogue_balloon(load(dialogue_file), dialogue_level)
+	if(!get_node("/root/Level_01").freeze_player_movement):
+		if Input.is_action_just_pressed("click") and is_mouse_hover and level != null:
+			DialogueManager.show_example_dialogue_balloon(load(dialogue_file), dialogue_level)
 
 # --------- SIGNALS ---------- #
 # Detect whetehr the mouse is hover on NPC

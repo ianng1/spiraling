@@ -10,7 +10,8 @@ extends CharacterBody2D
 # NPC, level, and dialogue identifiers. These will be reset
 # based on the metadata to match the correct npc and level.
 var id
-
+var action_cursor = preload("res://Assets/Images/action_cursor.png")
+var idle_cursor = preload("res://Assets/Images/idle_cursor.png")
 var cur_state = 0
 var is_mouse_hover = false
 # Special movement or iteration if any.
@@ -47,8 +48,10 @@ func _input(event: InputEvent) -> void:
 func _on_area_2d_mouse_entered():
 	print("entering")
 	is_mouse_hover = true
+	Input.set_custom_mouse_cursor(action_cursor)
 
 
 func _on_area_2d_mouse_exited():
 	print("leaving")
 	is_mouse_hover = false
+	Input.set_custom_mouse_cursor(idle_cursor)

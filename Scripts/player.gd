@@ -10,17 +10,23 @@ extends CharacterBody2D
 
 # Indicator of movement direction to set animation.
 var move_right : bool = true
+var freeze_player_movement = false
 
 @onready var player_sprite = $AnimatedSprite2D
 @onready var particle_trails = $ParticleTrails
+
+
 
 # --------- BUILT-IN FUNCTIONS ---------- #
 
 func _process(_delta):
 	# Calling functions
-	movement()
-	player_animations()
-	flip_player()
+	
+	if(!get_parent().freeze_player_movement):
+		movement()
+		player_animations()
+		flip_player()
+	
 	
 # --------- CUSTOM FUNCTIONS ---------- #
 

@@ -5,7 +5,7 @@
 
 [sub_resource type="GDScript" id="GDScript_5365e"]
 script/source = "extends Node2D
-
+var current_code: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -13,7 +13,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	current_code = int(str($Number1.cur_state) + str($Number2.cur_state) +
+	str($Number3.cur_state) + str($Number4.cur_state))
+
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_otna2"]
