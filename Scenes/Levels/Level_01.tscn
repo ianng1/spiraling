@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://cjanwm3sy2x37"]
+[gd_scene load_steps=31 format=3 uid="uid://cjanwm3sy2x37"]
 
 [ext_resource type="PackedScene" uid="uid://bvkfp0ufwcrm" path="res://Scenes/npc/a_husband.tscn" id="2_irrk8"]
 [ext_resource type="PackedScene" uid="uid://w7m6tehvvy3g" path="res://Scenes/Prefabs/player.tscn" id="2_pay8t"]
 [ext_resource type="PackedScene" uid="uid://bfmh3fm2de78o" path="res://Scenes/Prefabs/Coin.tscn" id="3_rrh80"]
 [ext_resource type="Texture2D" uid="uid://mlk8x2l6arr0" path="res://Assets/Spritesheet/side_TestMap.png" id="4_clgdb"]
+[ext_resource type="Script" path="res://Scripts/Level.gd" id="4_v2uxj"]
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="4_vgfkr"]
 [ext_resource type="PackedScene" uid="uid://b3lep270jdeyv" path="res://Scenes/npc/a_wife.tscn" id="5_7cr6o"]
 [ext_resource type="Texture2D" uid="uid://jaegp53ccc7w" path="res://Assets/Spritesheet/platformPack_tilesheet.png" id="5_wqbaa"]
@@ -11,12 +12,14 @@
 [ext_resource type="PackedScene" uid="uid://3ycmmp474166" path="res://Scenes/npc/b_sibling.tscn" id="6_xye2r"]
 [ext_resource type="Texture2D" uid="uid://clreg520jah1j" path="res://Assets/platformPack_item008.png" id="7_j7jun"]
 [ext_resource type="FontFile" uid="uid://qgc4vi5osk7v" path="res://Assets/Fonts/Star Choco.ttf" id="8_gwcy2"]
+[ext_resource type="PackedScene" uid="uid://cfhgdldvpdf8m" path="res://Scenes/Prefabs/clock.tscn" id="9_0fim8"]
 [ext_resource type="Texture2D" uid="uid://cssr3xx5j3dsl" path="res://Assets/Textures/godot_neutral_point_light.webp" id="10_23jwq"]
 [ext_resource type="PackedScene" uid="uid://dpq6pgox64htv" path="res://Scenes/puzzle_assets/lockbox.tscn" id="11_h7n2w"]
 [ext_resource type="PackedScene" uid="uid://c7r78oau0sqy2" path="res://Scenes/npc/c_kidnapped.tscn" id="13_ifglg"]
 [ext_resource type="PackedScene" uid="uid://cap0vf4rc5ks7" path="res://Scenes/npc/d_phych.tscn" id="14_rj8xu"]
 [ext_resource type="PackedScene" uid="uid://c3kkj0paj06i0" path="res://Scenes/Levels/chest.tscn" id="15_x4ydl"]
 [ext_resource type="Texture2D" uid="uid://kce0kr4wu0yr" path="res://Assets/Images/darkbackground.png" id="16_s0hr7"]
+[ext_resource type="Texture2D" uid="uid://bpiagwfga4rr8" path="res://Assets/Textures/bang.png" id="17_aahwe"]
 [ext_resource type="Texture2D" uid="uid://bt4ch0h1fcup3" path="res://Assets/Images/finalfoor.png" id="17_tq01t"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4lnhe"]
@@ -2024,35 +2027,13 @@ tile_size = Vector2i(48, 48)
 physics_layer_0/collision_layer = 1
 sources/3 = SubResource("TileSetAtlasSource_s0osg")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rndpx"]
-texture = ExtResource("5_wqbaa")
-texture_region_size = Vector2i(64, 64)
-0:5/0 = 0
-0:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:5/0/physics_layer_0/angular_velocity = 0.0
-0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 0, 16, 0, 32, 32, -32, 32)
-7:2/0 = 0
-7:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-7:2/0/physics_layer_0/angular_velocity = 0.0
-10:3/0 = 0
-10:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-10:3/0/physics_layer_0/angular_velocity = 0.0
-0:6/0 = 0
-0:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:6/0/physics_layer_0/angular_velocity = 0.0
-0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-33, 33.75, -32, -32, 32, -32, 32, 32)
-
-[sub_resource type="TileSet" id="TileSet_2fcbi"]
-tile_size = Vector2i(64, 64)
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_rndpx")
-
 [node name="Level_01" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_pay8t")]
 z_index = 7
 position = Vector2(55, 282)
 move_speed = 400.0
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="Player"]
 visible = false
@@ -2075,9 +2056,10 @@ editor_draw_drag_margin = true
 [node name="PointLight2D2" type="PointLight2D" parent="Player"]
 position = Vector2(-22, 11)
 scale = Vector2(0.172005, 0.236877)
-energy = 0.6
+energy = 1.92
 texture = SubResource("GradientTexture2D_di8t3")
 texture_scale = 47.95
+metadata/_edit_lock_ = true
 
 [node name="Coins" type="Node2D" parent="."]
 visible = false
@@ -2092,90 +2074,93 @@ position = Vector2(712, 353)
 position = Vector2(844, 408)
 
 [node name="Level" type="Node2D" parent="."]
-
-[node name="A_husband" parent="Level" instance=ExtResource("2_irrk8")]
-position = Vector2(412, 282)
-up_direction = Vector2(0, 1)
-
-[node name="A_wife" parent="Level" instance=ExtResource("5_7cr6o")]
-position = Vector2(284, 282)
-
-[node name="b_sibling" parent="Level" instance=ExtResource("6_xye2r")]
-position = Vector2(694, 282)
-
-[node name="c_kidnapped" parent="Level" instance=ExtResource("13_ifglg")]
-position = Vector2(902, 282)
+script = ExtResource("4_v2uxj")
 
 [node name="c_Jail" type="TileMap" parent="Level"]
+position = Vector2(173, -5)
 tile_set = SubResource("TileSet_vkk6f")
 rendering_quadrant_size = 4
 format = 2
+layer_0/z_index = 2
 layer_0/tile_data = PackedInt32Array(786494, 1376256, 24, 852030, 1376256, 24, 917566, 1376256, 24, 983102, 1376256, 24, 1048638, 1376256, 24, 1114174, 1376256, 24, 1179710, 1376256, 24, 1245246, 1376256, 24, 1310782, 1376256, 24, 1376318, 1376256, 24, 1441854, 1376256, 24, 1507390, 1376256, 24, 1572926, 1376256, 24, 1638462, 1376256, 24, 1703998, 1376256, 24, 1769534, 1376256, 24, 1835070, 1376256, 24, 1900606, 1376256, 24, 786486, 1376256, 24, 852022, 1376256, 24, 917558, 1376256, 24, 983094, 1376256, 24, 1048630, 1376256, 24, 1114166, 1376256, 24, 1179702, 1376256, 24, 1245238, 1376256, 24, 1310774, 1376256, 24, 1376310, 1376256, 24, 1441846, 1376256, 24, 1507382, 1376256, 24, 1572918, 1376256, 24, 1638454, 1376256, 24, 1703990, 1376256, 24, 1769526, 1376256, 24, 1835062, 1376256, 24, 1900598, 1376256, 24, 786491, 1376256, 24, 852027, 1376256, 24, 917563, 1376256, 24, 983099, 1376256, 24, 1048635, 1376256, 24, 1114171, 1376256, 24, 1179707, 1376256, 24, 1245243, 1376256, 24, 1310779, 1376256, 24, 1376315, 1376256, 24, 1441851, 1376256, 24, 1507387, 1376256, 24, 1572923, 1376256, 24, 1638459, 1376256, 24, 1703995, 1376256, 24, 1769531, 1376256, 24, 1835067, 1376256, 24, 1900603, 1376256, 24, 786497, 1376256, 24, 852033, 1376256, 24, 917569, 1376256, 24, 983105, 1376256, 24, 1048641, 1376256, 24, 1114177, 1376256, 24, 1179713, 1376256, 24, 1245249, 1376256, 24, 1310785, 1376256, 24, 1376321, 1376256, 24, 1441857, 1376256, 24, 1507393, 1376256, 24, 1572929, 1376256, 24, 1638465, 1376256, 24, 1704001, 1376256, 24, 1769537, 1376256, 24, 1835073, 1376256, 24, 1900609, 1376256, 24, 786483, 1376256, 24, 1900595, 1376256, 24, 1835059, 1376256, 24, 1769523, 1376256, 24, 1703987, 1376256, 24, 1638451, 1376256, 24, 1572915, 1376256, 24, 1507379, 1376256, 24, 1441843, 1376256, 24, 1376307, 1376256, 24, 1310771, 1376256, 24, 1245235, 1376256, 24, 1179699, 1376256, 24, 1114163, 1376256, 24, 1048627, 1376256, 24, 983091, 1376256, 24, 917555, 1376256, 24, 852019, 1376256, 24, 720947, 1376256, 25, 655411, 1376256, 25, 655412, 1376256, 25, 655413, 1376256, 25, 655414, 1376256, 25, 655415, 1376256, 25, 655416, 1376256, 25, 655417, 1376256, 25, 655418, 1376256, 25, 655419, 1376256, 25, 655420, 1376256, 25, 655421, 1376256, 25, 655422, 1376256, 25, 655423, 1376256, 25, 655424, 1376256, 25, 655425, 1376256, 25, 720961, 1376256, 25, 720958, 1376256, 25, 720955, 1376256, 25, 720950, 1376256, 25, 655410, 1376256, 25, 655409, 1376256, 25, 655408, 1376256, 25, 720944, 1376256, 25, 786480, 1376256, 25, 852016, 1376256, 25, 917552, 1376256, 25, 983088, 1376256, 25, 1048624, 1376256, 25, 1114160, 1376256, 25, 1179696, 1376256, 25, 1245232, 1376256, 25, 1310768, 1376256, 25, 1376304, 1376256, 25, 1441840, 1376256, 25, 1507376, 1376256, 25, 1572912, 1376256, 25, 1638448, 1376256, 25, 1703984, 1376256, 25, 1769520, 1376256, 25, 1835056, 1376256, 25, 1900592, 1376256, 25)
+metadata/_edit_lock_ = true
 
 [node name="617wallmark" type="TileMap" parent="Level"]
+position = Vector2(172, 4)
 scale = Vector2(0.2, 0.2)
 tile_set = SubResource("TileSet_d4jtk")
 format = 2
-layer_0/tile_data = PackedInt32Array(7078137, 2424832, 22, 7143674, 2424832, 22, 7143672, 2424832, 22, 7536888, 2424832, 22, 7602425, 2424832, 22, 7667962, 2424832, 22, 7864569, 2424832, 22, 7864570, 2424832, 22, 7864571, 2424832, 22, 7864572, 2424832, 22, 8585462, 2424832, 22, 8650999, 2424832, 22, 8716536, 2424832, 22, 8716537, 2424832, 22, 8651002, 2424832, 22, 6226166, 2424832, 22, 6226167, 2424832, 22, 6160632, 2424832, 22, 6160633, 2424832, 22, 6160631, 2424832, 22, 5570809, 2424832, 22, 5636346, 2424832, 22, 5701883, 2424832, 22, 4260157, 2424832, 22, 4260158, 2424832, 22, 4260159, 2424832, 22, 4260160, 2424832, 22, 4260161, 2424832, 22, 4915519, 2424832, 22, 4915520, 2424832, 22, 4915521, 2424832, 22, 4915522, 2424832, 22, 5833021, 2424832, 22, 5767486, 2424832, 22, 5701950, 2424832, 22, 5636415, 2424832, 22, 6226241, 2424832, 22, 6291777, 2424832, 22, 6357314, 2424832, 22, 6422850, 2424832, 22, 6684988, 2424832, 22, 6750525, 2424832, 22, 6816062, 2424832, 22, 6750526, 2424832, 22, 7340351, 2424832, 22, 7340352, 2424832, 22, 7340353, 2424832, 22, 7340354, 2424832, 22, 7995708, 2424832, 22, 8061244, 2424832, 22, 8126780, 2424832, 22, 8192316, 2424832, 22, 8782142, 2424832, 22, 8782143, 2424832, 22, 8782144, 2424832, 22, 8782145, 2424832, 22, 8782146, 2424832, 22, 9240894, 2424832, 22, 9306431, 2424832, 22, 9371967, 2424832, 22, 9437504, 2424832, 22, 7799105, 2424832, 22, 7864642, 2424832, 22, 7930179, 2424832, 22, 4587836, 2424832, 22, 4587837, 2424832, 22, 4587838, 2424832, 22, 8388928, 2424832, 22, 8388929, 2424832, 22, 8388930, 2424832, 22, 8388931, 2424832, 22, 5243197, 2424832, 22, 5243198, 2424832, 22, 5308735, 2424832, 22, 6160700, 2424832, 22, 6226237, 2424832, 22, 6291774, 2424832, 22, 7536957, 2424832, 22, 7602493, 2424832, 22, 7668029, 2424832, 22, 7668028, 2424832, 22, 3670335, 2424832, 22, 3735872, 2424832, 22, 3735873, 2424832, 22, 3801410, 2424832, 22)
+layer_0/tile_data = PackedInt32Array(7078137, 2424832, 22, 7143674, 2424832, 22, 7143672, 2424832, 22, 7536888, 2424832, 22, 7602425, 2424832, 22, 7667962, 2424832, 22, 7864569, 2424832, 22, 7864570, 2424832, 22, 7864571, 2424832, 22, 7864572, 2424832, 22, 8585462, 2424832, 22, 8650999, 2424832, 22, 8716536, 2424832, 22, 8716537, 2424832, 22, 8651002, 2424832, 22, 6226166, 2424832, 22, 6226167, 2424832, 22, 6160632, 2424832, 22, 6160633, 2424832, 22, 6160631, 2424832, 22, 5570809, 2424832, 22, 5636346, 2424832, 22, 5701883, 2424832, 22, 4260157, 2424832, 22, 4260158, 2424832, 22, 4260159, 2424832, 22, 4260160, 2424832, 22, 4260161, 2424832, 22, 4915519, 2424832, 22, 4915520, 2424832, 22, 4915521, 2424832, 22, 4915522, 2424832, 22, 5833021, 2424832, 22, 5767486, 2424832, 22, 5701950, 2424832, 22, 5636415, 2424832, 22, 6226241, 2424832, 22, 6291777, 2424832, 22, 6357314, 2424832, 22, 6422850, 2424832, 22, 6684988, 2424832, 22, 6750525, 2424832, 22, 6816062, 2424832, 22, 6750526, 2424832, 22, 7340351, 2424832, 22, 7340352, 2424832, 22, 7340353, 2424832, 22, 7340354, 2424832, 22, 7995708, 2424832, 22, 8061244, 2424832, 22, 8126780, 2424832, 22, 8192316, 2424832, 22, 8782142, 2424832, 22, 8782143, 2424832, 22, 8782144, 2424832, 22, 8782145, 2424832, 22, 8782146, 2424832, 22, 9240894, 2424832, 22, 9306431, 2424832, 22, 9371967, 2424832, 22, 9437504, 2424832, 22, 7799105, 2424832, 22, 7864642, 2424832, 22, 7930179, 2424832, 22, 4587836, 2424832, 22, 4587837, 2424832, 22, 4587838, 2424832, 22, 8388928, 2424832, 22, 8388929, 2424832, 22, 8388930, 2424832, 22, 8388931, 2424832, 22, 5243197, 2424832, 22, 5243198, 2424832, 22, 5308735, 2424832, 22, 6160700, 2424832, 22, 6226237, 2424832, 22, 6291774, 2424832, 22, 7536957, 2424832, 22, 7602493, 2424832, 22, 7668029, 2424832, 22, 7668028, 2424832, 22, 3670335, 2424832, 22, 3735872, 2424832, 22, 3735873, 2424832, 22, 3801410, 2424832, 22, 8978754, 1900544, 6, 9044290, 1900544, 6, 9109826, 1900544, 6)
+metadata/_edit_lock_ = true
+
+[node name="A_husband" parent="Level" instance=ExtResource("2_irrk8")]
+position = Vector2(446, 283)
+up_direction = Vector2(0, 1)
+
+[node name="A_wife" parent="Level" instance=ExtResource("5_7cr6o")]
+position = Vector2(310, 282)
+
+[node name="b_sibling" parent="Level" instance=ExtResource("6_xye2r")]
+position = Vector2(639, 282)
+
+[node name="c_kidnapped" parent="Level" instance=ExtResource("13_ifglg")]
+position = Vector2(1084, 282)
+
+[node name="clock_node2D" parent="Level" instance=ExtResource("9_0fim8")]
+position = Vector2(1354, 135)
+scale = Vector2(0.5, 0.5)
 
 [node name="d_phych" parent="Level" instance=ExtResource("14_rj8xu")]
-position = Vector2(1129, 282)
+position = Vector2(1556, 282)
 
 [node name="Background" type="TileMap" parent="Level" groups=["Ground"]]
+visible = false
 tile_set = SubResource("TileSet_ywwrl")
 format = 2
 layer_0/z_index = -100
 layer_0/tile_data = PackedInt32Array(393242, 327683, 0, 393240, 262147, 0, 458726, 262147, 0)
 
-[node name="RightTeleporter" type="TileMap" parent="Level" groups=["RightTeleporter"]]
-tile_set = SubResource("TileSet_2fcbi")
-format = 2
-layer_0/tile_data = PackedInt32Array(393237, 0, 6, 327701, 0, 6, 262165, 0, 6, 196629, 0, 6, 131093, 0, 6, 393238, 0, 6, 327702, 0, 6, 262166, 0, 6, 65557, 0, 6, 21, 0, 6)
-
-[node name="LeftTeleporter" type="TileMap" parent="Level" groups=["LeftTeleporter"]]
-tile_set = SubResource("TileSet_2fcbi")
-format = 2
-layer_0/tile_data = PackedInt32Array(458751, 0, 6, 393215, 0, 6, 327679, 0, 6, 262143, 0, 6, 196607, 0, 6, 131071, 0, 6)
-
-[node name="SpawnPoint" type="Marker2D" parent="Level"]
-unique_name_in_owner = true
-visible = false
-position = Vector2(174, 383)
-
-[node name="RightEntry" type="Marker2D" parent="Level"]
-unique_name_in_owner = true
-position = Vector2(1280, 282)
-
-[node name="LeftEntry" type="Marker2D" parent="Level"]
-unique_name_in_owner = true
-position = Vector2(64, 282)
-
 [node name="Lockbox" parent="Level" instance=ExtResource("11_h7n2w")]
-position = Vector2(96, 189)
+position = Vector2(721, 206)
+
+[node name="Chest" parent="Level" instance=ExtResource("15_x4ydl")]
+z_index = 1
+position = Vector2(832, 434)
+
+[node name="background" type="Sprite2D" parent="Level"]
+z_index = -10
+z_as_relative = false
+position = Vector2(167, 191)
+scale = Vector2(0.538546, 0.302984)
+texture = ExtResource("16_s0hr7")
+metadata/_edit_lock_ = true
+
+[node name="ground" type="Node2D" parent="Level"]
+position = Vector2(-124, 474)
+scale = Vector2(3.56857, 4.84722)
+
+[node name="ground_left" type="Sprite2D" parent="Level/ground"]
+position = Vector2(-420.336, 0)
+scale = Vector2(1.3, 1)
+texture = ExtResource("17_tq01t")
+centered = false
+
+[node name="ground_middle" type="Sprite2D" parent="Level/ground"]
+position = Vector2(34.4676, 0)
+scale = Vector2(1.30024, 1)
+texture = ExtResource("17_tq01t")
+centered = false
+
+[node name="ground_right" type="Sprite2D" parent="Level/ground"]
+position = Vector2(489.271, 0)
+scale = Vector2(1.3, 1)
+texture = ExtResource("17_tq01t")
+centered = false
 
 [node name="GameManager" type="Node2D" parent="."]
 script = ExtResource("4_vgfkr")
 
-[node name="level_copy_two_side_Node2D" type="Node2D" parent="."]
-
-[node name="d_phych_copy_left" parent="level_copy_two_side_Node2D" instance=ExtResource("14_rj8xu")]
-position = Vector2(-119, 282)
-
-[node name="c_kidnapped_copy_left" parent="level_copy_two_side_Node2D" instance=ExtResource("13_ifglg")]
-position = Vector2(-346, 282)
-
-[node name="b_sibling_copy_right" parent="level_copy_two_side_Node2D" instance=ExtResource("6_xye2r")]
-position = Vector2(1940, 282)
-
-[node name="A_wife_copy_right" parent="level_copy_two_side_Node2D" instance=ExtResource("5_7cr6o")]
-position = Vector2(1530, 282)
-
-[node name="A_husband_copy_right" parent="level_copy_two_side_Node2D" instance=ExtResource("2_irrk8")]
-position = Vector2(1658, 282)
-up_direction = Vector2(0, 1)
-
 [node name="UserInterface" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="GameUI" type="Control" parent="UserInterface"]
 layout_mode = 3
@@ -2187,9 +2172,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("6_66mfc")
+metadata/_edit_lock_ = true
 
 [node name="Score" type="Control" parent="UserInterface/GameUI"]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -2218,17 +2205,9 @@ theme_override_fonts/font = ExtResource("8_gwcy2")
 theme_override_font_sizes/font_size = 32
 text = "x 3"
 
-[node name="Chest" parent="." instance=ExtResource("15_x4ydl")]
-z_index = 1
-position = Vector2(552, 434)
-
-[node name="background" type="Sprite2D" parent="."]
-z_index = -5
-position = Vector2(167, 191)
-scale = Vector2(0.538546, 0.302984)
-texture = ExtResource("16_s0hr7")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(180, 549.868)
-scale = Vector2(11.8857, 4.84722)
-texture = ExtResource("17_tq01t")
+[node name="bang_Sprite2D" type="Sprite2D" parent="UserInterface/GameUI"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(981, 155)
+scale = Vector2(0.234642, 0.234642)
+texture = ExtResource("17_aahwe")

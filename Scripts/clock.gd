@@ -16,6 +16,9 @@ var movement_delta : Vector2
 var click_position : Vector2
 var clock_hover = true
 
+# Elements to unlock when done.
+@onready var bang_Sprite2D = %bang_Sprite2D
+
 # Set up the hands to rotate.
 func _ready():
 	hand_short = get_node("clock_hand_short")
@@ -29,7 +32,7 @@ func _process(_delta):
 		return
 	
 	var degree_to_rotate = clamp(
-		movement_delta.x / 20,
+		movement_delta.x / 25,
 		-45,
 		45
 	)
@@ -41,7 +44,9 @@ func _process(_delta):
 		hand_long.set_rotation_degrees(hand_long_degree)
 
 func _input(event):
-	if Input.is_action_just_pressed("click"):
+	if success:
+		return
+	if Input.is_action_just_pressed("click") and "position" in event:
 		click_position = event.position
 		
 	if event is InputEventMouseButton:
@@ -50,7 +55,7 @@ func _input(event):
 		else:
 			is_dragging = false
 	
-	if is_dragging:
+	if is_dragging and "position" in event:
 		movement_delta = click_position - event.position
 		pass
 			
@@ -61,7 +66,6 @@ func _input(event):
 		# so checking mod here and keep float actual degree for accuracy.
 		var hand_short_deg_360 = int(hand_short_degree + (floor(abs(hand_short_degree/360)) + 1) * 360) % 360
 		var hand_long_deg_360 = int(hand_long_degree + (floor(abs(hand_long_degree/360)) + 1) * 360) % 360
-		print(hand_long_deg_360, " ", hand_short_deg_360)
 		if (
 			125 < hand_short_deg_360
 			and hand_short_deg_360 < 145
@@ -71,21 +75,11 @@ func _input(event):
 			success = true
 			hand_long.set_rotation_degrees(90)
 			hand_short.set_rotation_degrees(135)
-			print("yeahhhhhh!!!!!")
+			print("Clock time correct. Bang unlocked")
+			# Unlock for next.
+			bang_Sprite2D.visible = true
 
 # --------- SIGNALS ---------- #
-
-func _on_hand_short_area_2d_mouse_entered():
-	hand_short_hover = true
-
-func _on_hand_short_area_2d_mouse_exited():
-	hand_short_hover = false
-
-func _on_hand_long_area_2d_mouse_entered():
-	hand_long_hover = true
-
-func _on_hand_long_area_2d_mouse_exited():
-	hand_long_hover = false
 
 func _on_clock_area_2d_mouse_entered():
 	clock_hover = true

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cfhgdldvpdf8m"]
 
-[ext_resource type="Texture2D" uid="uid://c88jyh2o1n8wc" path="res://Assets/Textures/clock_no_hand-removebg-preview.png" id="1_bg8wl"]
-[ext_resource type="Script" path="res://Scenes/Prefabs/clock.gd" id="1_jvf2d"]
+[ext_resource type="Texture2D" uid="uid://8m3gr3g088b8" path="res://Assets/Textures/clock_no_hand-removebg-preview.png" id="1_bg8wl"]
+[ext_resource type="Script" path="res://Scripts/clock.gd" id="1_jvf2d"]
 [ext_resource type="Texture2D" uid="uid://bark8145mxuyt" path="res://Assets/Textures/clock_hand_long.png" id="2_fgo0r"]
 [ext_resource type="Texture2D" uid="uid://do8ia4hcr86hs" path="res://Assets/Textures/clock_hand.png" id="3_lbfce"]
 
@@ -53,12 +53,7 @@ offset = Vector2(-38, -45)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="clock_hand_short/hand_short_Area2D"]
 position = Vector2(78.0875, 0.280762)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_2cqnl")
 
 [connection signal="mouse_entered" from="clock_bg_no_hand/clock_Area2D" to="." method="_on_clock_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="clock_bg_no_hand/clock_Area2D" to="." method="_on_clock_area_2d_mouse_exited"]
-[connection signal="mouse_entered" from="clock_hand_long/hand_long_Area2D" to="." method="_on_hand_long_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="clock_hand_long/hand_long_Area2D" to="." method="_on_hand_long_area_2d_mouse_exited"]
-[connection signal="mouse_entered" from="clock_hand_short/hand_short_Area2D" to="." method="_on_hand_short_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="clock_hand_short/hand_short_Area2D" to="." method="_on_hand_short_area_2d_mouse_exited"]
