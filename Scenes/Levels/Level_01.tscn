@@ -25,9 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://cc6w2ybsx5yga" path="res://Assets/Images/chest_interface.jpeg" id="23_ay53m"]
 [ext_resource type="Texture2D" uid="uid://c843pqnxa3qyq" path="res://Assets/Images/closebutton.png" id="24_penh4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_alnvl"]
-size = Vector2(548.69, 521.071)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26wly"]
 size = Vector2(15.2, 9.2)
 
@@ -2022,6 +2019,9 @@ tile_size = Vector2i(48, 48)
 physics_layer_0/collision_layer = 1
 sources/3 = SubResource("TileSetAtlasSource_s0osg")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_alnvl"]
+size = Vector2(548.69, 521.071)
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4lnhe"]
 light_mode = 2
 
@@ -2058,35 +2058,11 @@ script = ExtResource("4_v2uxj")
 z_index = 1
 position = Vector2(830, 431)
 
-[node name="ChestInterface" type="Sprite2D" parent="Level/Chest"]
-visible = false
-z_index = 10
-position = Vector2(-16.3, -21.05)
-scale = Vector2(0.234, 0.132333)
-texture = ExtResource("23_ay53m")
-
-[node name="Sprite2D" type="Sprite2D" parent="Level/Chest/ChestInterface"]
-position = Vector2(105.76, -95.2174)
-scale = Vector2(0.0781083, 0.112644)
-texture = ExtResource("24_penh4")
-
-[node name="Area2D" type="Area2D" parent="Level/Chest/ChestInterface/Sprite2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Chest/ChestInterface/Sprite2D/Area2D"]
-position = Vector2(0.000488281, -5.78931)
-shape = SubResource("RectangleShape2D_alnvl")
-
 [node name="Area2D2" type="Area2D" parent="Level/Chest"]
 
 [node name="MouseCollisionChest" type="CollisionShape2D" parent="Level/Chest/Area2D2"]
 position = Vector2(7.62939e-06, 0.200001)
 shape = SubResource("RectangleShape2D_26wly")
-
-[node name="Lockbox" parent="Level/Chest" instance=ExtResource("11_h7n2w")]
-visible = false
-z_index = 10
-position = Vector2(-40.8, -10.3)
-scale = Vector2(0.3, 0.3)
 
 [node name="c_Jail" type="TileMap" parent="Level"]
 position = Vector2(173, -5)
@@ -2217,6 +2193,33 @@ position = Vector2(981, 155)
 scale = Vector2(0.234642, 0.234642)
 texture = ExtResource("17_aahwe")
 
+[node name="chest_numberPad" type="Node2D" parent="UserInterface/GameUI"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-62, 70)
+
+[node name="ChestInterface" type="Sprite2D" parent="UserInterface/GameUI/chest_numberPad"]
+z_index = 10
+position = Vector2(667, 220.5)
+scale = Vector2(2.34, 1.32333)
+texture = ExtResource("23_ay53m")
+
+[node name="Sprite2D" type="Sprite2D" parent="UserInterface/GameUI/chest_numberPad/ChestInterface"]
+position = Vector2(105.76, -95.2174)
+scale = Vector2(0.0781083, 0.112644)
+texture = ExtResource("24_penh4")
+
+[node name="Area2D" type="Area2D" parent="UserInterface/GameUI/chest_numberPad/ChestInterface/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UserInterface/GameUI/chest_numberPad/ChestInterface/Sprite2D/Area2D"]
+position = Vector2(0.000488281, -5.78931)
+shape = SubResource("RectangleShape2D_alnvl")
+
+[node name="Lockbox" parent="UserInterface/GameUI/chest_numberPad" instance=ExtResource("11_h7n2w")]
+z_index = 10
+position = Vector2(422, 328)
+scale = Vector2(3, 3)
+
 [node name="Player" parent="." instance=ExtResource("2_pay8t")]
 z_index = 7
 position = Vector2(55, 282)
@@ -2249,11 +2252,11 @@ texture = SubResource("GradientTexture2D_di8t3")
 texture_scale = 47.95
 metadata/_edit_lock_ = true
 
-[connection signal="input_event" from="Level/Chest/ChestInterface/Sprite2D/Area2D" to="Level/Chest" method="_on_area_2d_input_event"]
-[connection signal="mouse_entered" from="Level/Chest/ChestInterface/Sprite2D/Area2D" to="." method="change_to_action_cursor"]
-[connection signal="mouse_exited" from="Level/Chest/ChestInterface/Sprite2D/Area2D" to="." method="change_to_idle_cursor"]
 [connection signal="input_event" from="Level/Chest/Area2D2" to="Level/Chest" method="_on_area_2d_2_input_event"]
 [connection signal="mouse_entered" from="Level/Chest/Area2D2" to="." method="change_to_action_cursor"]
 [connection signal="mouse_entered" from="Level/Chest/Area2D2" to="Level/Chest" method="_mouse_on_box"]
 [connection signal="mouse_exited" from="Level/Chest/Area2D2" to="." method="change_to_idle_cursor"]
 [connection signal="mouse_exited" from="Level/Chest/Area2D2" to="Level/Chest" method="_mouse_off_box"]
+[connection signal="input_event" from="UserInterface/GameUI/chest_numberPad/ChestInterface/Sprite2D/Area2D" to="Level/Chest" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="UserInterface/GameUI/chest_numberPad/ChestInterface/Sprite2D/Area2D" to="." method="change_to_action_cursor"]
+[connection signal="mouse_exited" from="UserInterface/GameUI/chest_numberPad/ChestInterface/Sprite2D/Area2D" to="." method="change_to_idle_cursor"]
