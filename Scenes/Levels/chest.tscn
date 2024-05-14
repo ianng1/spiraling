@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c3kkj0paj06i0"]
+[gd_scene load_steps=22 format=3 uid="uid://35qculf7vxrt"]
 
 [ext_resource type="Texture2D" uid="uid://24nad3b3kwqb" path="res://Assets/Spritesheet/loot_box_anim_strip_12.png" id="1_bgg1v"]
 [ext_resource type="Texture2D" uid="uid://d2umj3pqrrvoc" path="res://Assets/Spritesheet/loot_box_anim_opening_strip_6.png" id="2_hmm57"]
