@@ -12,7 +12,7 @@ func _test():
 	pass
 
 func _process(delta):
-	if ($Chest.is_interface_open):
+	if ($"Level/Chest".is_interface_open):
 		freeze_player_movement = true
 	else:
 		freeze_player_movement = false
