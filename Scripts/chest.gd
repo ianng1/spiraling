@@ -26,15 +26,18 @@ func _input(event: InputEvent) -> void:
 
 func _open_box():
 	is_opened = true
-	$ChestInterface.visible = false
-	$Lockbox.visible = false
+	if $ChestInterface:
+		$ChestInterface.visible = false
+	if $Lockbox:
+		$Lockbox.visible = false
 	is_interface_open = false
 	animation_player.play("open")
 	print("chest was opened successfully")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	code_entered = get_node("/root/Level_01/Chest/Lockbox/NumberPad").current_code
+	if get_node("/root/Level_01/Chest/Lockbox/NumberPad"):
+		code_entered = get_node("/root/Level_01/Chest/Lockbox/NumberPad").current_code
 	if code_entered == 0617 and is_interface_open:
 		_open_box()
 
