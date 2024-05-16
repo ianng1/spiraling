@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cjanwm3sy2x37"]
+[gd_scene load_steps=49 format=3 uid="uid://cjanwm3sy2x37"]
 
 [ext_resource type="Script" path="res://Scripts/Level_01.gd" id="1_iaili"]
 [ext_resource type="PackedScene" uid="uid://bvkfp0ufwcrm" path="res://Scenes/npc/a_husband.tscn" id="2_irrk8"]
@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://kce0kr4wu0yr" path="res://Assets/Images/darkbackground.png" id="16_s0hr7"]
 [ext_resource type="Texture2D" uid="uid://bpiagwfga4rr8" path="res://Assets/Textures/bang.png" id="17_aahwe"]
 [ext_resource type="Texture2D" uid="uid://bt4ch0h1fcup3" path="res://Assets/Images/finalfoor.png" id="17_tq01t"]
-[ext_resource type="Texture2D" uid="uid://cc6w2ybsx5yga" path="res://Assets/Images/chest_interface.jpeg" id="23_ay53m"]
+[ext_resource type="Texture2D" uid="uid://cphd0kpkeoj4m" path="res://Assets/Images/Group 167.png" id="22_lqeui"]
 [ext_resource type="Texture2D" uid="uid://c843pqnxa3qyq" path="res://Assets/Images/closebutton.png" id="24_penh4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nnhrj"]
@@ -2016,6 +2016,48 @@ tile_size = Vector2i(48, 48)
 physics_layer_0/collision_layer = 1
 sources/3 = SubResource("TileSetAtlasSource_s0osg")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_alnvl"]
+size = Vector2(548.69, 521.071)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ciuj"]
+size = Vector2(30.5557, 10.0305)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_on52d"]
+size = Vector2(34.2453, 12.3675)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gy2mg"]
+size = Vector2(36.2111, 11.7756)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fjyaf"]
+size = Vector2(34.2453, 11.7756)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0d0yd"]
+size = Vector2(34.9006, 12.3675)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avglj"]
+size = Vector2(34.2453, 11.7756)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pb8py"]
+size = Vector2(34.2453, 11.7756)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_scbae"]
+size = Vector2(35.5558, 11.1837)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ij26u"]
+size = Vector2(34.9006, 12.3675)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gm50g"]
+size = Vector2(36.2111, 12.3675)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wy8rh"]
+size = Vector2(36.2112, 12.3675)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwgbo"]
+size = Vector2(33.59, 12.3675)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26wly"]
+size = Vector2(15.2, 9.2)
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4lnhe"]
 light_mode = 2
 
@@ -2030,11 +2072,8 @@ fill_from = Vector2(0.619658, 0)
 fill_to = Vector2(0.967949, 0.196581)
 metadata/_snap_count = 13
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_alnvl"]
-size = Vector2(548.69, 521.071)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_26wly"]
-size = Vector2(15.2, 9.2)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0vah"]
+size = Vector2(273, 287)
 
 [node name="Level_01" type="Node2D"]
 script = ExtResource("1_iaili")
@@ -2128,6 +2167,120 @@ scale = Vector2(1.3, 1)
 texture = ExtResource("17_tq01t")
 centered = false
 
+[node name="Chest" parent="Level" instance=ExtResource("15_x4ydl")]
+z_index = 1
+position = Vector2(830, 431)
+
+[node name="ChestInterface" type="Sprite2D" parent="Level/Chest"]
+visible = false
+z_index = 10
+position = Vector2(20, -18.4)
+scale = Vector2(0.152607, 0.168956)
+texture = ExtResource("22_lqeui")
+
+[node name="exit button" type="Sprite2D" parent="Level/Chest/ChestInterface"]
+position = Vector2(110.739, -112.346)
+scale = Vector2(0.0882688, 0.0776868)
+texture = ExtResource("24_penh4")
+
+[node name="Area2D" type="Area2D" parent="Level/Chest/ChestInterface/exit button"]
+collision_layer = 256
+
+[node name="exitcollision" type="CollisionShape2D" parent="Level/Chest/ChestInterface/exit button/Area2D"]
+position = Vector2(0.000488281, -5.78931)
+shape = SubResource("RectangleShape2D_alnvl")
+
+[node name="Area2D_clear" type="Area2D" parent="Level/Chest/ChestInterface"]
+position = Vector2(0.655334, -0.295944)
+
+[node name="clearcollision" type="CollisionShape2D" parent="Level/Chest/ChestInterface/Area2D_clear"]
+position = Vector2(-53.7328, 106.241)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_3ciuj")
+
+[node name="Area2D_one" type="Area2D" parent="Level/Chest/ChestInterface"]
+
+[node name="onecollision" type="CollisionShape2D" parent="Level/Chest/ChestInterface/Area2D_one"]
+position = Vector2(-53.8181, 39.0944)
+shape = SubResource("RectangleShape2D_on52d")
+
+[node name="Area2D_two" type="Area2D" parent="Level/Chest/ChestInterface"]
+
+[node name="twocollision" type="CollisionShape2D" parent="Level/Chest/ChestInterface/Area2D_two"]
+position = Vector2(-6.31052, 39.3904)
+shape = SubResource("RectangleShape2D_gy2mg")
+
+[node name="Area2D_three" type="Area2D" parent="Level/Chest/ChestInterface"]
+
+[node name="threecollision" type="CollisionShape2D" parent="Level/Chest/ChestInterface/Area2D_three"]
+position = Vector2(41.8524, 39.3904)
+shape = SubResource("RectangleShape2D_fjyaf")
+
+[node name="Area2D_four" type="Area2D" parent="Level/Chest/ChestInterface"]
+
+[node name="fourcollision" type="CollisionShape2D" parent="Level/Chest/ChestInterface/Area2D_four"]
+position = Vector2(-54.1458, 63.3611)
+shape = SubResource("RectangleShape2D_0d0yd")
+
+[node name="Area2D_five" type="Area2D" parent="Level/Chest/ChestInterface"]
+
+[node name="fivecollision" type="CollisionShape2D" parent="Level/Chest/ChestInterface/Area2D_five"]
+position = Vector2(-5.98288, 63.6571)
+shape = SubResource("RectangleShape2D_avglj")
+
+[node name="Area2D_six" type="Area2D" parent="Level/Chest/ChestInterface"]
+
+[node name="sixcollision" type="CollisionShape2D" parent="Level/Chest/ChestInterface/Area2D_six"]
+position = Vector2(41.8524, 63.6571)
+shape = SubResource("RectangleShape2D_pb8py")
+
+[node name="Area2D_seven" type="Area2D" parent="Level/Chest/ChestInterface"]
+
+[node name="sevencollision" type="CollisionShape2D" parent="Level/Chest/ChestInterface/Area2D_seven"]
+position = Vector2(-54.4734, 87.036)
+shape = SubResource("RectangleShape2D_scbae")
+
+[node name="Area2D_eight" type="Area2D" parent="Level/Chest/ChestInterface"]
+
+[node name="eightcollision" type="CollisionShape2D" parent="Level/Chest/ChestInterface/Area2D_eight"]
+position = Vector2(-6.31052, 87.036)
+shape = SubResource("RectangleShape2D_ij26u")
+
+[node name="Area2D_nine" type="Area2D" parent="Level/Chest/ChestInterface"]
+
+[node name="ninecollision" type="CollisionShape2D" parent="Level/Chest/ChestInterface/Area2D_nine"]
+position = Vector2(41.9378, 87.301)
+shape = SubResource("RectangleShape2D_gm50g")
+
+[node name="Area2D_zero" type="Area2D" parent="Level/Chest/ChestInterface"]
+
+[node name="zerocollision" type="CollisionShape2D" parent="Level/Chest/ChestInterface/Area2D_zero"]
+position = Vector2(-5.65521, 107.752)
+shape = SubResource("RectangleShape2D_wy8rh")
+
+[node name="Area2D_submit" type="Area2D" parent="Level/Chest/ChestInterface"]
+
+[node name="submitcollision" type="CollisionShape2D" parent="Level/Chest/ChestInterface/Area2D_submit"]
+position = Vector2(43.2483, 105.945)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_pwgbo")
+
+[node name="Area2D2" type="Area2D" parent="Level/Chest"]
+
+[node name="MouseCollisionChest" type="CollisionShape2D" parent="Level/Chest/Area2D2"]
+position = Vector2(7.62939e-06, 0.200001)
+shape = SubResource("RectangleShape2D_26wly")
+
+[node name="Lockbox" parent="Level/Chest" instance=ExtResource("11_h7n2w")]
+visible = false
+z_index = 10
+position = Vector2(11.8, -13.9)
+scale = Vector2(0.1, 0.1)
+
+[node name="ClickCooldownTimer" type="Timer" parent="Level/Chest"]
+wait_time = 0.25
+one_shot = true
+
 [node name="GameManager" type="Node2D" parent="."]
 script = ExtResource("4_vgfkr")
 
@@ -2186,6 +2339,7 @@ texture = ExtResource("17_aahwe")
 [node name="Player" parent="." instance=ExtResource("2_pay8t")]
 z_index = 7
 position = Vector2(55, 282)
+collision_layer = 9
 move_speed = 400.0
 metadata/_edit_lock_ = true
 
@@ -2215,45 +2369,32 @@ texture = SubResource("GradientTexture2D_di8t3")
 texture_scale = 47.95
 metadata/_edit_lock_ = true
 
-[node name="Chest" parent="." instance=ExtResource("15_x4ydl")]
-z_index = 1
-position = Vector2(830, 431)
+[node name="Area2D" type="Area2D" parent="Player"]
+collision_layer = 256
 
-[node name="ChestInterface" type="Sprite2D" parent="Chest"]
-visible = false
-z_index = 10
-position = Vector2(-16.3, -21.05)
-scale = Vector2(0.234, 0.132333)
-texture = ExtResource("23_ay53m")
+[node name="PlayerNearChest" type="CollisionShape2D" parent="Player/Area2D"]
+position = Vector2(-10.5, 49)
+shape = SubResource("RectangleShape2D_q0vah")
 
-[node name="Sprite2D" type="Sprite2D" parent="Chest/ChestInterface"]
-position = Vector2(105.76, -95.2174)
-scale = Vector2(0.0781083, 0.112644)
-texture = ExtResource("24_penh4")
-
-[node name="Area2D" type="Area2D" parent="Chest/ChestInterface/Sprite2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest/ChestInterface/Sprite2D/Area2D"]
-position = Vector2(0.000488281, -5.78931)
-shape = SubResource("RectangleShape2D_alnvl")
-
-[node name="Area2D2" type="Area2D" parent="Chest"]
-
-[node name="MouseCollisionChest" type="CollisionShape2D" parent="Chest/Area2D2"]
-position = Vector2(7.62939e-06, 0.200001)
-shape = SubResource("RectangleShape2D_26wly")
-
-[node name="Lockbox" parent="Chest" instance=ExtResource("11_h7n2w")]
-visible = false
-z_index = 10
-position = Vector2(-40.8, -10.3)
-scale = Vector2(0.3, 0.3)
-
-[connection signal="input_event" from="Chest/ChestInterface/Sprite2D/Area2D" to="Chest" method="_on_area_2d_input_event"]
-[connection signal="mouse_entered" from="Chest/ChestInterface/Sprite2D/Area2D" to="." method="change_to_action_cursor"]
-[connection signal="mouse_exited" from="Chest/ChestInterface/Sprite2D/Area2D" to="." method="change_to_idle_cursor"]
-[connection signal="input_event" from="Chest/Area2D2" to="Chest" method="_on_area_2d_2_input_event"]
-[connection signal="mouse_entered" from="Chest/Area2D2" to="." method="change_to_action_cursor"]
-[connection signal="mouse_entered" from="Chest/Area2D2" to="Chest" method="_mouse_on_box"]
-[connection signal="mouse_exited" from="Chest/Area2D2" to="." method="change_to_idle_cursor"]
-[connection signal="mouse_exited" from="Chest/Area2D2" to="Chest" method="_mouse_off_box"]
+[connection signal="input_event" from="Level/Chest/ChestInterface/exit button/Area2D" to="Level/Chest" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Level/Chest/ChestInterface/exit button/Area2D" to="." method="change_to_action_cursor"]
+[connection signal="mouse_exited" from="Level/Chest/ChestInterface/exit button/Area2D" to="." method="change_to_idle_cursor"]
+[connection signal="input_event" from="Level/Chest/ChestInterface/Area2D_clear" to="Level/Chest" method="_on_area_2d_clear_input_event"]
+[connection signal="input_event" from="Level/Chest/ChestInterface/Area2D_one" to="Level/Chest" method="_on_area_2d_one_input_event"]
+[connection signal="input_event" from="Level/Chest/ChestInterface/Area2D_two" to="Level/Chest" method="_on_area_2d_two_input_event"]
+[connection signal="input_event" from="Level/Chest/ChestInterface/Area2D_three" to="Level/Chest" method="_on_area_2d_three_input_event"]
+[connection signal="input_event" from="Level/Chest/ChestInterface/Area2D_four" to="Level/Chest" method="_on_area_2d_four_input_event"]
+[connection signal="input_event" from="Level/Chest/ChestInterface/Area2D_five" to="Level/Chest" method="_on_area_2d_five_input_event"]
+[connection signal="input_event" from="Level/Chest/ChestInterface/Area2D_six" to="Level/Chest" method="_on_area_2d_six_input_event"]
+[connection signal="input_event" from="Level/Chest/ChestInterface/Area2D_seven" to="Level/Chest" method="_on_area_2d_seven_input_event"]
+[connection signal="input_event" from="Level/Chest/ChestInterface/Area2D_eight" to="Level/Chest" method="_on_area_2d_eight_input_event"]
+[connection signal="input_event" from="Level/Chest/ChestInterface/Area2D_nine" to="Level/Chest" method="_on_area_2d_nine_input_event"]
+[connection signal="input_event" from="Level/Chest/ChestInterface/Area2D_zero" to="Level/Chest" method="_on_area_2d_zero_input_event"]
+[connection signal="input_event" from="Level/Chest/ChestInterface/Area2D_submit" to="Level/Chest" method="_on_area_2d_submit_input_event"]
+[connection signal="input_event" from="Level/Chest/Area2D2" to="Level/Chest" method="_on_area_2d_2_input_event"]
+[connection signal="mouse_entered" from="Level/Chest/Area2D2" to="." method="change_to_action_cursor"]
+[connection signal="mouse_entered" from="Level/Chest/Area2D2" to="Level/Chest" method="_mouse_on_box"]
+[connection signal="mouse_exited" from="Level/Chest/Area2D2" to="." method="change_to_idle_cursor"]
+[connection signal="mouse_exited" from="Level/Chest/Area2D2" to="Level/Chest" method="_mouse_off_box"]
+[connection signal="timeout" from="Level/Chest/ClickCooldownTimer" to="Level/Chest" method="_on_click_cooldown_timer_timeout"]
+[connection signal="area_entered" from="Player/Area2D" to="Level/Chest" method="_on_area_2d_area_entered"]

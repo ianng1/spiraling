@@ -48,18 +48,22 @@ size = Vector2(36, 43)
 script = SubResource("GDScript_5365e")
 
 [node name="Number1" type="CharacterBody2D" parent="NumberPad"]
-position = Vector2(0, -37)
+position = Vector2(3, -36)
+scale = Vector2(1.02, 1.02)
 script = ExtResource("2_0a3qm")
 
 [node name="Area2D" type="Area2D" parent="NumberPad/Number1"]
 position = Vector2(-1, 1)
+scale = Vector2(1.02, 1.02)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPad/Number1/Area2D"]
 position = Vector2(2, 3)
+scale = Vector2(1.02, 1.02)
 shape = SubResource("RectangleShape2D_otna2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPad/Number1"]
 position = Vector2(4.75, 4)
+scale = Vector2(1.02, 1.02)
 shape = SubResource("RectangleShape2D_swmat")
 disabled = true
 
@@ -69,7 +73,7 @@ scale = Vector2(1.035, 0.98)
 texture = ExtResource("2_18hti")
 
 [node name="Number2" type="CharacterBody2D" parent="NumberPad"]
-position = Vector2(61, -32)
+position = Vector2(53, -29)
 script = ExtResource("2_0a3qm")
 
 [node name="Area2D" type="Area2D" parent="NumberPad/Number2"]
@@ -79,7 +83,6 @@ position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_k4xpv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPad/Number2"]
-position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_wy8ci")
 
 [node name="Sprite2D" type="Sprite2D" parent="NumberPad/Number2"]
@@ -88,7 +91,7 @@ scale = Vector2(1.05, 1.075)
 texture = ExtResource("2_18hti")
 
 [node name="Number3" type="CharacterBody2D" parent="NumberPad"]
-position = Vector2(113, -32)
+position = Vector2(98, -28)
 script = ExtResource("2_0a3qm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPad/Number3"]
@@ -106,7 +109,7 @@ shape = SubResource("RectangleShape2D_vbhsi")
 texture = ExtResource("2_18hti")
 
 [node name="Number4" type="CharacterBody2D" parent="NumberPad"]
-position = Vector2(161, -35)
+position = Vector2(143, -28)
 script = ExtResource("2_0a3qm")
 
 [node name="Area2D" type="Area2D" parent="NumberPad/Number4"]

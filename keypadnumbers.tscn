@@ -1,0 +1,55 @@
+[gd_scene load_steps=11 format=3 uid="uid://d4eu0841v5473"]
+
+[ext_resource type="Texture2D" uid="uid://dki5r5evtw3tq" path="res://Assets/Textures/lock_digits/1.png" id="1_3jsmx"]
+[ext_resource type="Texture2D" uid="uid://bjnhdb56fvtx3" path="res://Assets/Textures/lock_digits/2.png" id="2_vvk4b"]
+[ext_resource type="Texture2D" uid="uid://u8plen21mpge" path="res://Assets/Textures/lock_digits/3.png" id="3_mgpvb"]
+[ext_resource type="Texture2D" uid="uid://giqijehvwvic" path="res://Assets/Textures/lock_digits/4.png" id="4_pwrjn"]
+[ext_resource type="Texture2D" uid="uid://cf70blvb46i2d" path="res://Assets/Textures/lock_digits/5.png" id="5_qrkmg"]
+[ext_resource type="Texture2D" uid="uid://bvqmnnon3d30m" path="res://Assets/Textures/lock_digits/6.png" id="6_66oat"]
+[ext_resource type="Texture2D" uid="uid://w4ff8jx6s34c" path="res://Assets/Textures/lock_digits/8.png" id="7_ler0b"]
+[ext_resource type="Texture2D" uid="uid://b3yfedini420n" path="res://Assets/Textures/lock_digits/7.png" id="8_s2r40"]
+[ext_resource type="Texture2D" uid="uid://18ypws2aor3h" path="res://Assets/Textures/lock_digits/9.png" id="9_dv1u5"]
+[ext_resource type="Texture2D" uid="uid://b5bpj3yeu2hj6" path="res://Assets/Textures/lock_digits/0.png" id="10_4yq8x"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(66, -155)
+
+[node name="one" type="Sprite2D" parent="."]
+position = Vector2(57, -43)
+texture = ExtResource("1_3jsmx")
+
+[node name="two" type="Sprite2D" parent="."]
+position = Vector2(106, -43)
+texture = ExtResource("2_vvk4b")
+
+[node name="three" type="Sprite2D" parent="."]
+position = Vector2(158, -43)
+texture = ExtResource("3_mgpvb")
+
+[node name="four" type="Sprite2D" parent="."]
+position = Vector2(57, 17)
+texture = ExtResource("4_pwrjn")
+
+[node name="five" type="Sprite2D" parent="."]
+position = Vector2(109, 18)
+texture = ExtResource("5_qrkmg")
+
+[node name="six" type="Sprite2D" parent="."]
+position = Vector2(160, 20)
+texture = ExtResource("6_66oat")
+
+[node name="eight" type="Sprite2D" parent="."]
+position = Vector2(106, 81)
+texture = ExtResource("7_ler0b")
+
+[node name="seven" type="Sprite2D" parent="."]
+position = Vector2(55, 83)
+texture = ExtResource("8_s2r40")
+
+[node name="nine" type="Sprite2D" parent="."]
+position = Vector2(160, 84)
+texture = ExtResource("9_dv1u5")
+
+[node name="zero" type="Sprite2D" parent="."]
+position = Vector2(106, 133)
+texture = ExtResource("10_4yq8x")

@@ -2,12 +2,16 @@ extends AnimatedSprite2D
 
 @export var object_scene: PackedScene = null
 
-var is_player_inside: bool = false
-var is_locked_solved: bool = false
+
 var is_mouse_on_chest: bool = false
 var is_interface_open: bool = false
 var is_opened: bool = false
-var code_entered: int = 0
+var click_allowed = true
+var show_clear_digits: bool = true
+var code_entered: String = "" 
+var last_num_pressed = -1
+const SOLUTION = "0617"
+
 
 @onready var animation_player: AnimationPlayer = get_node("AnimationPlayer")
 @onready var tween = get_tree().create_tween()
@@ -15,14 +19,14 @@ var code_entered: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	name = "Chest"
 	animation_player.play("idle")
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("click") and is_locked_solved and is_mouse_on_chest:
-		is_opened = true
-		animation_player.play("open")
-		print("chest was opened successfully")
-		
+func _mouse_on_box():
+	is_mouse_on_chest = true
+	
+func _mouse_off_box():
+	is_mouse_on_chest = false
 
 func _open_box():
 	is_opened = true
@@ -30,32 +34,17 @@ func _open_box():
 	$Lockbox.visible = false
 	is_interface_open = false
 	animation_player.play("open")
-	print("chest was opened successfully")
+
+func _reset_keypad():
+	show_clear_digits = true
+	code_entered = ""
+	last_num_pressed = -1
 	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	code_entered = get_node("/root/Level_01/Chest/Lockbox/NumberPad").current_code
-	if code_entered == 0617 and is_interface_open:
-		_open_box()
-
-func _mouse_on_box():
-	is_mouse_on_chest = true
-	
-	
-func _mouse_off_box():
-	is_mouse_on_chest = false
-
-
-func _on_area_2d_player_entered(player: CharacterBody2D) -> void:
-	is_player_inside = true
-
-
-func _on_area_2d_player_exited(player: CharacterBody2D) -> void:
-	is_player_inside = false
-
-
-func _drop_object() -> void:
-	print("chest was opened successfully")
+func _press_number_on_keypad(number):
+	code_entered += str(number)
+	last_num_pressed = number
+	click_allowed = false
+	$ClickCooldownTimer.start()
 
 
 func _on_area_2d_2_input_event(viewport, event, shape_idx):
@@ -64,13 +53,95 @@ func _on_area_2d_2_input_event(viewport, event, shape_idx):
 		$Lockbox.visible = true
 		is_interface_open = true
 
-		
-
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and is_interface_open:
 		$ChestInterface.visible = false
 		$Lockbox.visible = false
 		is_interface_open = false
+		_reset_keypad()
 
 
+func _on_area_2d_one_input_event(viewport, event, shape_idx):
+	if click_allowed:
+		show_clear_digits = false
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and (len(code_entered) <= 4):
+			_press_number_on_keypad(1)
+
+func _on_area_2d_two_input_event(viewport, event, shape_idx):
+	if click_allowed:
+		show_clear_digits = false
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and (len(code_entered) <= 4):
+			_press_number_on_keypad(2)
+
+
+func _on_area_2d_three_input_event(viewport, event, shape_idx):
+	if click_allowed:
+		show_clear_digits = false
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and (len(code_entered) <= 4):
+			_press_number_on_keypad(3)
+
+func _on_area_2d_four_input_event(viewport, event, shape_idx):
+	if click_allowed:
+		show_clear_digits = false
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and (len(code_entered) <= 4):
+			_press_number_on_keypad(4)
+
+
+
+func _on_area_2d_five_input_event(viewport, event, shape_idx):
+	if click_allowed:
+		show_clear_digits = false
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and (len(code_entered) <= 4):
+			_press_number_on_keypad(5)
+
+		
+func _on_area_2d_six_input_event(viewport, event, shape_idx):
+	if click_allowed:
+		show_clear_digits = false
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and (len(code_entered) <= 4):
+			_press_number_on_keypad(6)
+
+		
+func _on_area_2d_seven_input_event(viewport, event, shape_idx):
+	if click_allowed:
+		show_clear_digits = false
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and (len(code_entered) <= 4):
+			_press_number_on_keypad(7)
+
+		
+func _on_area_2d_eight_input_event(viewport, event, shape_idx):
+	if click_allowed:
+		show_clear_digits = false
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and (len(code_entered) <= 4):
+			_press_number_on_keypad(8)
+
+		
+func _on_area_2d_nine_input_event(viewport, event, shape_idx):
+	if click_allowed:
+		show_clear_digits = false
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and (len(code_entered) <= 4):
+			_press_number_on_keypad(9)
+
+		
+func _on_area_2d_zero_input_event(viewport, event, shape_idx):
+	if click_allowed:
+		show_clear_digits = false
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and (len(code_entered) <= 4):
+			_press_number_on_keypad(0)
+
+
+func _on_area_2d_clear_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		_reset_keypad()
+
+
+func _on_area_2d_submit_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if code_entered == SOLUTION:
+			_open_box()
+		else:
+			_reset_keypad()
+
+func _on_click_cooldown_timer_timeout():
+	click_allowed = true

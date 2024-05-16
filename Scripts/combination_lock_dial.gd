@@ -14,6 +14,12 @@ var action_cursor = preload("res://Assets/Images/action_cursor.png")
 var idle_cursor = preload("res://Assets/Images/idle_cursor.png")
 var cur_state = 0
 var is_mouse_hover = false
+var display_clear_digits = true
+var position_to_write: int = 1
+var current_code: String = ""
+var number_to_write: int
+var image_to_load: String = ""
+var test = ""
 # Special movement or iteration if any.
 var is_special_movement = false
 @onready var sprite2d = get_node("Sprite2D")
@@ -33,25 +39,35 @@ func _process(delta):
 	#if cur_state == IDLE:
 		#$AnimatedSprite2D.play("Idle")
 	#elif cur_state == SPECIAL_MOVE:
-		## TODO: add any special movement if needed.
-		pass
+	display_clear_digits = get_node("/root/Level_01/Level/Chest").show_clear_digits
+	if display_clear_digits:
+		#print("clear digits displayed")
+		#position_to_write = len(get_node("/root/Level_01/Chest").code_entered)
+		#if (position_to_write == 0):
+			#print("SUCCESSFULLY CLEARED")
+		sprite2d.set_texture(load("res://Assets/Textures/lock_digits/cleared.png"))
+	else:
+		position_to_write = len(get_node("/root/Level_01/Level/Chest").code_entered)
+		#test = get_node("/root/Level_01/Chest").code_entered
+		#print(test)
+		number_to_write = get_node("/root/Level_01/Level/Chest").last_num_pressed
+		if number_to_write != -1:
+			image_to_load = "res://Assets/Textures/lock_digits/" + str(number_to_write) + ".png"
+			if (position_to_write == 1):
+				get_node("/root/Level_01/Level/Chest/Lockbox/NumberPad/Number1/Sprite2D").set_texture(load(image_to_load))
+			elif (position_to_write == 2):
+				get_node("/root/Level_01/Level/Chest/Lockbox/NumberPad/Number2/Sprite2D").set_texture(load(image_to_load))
+			elif (position_to_write == 3):
+				get_node("/root/Level_01/Level/Chest/Lockbox/NumberPad/Number3/Sprite2D").set_texture(load(image_to_load))
+			else:
+				get_node("/root/Level_01/Level/Chest/Lockbox/NumberPad/Number4/Sprite2D").set_texture(load(image_to_load))
 
-func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("click") and is_mouse_hover:
-		cur_state = (cur_state + 1) % 10
-		sprite2d.set_texture(load("res://Assets/Textures/lock_digits/" + str(cur_state) + ".png"))
-		print("res://Assets/Textures/lock_digits/" + str(cur_state) + ".png")
+
+		#number_to_write = get_node("/root/Level_01/Chest").last_num_pressed
+		#if (position == 1):
+			#get_node("/root/Level_01/Chest/Lockbox/NumberPad/Number1/Sprite2D").set_texture(load("res://Assets/Textures/lock_digits/" + str(number_to_write) + ".png"))
+
 # --------- SIGNALS ---------- #
 # Detect whetehr the mouse is hover on NPC
 
 
-func _on_area_2d_mouse_entered():
-	print("entering")
-	is_mouse_hover = true
-	Input.set_custom_mouse_cursor(action_cursor)
-
-
-func _on_area_2d_mouse_exited():
-	print("leaving")
-	is_mouse_hover = false
-	Input.set_custom_mouse_cursor(idle_cursor)

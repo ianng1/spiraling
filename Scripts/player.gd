@@ -16,8 +16,10 @@ var freeze_player_movement = false
 @onready var particle_trails = $ParticleTrails
 
 
-
 # --------- BUILT-IN FUNCTIONS ---------- #
+
+func _ready():
+	name = "Player"
 
 func _process(_delta):
 	# Calling functions
@@ -56,3 +58,9 @@ func flip_player():
 		player_sprite.flip_h = false
 	else:
 		player_sprite.flip_h = true
+
+
+func _on_area_2d_area_entered(area):
+	if area.name == "Chest":
+		print("hi")
+
