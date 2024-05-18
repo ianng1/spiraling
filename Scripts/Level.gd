@@ -8,7 +8,7 @@ extends Node2D
 var canvas_size = 3260
 var stretch_scale = 2
 # Offset jail from tilemap position.
-var jail_offset = 905
+var jail_offset = 2013
 
 @onready var level = $"../Level"
 
@@ -27,7 +27,7 @@ func _process(_delta):
 		var buffer = 300
 		
 		# The actual drawing of jail is offset from the position of tilemap.
-		if node.get_name() in ["c_Jail", "617wallmark"]:
+		if node.get_name() in ["617scratchmark"]:
 			screen_pos.x += jail_offset
 		if screen_pos.x < -buffer:
 			node.position.x += canvas_size
