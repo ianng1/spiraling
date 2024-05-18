@@ -27,9 +27,10 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [display]
 
-window/size/viewport_height=600
+window/size/viewport_width=2000
+window/size/viewport_height=1200
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/stretch/scale=2.0
 mouse_cursor/custom_image="res://Assets/Images/idle_cursor.png"
 
 [editor_plugins]

@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfhgdldvpdf8m"]
+[gd_scene load_steps=14 format=3 uid="uid://cfhgdldvpdf8m"]
 
 [ext_resource type="Texture2D" uid="uid://8m3gr3g088b8" path="res://Assets/Textures/clock_no_hand-removebg-preview.png" id="1_bg8wl"]
 [ext_resource type="Script" path="res://Scripts/clock.gd" id="1_jvf2d"]
 [ext_resource type="Texture2D" uid="uid://bark8145mxuyt" path="res://Assets/Textures/clock_hand_long.png" id="2_fgo0r"]
 [ext_resource type="Texture2D" uid="uid://do8ia4hcr86hs" path="res://Assets/Textures/clock_hand.png" id="3_lbfce"]
+[ext_resource type="Texture2D" uid="uid://cl867oe582805" path="res://Assets/Textures/clockwise-rotation-svgrepo-com.png" id="5_u6lek"]
+[ext_resource type="Texture2D" uid="uid://d07k5gtvppk6r" path="res://Assets/Textures/counterclockwise-rotation-svgrepo-com.svg" id="6_oeqy3"]
+[ext_resource type="Texture2D" uid="uid://c843pqnxa3qyq" path="res://Assets/Images/closebutton.png" id="7_ekscw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8mfw3"]
 radius = 145.729
@@ -13,6 +16,15 @@ size = Vector2(244.102, 46.2499)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2cqnl"]
 size = Vector2(204.379, 47.975)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qxyoh"]
+radius = 250.083
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xtan6"]
+radius = 397.597
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4axi"]
+size = Vector2(558.09, 503.412)
 
 [node name="clock_node2D" type="Node2D"]
 position = Vector2(308, 300)
@@ -55,5 +67,47 @@ offset = Vector2(-38, -45)
 position = Vector2(78.0875, 0.280762)
 shape = SubResource("RectangleShape2D_2cqnl")
 
+[node name="clockwise_sprite" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(57, 83)
+scale = Vector2(0.124023, 0.124023)
+texture = ExtResource("5_u6lek")
+
+[node name="clockwise_area2D" type="Area2D" parent="clockwise_sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="clockwise_sprite/clockwise_area2D"]
+shape = SubResource("CircleShape2D_qxyoh")
+debug_color = Color(0, 0.6, 0.701961, 0.0666667)
+
+[node name="counter-clockwise_sprite" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-57, 83)
+scale = Vector2(0.0781596, 0.0781596)
+texture = ExtResource("6_oeqy3")
+region_enabled = true
+region_rect = Rect2(0, 0, 800, 800)
+
+[node name="counter-clockwise_area2D" type="Area2D" parent="counter-clockwise_sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="counter-clockwise_sprite/counter-clockwise_area2D"]
+shape = SubResource("CircleShape2D_xtan6")
+debug_color = Color(0.624043, 0.925148, 1, 0.42)
+
+[node name="close_Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(303, -245)
+scale = Vector2(0.237755, 0.237755)
+texture = ExtResource("7_ekscw")
+
+[node name="close_Area2D" type="Area2D" parent="close_Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="close_Sprite2D/close_Area2D"]
+position = Vector2(2.75757, 0.654526)
+shape = SubResource("RectangleShape2D_h4axi")
+
 [connection signal="mouse_entered" from="clock_bg_no_hand/clock_Area2D" to="." method="_on_clock_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="clock_bg_no_hand/clock_Area2D" to="." method="_on_clock_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="clockwise_sprite/clockwise_area2D" to="." method="_on_clockwise_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="clockwise_sprite/clockwise_area2D" to="." method="_on_clockwise_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="counter-clockwise_sprite/counter-clockwise_area2D" to="." method="_on_counterclockwise_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="counter-clockwise_sprite/counter-clockwise_area2D" to="." method="_on_counterclockwise_area_2d_mouse_exited"]

@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://3ycmmp474166" path="res://Scenes/npc/b_sibling.tscn" id="6_xye2r"]
 [ext_resource type="Texture2D" uid="uid://clreg520jah1j" path="res://Assets/platformPack_item008.png" id="7_j7jun"]
 [ext_resource type="FontFile" uid="uid://qgc4vi5osk7v" path="res://Assets/Fonts/Star Choco.ttf" id="8_gwcy2"]
-[ext_resource type="PackedScene" path="res://Scenes/Prefabs/clock.tscn" id="9_0fim8"]
+[ext_resource type="PackedScene" uid="uid://cfhgdldvpdf8m" path="res://Scenes/Prefabs/clock.tscn" id="9_0fim8"]
 [ext_resource type="Texture2D" uid="uid://cssr3xx5j3dsl" path="res://Assets/Textures/godot_neutral_point_light.webp" id="10_23jwq"]
 [ext_resource type="PackedScene" uid="uid://dpq6pgox64htv" path="res://Scenes/puzzle_assets/lockbox.tscn" id="11_h7n2w"]
 [ext_resource type="PackedScene" uid="uid://c7r78oau0sqy2" path="res://Scenes/npc/c_kidnapped.tscn" id="13_ifglg"]
@@ -2146,15 +2146,14 @@ script = ExtResource("4_vgfkr")
 
 [node name="GameUI" type="Control" parent="UserInterface"]
 layout_mode = 3
-anchor_right = 1.081
-anchor_bottom = 0.941
-offset_right = -0.312134
-offset_bottom = 0.231995
+anchor_right = 1.064
+anchor_bottom = 0.882
+offset_right = -1128.0
+offset_bottom = -360.4
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("6_66mfc")
-metadata/_edit_lock_ = true
 
 [node name="Score" type="Control" parent="UserInterface/GameUI"]
 unique_name_in_owner = true
@@ -2190,7 +2189,7 @@ text = "x 3"
 [node name="bang_Sprite2D" type="Sprite2D" parent="UserInterface/GameUI"]
 unique_name_in_owner = true
 visible = false
-position = Vector2(981, 155)
+position = Vector2(849, 106)
 scale = Vector2(0.234642, 0.234642)
 texture = ExtResource("17_aahwe")
 
@@ -2266,6 +2265,10 @@ energy = 1.92
 texture = SubResource("GradientTexture2D_di8t3")
 texture_scale = 47.95
 metadata/_edit_lock_ = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0.347817, 0.347817, 0.347817, 1)
 
 [connection signal="input_event" from="Level/Chest/Area2D2" to="Level/Chest" method="_on_area_2d_2_input_event"]
 [connection signal="mouse_entered" from="Level/Chest/Area2D2" to="." method="change_to_action_cursor"]
