@@ -83,7 +83,7 @@ func _input(event):
 			print("Clock time correct. Bang unlocked")
 			# Unlock for next.
 			bang_Sprite2D.visible = true
-			get_node("/root/Level_01/").unlock_next_level()
+			get_node("/root/Level_01/").unlock_level1()
 
 # --------- SIGNALS ---------- #
 

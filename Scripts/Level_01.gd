@@ -3,7 +3,7 @@ extends Node2D
 var next_scene = "res://Scenes/Levels/Level_02.tscn"
 
 var freeze_player_movement = false
-var unlocked = false
+var level1_unlocked = false
 
 var action_cursor = preload("res://Assets/Images/action_cursor.png")
 var idle_cursor = preload("res://Assets/Images/idle_cursor.png")
@@ -18,8 +18,8 @@ func _ready():
 func _test():
 	pass
 	
-func unlock_next_level():
-	unlocked = true
+func unlock_level1():
+	level1_unlocked = true
 
 func _process(delta):
 	if ($"Level/Chest".is_interface_open):
@@ -27,10 +27,9 @@ func _process(delta):
 	else:
 		freeze_player_movement = false
 	
-	if unlocked && player:
-		print(player.global_position.x)
-		get_tree().change_scene_to_file(next_scene)
-
+	if level1_unlocked && player:
+		pass
+		# TODO: go to level 2
 
 func change_to_action_cursor():
 	Input.set_custom_mouse_cursor(action_cursor)
