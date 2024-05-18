@@ -51,7 +51,6 @@ func _process(_delta):
 	
 	# Some NPC will have dialogue different before orafter the next level is unlocked.
 	NpcStates.level_unlocked[npcId] = level_globals.max_level > int(level)
-	print(NpcStates.level_unlocked)
 	
 	if cur_state == IDLE:
 		$AnimatedSprite2D.play("Idle")
