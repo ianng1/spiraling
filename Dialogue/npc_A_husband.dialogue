@@ -8,3 +8,10 @@
 ???: Her name is...uh...
 
 => END
+
+~ repeat
+% ???: Where are you here again? Do not brother me!
+% ???: Stay away from me!
+% ???: Go find others OKAY?
+
+=> END

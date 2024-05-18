@@ -1,7 +1,5 @@
 extends Node2D
 
-var next_scene = "res://Scenes/Levels/Level_02.tscn"
-
 var freeze_player_movement = false
 var level1_unlocked = false
 
@@ -13,7 +11,6 @@ var idle_cursor = preload("res://Assets/Images/idle_cursor.png")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
 
 func _test():
 	pass
