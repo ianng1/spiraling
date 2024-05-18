@@ -58,7 +58,6 @@ func _on_area_2d_player_entered(player: CharacterBody2D) -> void:
 func _on_area_2d_player_exited(player: CharacterBody2D) -> void:
 	is_player_inside = false
 
-
 func _drop_object() -> void:
 	print("chest was opened successfully")
 

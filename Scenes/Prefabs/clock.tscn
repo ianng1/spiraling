@@ -37,6 +37,7 @@ texture = ExtResource("1_bg8wl")
 [node name="clock_Area2D" type="Area2D" parent="clock_bg_no_hand"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="clock_bg_no_hand/clock_Area2D"]
+modulate = Color(0.121569, 1, 1, 1)
 shape = SubResource("CircleShape2D_8mfw3")
 
 [node name="clock_hand_long" type="Sprite2D" parent="."]
