@@ -5,7 +5,7 @@ extends Node2D
 # - https://www.reddit.com/r/godot/comments/40cm3w/looping_through_all_children_and_subchildren_of_a/
 
 # Default configs, need to change when scene width is changed.
-var canvas_size = 1625
+var canvas_size = 3260
 var stretch_scale = 2
 # Offset jail from tilemap position.
 var jail_offset = 905
