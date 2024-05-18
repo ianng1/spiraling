@@ -14,7 +14,10 @@ var is_dragging = false
 var success = false
 var movement_delta : Vector2
 var click_position : Vector2
-var clock_hover = true
+var clock_hover = false
+
+var clockwise_hover = false
+var counter_clockwise_hover = false
 
 # Elements to unlock when done.
 @onready var bang_Sprite2D = %bang_Sprite2D
@@ -31,17 +34,19 @@ func _process(_delta):
 	if not is_dragging or success:
 		return
 	
-	var degree_to_rotate = clamp(
-		movement_delta.x / 25,
-		-45,
-		45
-	)
-	if clock_hover:
+	var degree_to_rotate = 12
+
+	#if clock_hover:
+	if counter_clockwise_hover:
+		degree_to_rotate = -degree_to_rotate
+	
+	if counter_clockwise_hover or clockwise_hover:
 		#var dir = 1 if int(hand_long_degree) % 360 > 180 else -1
 		hand_short_degree += degree_to_rotate / 12
 		hand_long_degree += degree_to_rotate
 		hand_short.set_rotation_degrees(hand_short_degree)
 		hand_long.set_rotation_degrees(hand_long_degree)
+	
 
 func _input(event):
 	if success:
@@ -78,6 +83,7 @@ func _input(event):
 			print("Clock time correct. Bang unlocked")
 			# Unlock for next.
 			bang_Sprite2D.visible = true
+			get_node("/root/Level_01/").unlock_level1()
 
 # --------- SIGNALS ---------- #
 
@@ -86,3 +92,17 @@ func _on_clock_area_2d_mouse_entered():
 
 func _on_clock_area_2d_mouse_exited():
 	clock_hover = false
+
+func _on_counterclockwise_area_2d_mouse_entered():
+	counter_clockwise_hover = true
+
+func _on_counterclockwise_area_2d_mouse_exited():
+	counter_clockwise_hover = false
+
+func _on_clockwise_area_2d_mouse_entered():
+	clockwise_hover = true
+
+func _on_clockwise_area_2d_mouse_exited():
+	clockwise_hover = false
+
+
