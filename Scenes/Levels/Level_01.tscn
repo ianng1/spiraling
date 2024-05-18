@@ -2093,6 +2093,7 @@ position = Vector2(310, 282)
 position = Vector2(639, 282)
 
 [node name="c_kidnapped" parent="Level" instance=ExtResource("13_ifglg")]
+unique_name_in_owner = true
 position = Vector2(1084, 282)
 
 [node name="clock_node2D" parent="Level" instance=ExtResource("9_0fim8")]

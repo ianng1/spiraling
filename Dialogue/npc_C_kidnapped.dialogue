@@ -1,9 +1,17 @@
 ~ level1
+if not NpcStates.level_unlocked["C_kidnapped"]:
+	???: Birthday...
+	???: when is it?
+	???: ...
+	???: ...no. I can't forget. I can't forget.
+	???: NO WAY I CAN NOT FORGOT MY BIRTHDAY! WHEN IS IT?
+else:
+	???: June 17... Already 15 years...These scratches are the only things staying with me..
+	???: Will my whole life be like this...No way....Dark as always.
 
-???: Birthday...
-???: when is it?
-???: ...
-???: ...no. I can't forget. I can't forget.
-???: NO WAY I CAN NOT FORGOT MY BIRTHDAY! WHEN IS IT? 
+=> END
+
+~ repeat
+% Hey! you need to add dialogue for me starting level 2. Do you hear me????
 
 => END
