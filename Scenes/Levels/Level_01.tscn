@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://c843pqnxa3qyq" path="res://Assets/Images/closebutton.png" id="24_penh4"]
 [ext_resource type="Texture2D" uid="uid://bxtxixate6gbn" path="res://Assets/Textures/map/map_circle.jpeg" id="27_5ghgl"]
 [ext_resource type="Script" path="res://Scenes/Levels/PlayerIndicator.gd" id="27_i5mts"]
-[ext_resource type="Texture2D" uid="uid://dliw76uyi21nt" path="res://Assets/Textures/map/red_dot.jpeg" id="28_rpok5"]
+[ext_resource type="Texture2D" uid="uid://bi4lb4o5mr7v1" path="res://Assets/Textures/map/red_dot.png" id="29_qjy5m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26wly"]
 size = Vector2(15.2, 9.2)
@@ -1422,11 +1422,10 @@ disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="UserInterface/GameUI/Minimap/PlayerIndicator"]
 position = Vector2(148, 306)
-scale = Vector2(0.00816325, 0.0079787)
-texture = ExtResource("28_rpok5")
+scale = Vector2(0.010592, 0.0104166)
+texture = ExtResource("29_qjy5m")
 
 [node name="Player" parent="." instance=ExtResource("2_pay8t")]
-visible = false
 z_index = 7
 position = Vector2(55, 282)
 collision_layer = 9
