@@ -23,14 +23,14 @@ func _process(_delta):
 	for node in level.get_children():
 		var screen_pos = get_viewport().canvas_transform * node.global_position
 		var viewport_x = get_viewport().size.x
-		# Buffer to set when to move nodes arounds to avoid glitch.
-		var buffer = 300
+		## Buffer to set when to move nodes arounds to avoid glitch.
+		#var buffer = 500
 		
 		# The actual drawing of jail is offset from the position of tilemap.
 		if node.get_name() in ["617scratchmark"]:
 			screen_pos.x += jail_offset
-		if screen_pos.x < -buffer:
+		if screen_pos.x < -canvas_size / 2:
 			node.position.x += canvas_size
 		# Need to adjust buffer size by window scale
-		elif screen_pos.x > viewport_x - buffer * viewport_x * stretch_scale / canvas_size:
+		elif screen_pos.x > canvas_size / 2:
 			node.position.x -= canvas_size

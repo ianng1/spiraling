@@ -53,14 +53,15 @@ func _process(delta):
 		number_to_write = get_node("/root/Level_01/Level/Chest").last_num_pressed
 		if number_to_write != -1:
 			image_to_load = "res://Assets/Textures/lock_digits/" + str(number_to_write) + ".png"
+			var lockbox_number_path = "/root/Level_01/UserInterface/GameUI/Lockbox/NumberPad/"
 			if (position_to_write == 1):
-				get_node("/root/Level_01/Level/Chest/Lockbox/NumberPad/Number1/Sprite2D").set_texture(load(image_to_load))
+				get_node(lockbox_number_path + "Number1/Sprite2D").set_texture(load(image_to_load))
 			elif (position_to_write == 2):
-				get_node("/root/Level_01/Level/Chest/Lockbox/NumberPad/Number2/Sprite2D").set_texture(load(image_to_load))
+				get_node(lockbox_number_path + "Number2/Sprite2D").set_texture(load(image_to_load))
 			elif (position_to_write == 3):
-				get_node("/root/Level_01/Level/Chest/Lockbox/NumberPad/Number3/Sprite2D").set_texture(load(image_to_load))
+				get_node(lockbox_number_path + "Number3/Sprite2D").set_texture(load(image_to_load))
 			else:
-				get_node("/root/Level_01/Level/Chest/Lockbox/NumberPad/Number4/Sprite2D").set_texture(load(image_to_load))
+				get_node(lockbox_number_path + "Number4/Sprite2D").set_texture(load(image_to_load))
 
 
 		#number_to_write = get_node("/root/Level_01/Chest").last_num_pressed
