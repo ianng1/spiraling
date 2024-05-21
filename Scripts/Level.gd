@@ -5,9 +5,10 @@ extends Node2D
 # - https://www.reddit.com/r/godot/comments/40cm3w/looping_through_all_children_and_subchildren_of_a/
 
 # Default configs, need to change when scene width is changed.
-var canvas_size = 1625
+var canvas_size = 3260
+var stretch_scale = 2
 # Offset jail from tilemap position.
-var jail_offset = 905
+var jail_offset = 2013
 
 @onready var level = $"../Level"
 
@@ -23,13 +24,13 @@ func _process(_delta):
 		var screen_pos = get_viewport().canvas_transform * node.global_position
 		var viewport_x = get_viewport().size.x
 		# Buffer to set when to move nodes arounds to avoid glitch.
-		var buffer = 200
+		var buffer = 300
 		
 		# The actual drawing of jail is offset from the position of tilemap.
-		if node.get_name() in ["c_Jail", "617wallmark"]:
+		if node.get_name() in ["617scratchmark"]:
 			screen_pos.x += jail_offset
-
 		if screen_pos.x < -buffer:
 			node.position.x += canvas_size
-		elif screen_pos.x> viewport_x + buffer:
+		# Need to adjust buffer size by window scale
+		elif screen_pos.x > viewport_x - buffer * viewport_x * stretch_scale / canvas_size:
 			node.position.x -= canvas_size

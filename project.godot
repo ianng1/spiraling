@@ -24,12 +24,14 @@ GameManager="*res://Scripts/GameManager.gd"
 SceneTransition="*res://Scenes/Managers/SceneTransition.tscn"
 AudioManager="*res://Scenes/Managers/AudioManager.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+NpcStates="*res://Scripts/npc_states.gd"
 
 [display]
 
-window/size/viewport_height=600
+window/size/viewport_width=2000
+window/size/viewport_height=1200
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/stretch/scale=2.0
 mouse_cursor/custom_image="res://Assets/Images/idle_cursor.png"
 
 [editor_plugins]

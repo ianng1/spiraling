@@ -84,6 +84,7 @@ shape = SubResource("RectangleShape2D_k4xpv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPad/Number2"]
 shape = SubResource("RectangleShape2D_wy8ci")
+disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NumberPad/Number2"]
 position = Vector2(-2, 1.5)
@@ -97,6 +98,7 @@ script = ExtResource("2_0a3qm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPad/Number3"]
 position = Vector2(-4, -3)
 shape = SubResource("RectangleShape2D_ei04w")
+disabled = true
 
 [node name="Area2D" type="Area2D" parent="NumberPad/Number3"]
 position = Vector2(1, 1)
@@ -122,6 +124,7 @@ shape = SubResource("RectangleShape2D_onc4s")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPad/Number4"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_fadg6")
+disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NumberPad/Number4"]
 texture = ExtResource("2_18hti")

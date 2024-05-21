@@ -23,8 +23,7 @@ func _ready():
 
 func _process(_delta):
 	# Calling functions
-	
-	if(!get_parent().freeze_player_movement):
+	if(get_parent().name == "Level_01" and !get_parent().freeze_player_movement):
 		movement()
 		player_animations()
 		flip_player()
