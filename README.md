@@ -9,7 +9,7 @@ Update from last week
 - Have other prisoners (except prisoner 3) have repeated dialogue directing the player to other prisoners after the dialogue is completed once to reduce confusion on where the clues to puzzles are.
 - Update the design of the prison to make it more cohesive with the scheme and add a prison bar for all prisoners
 - Update the design of the chest lock to make it more intuitive and easier to enter the password
-- TO push: add the map to indicate where the player is.
+- Add the map to indicate where the player is.
 
 ![1](https://github.com/ianng1/spiraling/assets/48111348/06ed4213-3d85-48e4-a9f0-e4e19fdcf331)
 ![2](https://github.com/ianng1/spiraling/assets/48111348/c2b65560-11c2-4fd0-85ab-a5f4d9d06327)
