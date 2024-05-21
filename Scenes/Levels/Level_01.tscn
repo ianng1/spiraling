@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cjanwm3sy2x37"]
+[gd_scene load_steps=55 format=3 uid="uid://cjanwm3sy2x37"]
 
 [ext_resource type="Script" path="res://Scripts/Level_01.gd" id="1_iaili"]
 [ext_resource type="PackedScene" uid="uid://bvkfp0ufwcrm" path="res://Scenes/npc/a_husband.tscn" id="2_irrk8"]
@@ -28,6 +28,9 @@
 [ext_resource type="Texture2D" uid="uid://cphd0kpkeoj4m" path="res://Assets/Images/Group 167.png" id="22_lqeui"]
 [ext_resource type="Texture2D" uid="uid://7nc4mdm5ep0t" path="res://Assets/Images/poster.png" id="23_6ig1y"]
 [ext_resource type="Texture2D" uid="uid://c843pqnxa3qyq" path="res://Assets/Images/closebutton.png" id="24_penh4"]
+[ext_resource type="Texture2D" uid="uid://bxtxixate6gbn" path="res://Assets/Textures/map/map_circle.jpeg" id="27_5ghgl"]
+[ext_resource type="Script" path="res://Scenes/Levels/PlayerIndicator.gd" id="27_i5mts"]
+[ext_resource type="Texture2D" uid="uid://dliw76uyi21nt" path="res://Assets/Textures/map/red_dot.jpeg" id="28_rpok5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26wly"]
 size = Vector2(15.2, 9.2)
@@ -1073,6 +1076,9 @@ size = Vector2(36.2112, 12.3675)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pwgbo"]
 size = Vector2(33.59, 12.3675)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o66b5"]
+size = Vector2(85, 84)
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4lnhe"]
 light_mode = 2
 
@@ -1399,7 +1405,28 @@ collision_layer = 256
 position = Vector2(0.000488281, -5.78931)
 shape = SubResource("RectangleShape2D_alnvl")
 
+[node name="Minimap" type="Node2D" parent="UserInterface/GameUI"]
+
+[node name="Sprite2D" type="Sprite2D" parent="UserInterface/GameUI/Minimap"]
+position = Vector2(969, 557)
+scale = Vector2(0.178231, 0.176756)
+texture = ExtResource("27_5ghgl")
+
+[node name="PlayerIndicator" type="CharacterBody2D" parent="UserInterface/GameUI/Minimap"]
+position = Vector2(820, 222)
+script = ExtResource("27_i5mts")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UserInterface/GameUI/Minimap/PlayerIndicator"]
+shape = SubResource("RectangleShape2D_o66b5")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UserInterface/GameUI/Minimap/PlayerIndicator"]
+position = Vector2(148, 306)
+scale = Vector2(0.00816325, 0.0079787)
+texture = ExtResource("28_rpok5")
+
 [node name="Player" parent="." instance=ExtResource("2_pay8t")]
+visible = false
 z_index = 7
 position = Vector2(55, 282)
 collision_layer = 9
@@ -1407,7 +1434,6 @@ move_speed = 400.0
 metadata/_edit_lock_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="Player"]
-visible = false
 material = SubResource("CanvasItemMaterial_4lnhe")
 position = Vector2(3, 40)
 texture = ExtResource("10_23jwq")
