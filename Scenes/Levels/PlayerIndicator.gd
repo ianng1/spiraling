@@ -1,39 +1,29 @@
-extends CharacterBody2D
+extends Node
 
 # --------- VARIABLES ---------- #
 
-@export_category("Player Properties") # You can tweak these changes according to your likings
-@export var move_speed : float = 200
-
-@export_category("Toggle Functions") # Double jump feature is disable by default (Can be toggled from inspector)
-#@export var double_jump : = false
-
-# Indicator of movement direction to set animation.
-var move_right : bool = true
-var freeze_player_movement = false
-var center_x = 820
-var center_y = 251
+var roration_degree = 0
+@onready var level = %Level
+@onready var player = %Player
+@onready var redDot = $playerDot_Sprite2D
 
 # --------- BUILT-IN FUNCTIONS ---------- #
 
 func _process(_delta):
-	# Calling functions
 	movement()
-	
 	
 # --------- CUSTOM FUNCTIONS ---------- #
 
-# <-- Player Movement Code -->
 func movement():
-	print(position.x)
-	print(position.y)
-	# Move Player
-	var inputAxis = Input.get_axis("Left", "Right")
-	move_right = move_right if inputAxis == 0 else inputAxis > 0
-	# velocity = Vector2(inputAxis * move_speed, velocity.y)
-	
-	var offset_y = position.y - center_y
-	var offset_x = position.x - center_x
-	velocity = Vector2(offset_y * -0.77 * inputAxis, offset_x * 0.77 * inputAxis)
-	move_and_slide()
+	# Move Red dot
+	roration_degree =  get_player_pos_in_canvas()
+	if redDot != null:
+		redDot.set_rotation_degrees(roration_degree)
 
+func get_player_pos_in_canvas():
+	if player == null or level == null:
+		return 0 
+	var player_pos = player.global_position.x
+	var canvas_size = level.canvas_size
+	var player_canvas_ratio = player_pos / canvas_size * 360
+	return int(player_canvas_ratio + (floor(abs(player_canvas_ratio/360)) + 1) * 360) % 360
