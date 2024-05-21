@@ -1,7 +1,15 @@
 extends Node
 
+var npc_names = [
+	"A_husband",
+	"A_wife",
+	"B_sibling",
+	"C_kidnapped",
+	"D_phych",
+]
+
 # The level where each NPC is at.
-var levels = {
+var npc_levels = {
 	"A_husband": 1,
 	"A_wife": 1,
 	"B_sibling": 1,

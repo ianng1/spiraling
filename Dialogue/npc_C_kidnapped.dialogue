@@ -12,6 +12,15 @@ else:
 => END
 
 ~ repeat
-% ???: Hey! you need to add dialogue for me starting level 2. Do you hear me????
+% ???: ...Remember your identity. That's the most important thing to do if you've been...
 
+=> END
+
+~ level2
+???: ...Birthday.
+???: ...June 17. 
+???: ...1991.
+???: ...Remember your identity. That's the most important thing to do if you've been...
+???: ...been what?
+???: ...what happened to me?
 => END

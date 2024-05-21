@@ -25,6 +25,7 @@ var is_special_movement = false
 # The NPC related to puzzles on each levels
 var npc_clues = {
 	"1": ["C_kidnapped"],
+	"2": ["B_sibling"]
 }
 # Whether the current level is unlocked.
 var level_unlocked = false
@@ -40,15 +41,16 @@ enum {
 func _ready():
 	randomize()
 	# Set npc and level based on metadata.
-	level = get_meta("level")
+	#level = get_meta("level")
 	npcId = get_meta("npcId")
 	dialogue_file = "res://Dialogue/npc_" + npcId + ".dialogue"
-	dialogue_level = "level" + level
 
 func _process(_delta):
 	if level_globals.freeze_player_movement:
 		return
 	
+	# Update level from status
+	level = str(NpcStates.npc_levels[npcId])
 	# Some NPC will have dialogue different before orafter the next level is unlocked.
 	NpcStates.level_unlocked[npcId] = level_globals.max_level > int(level)
 	
@@ -73,6 +75,7 @@ func load_dialogue():
 	if (not npcId in npc_clues[level]) and completed_dialogue:
 		DialogueManager.show_example_dialogue_balloon(load(dialogue_file), repeat_dialogue_id)
 	else:
+		dialogue_level = "level" + level
 		DialogueManager.show_example_dialogue_balloon(load(dialogue_file), dialogue_level)
 		dialogue_completed[level] = true
 
