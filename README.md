@@ -12,7 +12,8 @@ Update from last week
 - Update the icon and loading screen to match our scheme.
 
 <img width="995" alt="image" src="https://github.com/ianng1/spiraling/assets/32094663/f46db110-5a88-4151-b9f4-2fa13bab1408">
-![1](https://github.com/ianng1/spiraling/assets/48111348/06ed4213-3d85-48e4-a9f0-e4e19fdcf331)
+<img width="985" alt="image" src="https://github.com/ianng1/spiraling/assets/32094663/454e0463-8a20-4183-8e3a-ff299f2d1664">
+
 ![2](https://github.com/ianng1/spiraling/assets/48111348/c2b65560-11c2-4fd0-85ab-a5f4d9d06327)
 ![3](https://github.com/ianng1/spiraling/assets/48111348/c207c146-dd67-4276-8bd6-5ef19f9797e6)
 ![4-1](https://github.com/ianng1/spiraling/assets/48111348/2d044bd0-8bc8-49ca-ac2c-fe1e9fca677c)
