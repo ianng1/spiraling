@@ -1,13 +1,17 @@
 extends Node
 
-# The level where each NPC is at.
-var levels = {
-	"A_husband": 1,
-	"A_wife": 1,
-	"B_sibling": 1,
-	"C_kidnapped": 1,
-	"D_phych": 1,
-}
+# Level related states
+var l1_box_opened = false
+
+var npc_names = [
+	"A_husband",
+	"A_wife",
+	"B_sibling",
+	"C_kidnapped",
+	"D_phych",
+]
+
+var player_level = 1
 
 # Whether the level where each NPC are is unlocked.
 var level_unlocked = {

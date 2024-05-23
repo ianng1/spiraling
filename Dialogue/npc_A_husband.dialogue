@@ -9,9 +9,24 @@
 
 => END
 
-~ repeat
+~ level1_repeat
+???: Oh... you're new here... We've never seen a new prisoner here. And we've been here a long time. How long have we even been here? It all blurs together... Anyway. This is my wife.... hmmm...how do I know that? Her name is...uh...
 % ???: Where are you here again? Do not brother me!
 % ???: Stay away from me!
 % ???: Go find others OKAY?
 
+=> END
+
+~ level2
+???: Oh... you're new here...
+???: This is my wife. 
+???: Did I have a child? I think I have.
+???: Why can't I remember?
+=> END
+
+~ level2_repeat
+???: Oh... you're new here. This is my wife. Did I have a child? I think I have. Why can't I remember?
+% ???: Where are you here again? Do not brother me!
+% ???: Stay away from me!
+% ???: Go find others OKAY?
 => END

@@ -39,6 +39,7 @@ func _open_box():
 	if poster:
 		poster.visible = true
 		is_poster_open = true
+	GameStates.l1_box_opened = true
 
 func _reset_keypad():
 	show_clear_digits = true
