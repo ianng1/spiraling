@@ -11,10 +11,13 @@ extends CharacterBody2D
 # Indicator of movement direction to set animation.
 var move_right : bool = true
 var freeze_player_movement = false
+var level = 1
+var max_level = 1
 
 @onready var player_sprite = $AnimatedSprite2D
 @onready var particle_trails = $ParticleTrails
-
+@onready var level_globals = get_node("/root/Level_01")
+@onready var player_jail = %mc_jail
 
 # --------- BUILT-IN FUNCTIONS ---------- #
 
@@ -28,6 +31,8 @@ func _process(_delta):
 		player_animations()
 		flip_player()
 	
+	# Determine player's level
+	update_level()
 	
 # --------- CUSTOM FUNCTIONS ---------- #
 
@@ -57,9 +62,18 @@ func flip_player():
 		player_sprite.flip_h = false
 	else:
 		player_sprite.flip_h = true
-
-
-func _on_area_2d_area_entered(area):
-	if area.name == "Chest":
-		print("hi")
+		
+func update_level():
+	if level_globals:
+		max_level = level_globals.max_level
+	
+	# Move player to upper lower level when close to its jail.
+	var offset = 20
+	var jail_x = player_jail.position.x
+	if position.x > jail_x - offset and position.x < jail_x + offset:
+		if move_right and level < max_level:
+			level += 1
+		elif (!move_right) and level > 1:
+			level -= 1
+	GameStates.player_level = level
 

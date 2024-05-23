@@ -1178,6 +1178,7 @@ scale = Vector2(0.157256, 0.132721)
 texture = ExtResource("14_e8cml")
 
 [node name="mc_jail" type="Sprite2D" parent="Level"]
+unique_name_in_owner = true
 texture_filter = 1
 position = Vector2(-26, 278)
 scale = Vector2(0.80404, 0.865079)

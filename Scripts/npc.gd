@@ -50,9 +50,9 @@ func _process(_delta):
 		return
 	
 	# Update level from status
-	level = str(NpcStates.npc_levels[npcId])
+	level = str(GameStates.player_level)
 	# Some NPC will have dialogue different before orafter the next level is unlocked.
-	NpcStates.level_unlocked[npcId] = level_globals.max_level > int(level)
+	GameStates.level_unlocked[npcId] = level_globals.max_level > int(level)
 	
 	if cur_state == IDLE:
 		$AnimatedSprite2D.play("Idle")
@@ -72,10 +72,10 @@ func load_dialogue():
 	
 	# Only play the full dialogue for NPCs related to the puzzle
 	# or whose dialogue is not played before.
+	dialogue_level = "level" + level
 	if (not npcId in npc_clues[level]) and completed_dialogue:
-		DialogueManager.show_example_dialogue_balloon(load(dialogue_file), repeat_dialogue_id)
+		DialogueManager.show_example_dialogue_balloon(load(dialogue_file), dialogue_level + "_" + repeat_dialogue_id)
 	else:
-		dialogue_level = "level" + level
 		DialogueManager.show_example_dialogue_balloon(load(dialogue_file), dialogue_level)
 		dialogue_completed[level] = true
 

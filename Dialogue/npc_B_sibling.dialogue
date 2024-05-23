@@ -8,7 +8,7 @@
 
 => END
 
-~ repeat
+~ level1_repeat
 % ???: ..haha...ha....hahaha.....
 % ???: ...Heh
 
@@ -18,5 +18,10 @@
 ???: ...the voices are quiet. 
 ???: ...I miss the voices. I talked to them.
 ???: ...ha....ha............ha......
-???: You hear the sounds? I comes back up again, but still quiet. Where are they from?
+???: You hear the sounds? I comes back up again, but still quiet. WHERE ARE THEY FROM?
+=> END
+
+~ level2_repeat
+% ???: ..haha...ha....hahaha.....
+% ???: ...Heh
 => END
