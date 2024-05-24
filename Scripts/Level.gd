@@ -13,7 +13,7 @@ var jail_offset = 2013
 @onready var level = $"../Level"
 
 # Level related items to show or hide.
-@onready var bang_Sprite2D = %bang_Sprite2D
+@onready var bang_Sprite2D = %bang_Sprite2D_UI
 
 func _ready():
 	pass

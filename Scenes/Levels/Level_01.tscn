@@ -1348,6 +1348,7 @@ theme_override_font_sizes/font_size = 32
 text = "x 3"
 
 [node name="bang_Sprite2D_UI" type="Sprite2D" parent="UserInterface/GameUI"]
+unique_name_in_owner = true
 visible = false
 position = Vector2(849, 106)
 scale = Vector2(0.234642, 0.234642)
