@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://cjanwm3sy2x37"]
+[gd_scene load_steps=62 format=3 uid="uid://cjanwm3sy2x37"]
 
 [ext_resource type="Script" path="res://Scripts/Level_01.gd" id="1_iaili"]
 [ext_resource type="PackedScene" uid="uid://bvkfp0ufwcrm" path="res://Scenes/npc/a_husband.tscn" id="2_irrk8"]
@@ -15,7 +15,11 @@
 [ext_resource type="FontFile" uid="uid://qgc4vi5osk7v" path="res://Assets/Fonts/Star Choco.ttf" id="8_gwcy2"]
 [ext_resource type="PackedScene" uid="uid://cfhgdldvpdf8m" path="res://Scenes/Prefabs/clock.tscn" id="9_0fim8"]
 [ext_resource type="Texture2D" uid="uid://cssr3xx5j3dsl" path="res://Assets/Textures/godot_neutral_point_light.webp" id="10_23jwq"]
+[ext_resource type="Texture2D" uid="uid://8m3gr3g088b8" path="res://Assets/Textures/clock_no_hand-removebg-preview.png" id="10_j6082"]
+[ext_resource type="Script" path="res://Scenes/Levels/Clock_Node2D.gd" id="10_m53l3"]
 [ext_resource type="PackedScene" uid="uid://dpq6pgox64htv" path="res://Scenes/puzzle_assets/lockbox.tscn" id="11_h7n2w"]
+[ext_resource type="Texture2D" uid="uid://bark8145mxuyt" path="res://Assets/Textures/clock_hand_long.png" id="11_jocd3"]
+[ext_resource type="Texture2D" uid="uid://do8ia4hcr86hs" path="res://Assets/Textures/clock_hand.png" id="12_ojc45"]
 [ext_resource type="PackedScene" uid="uid://c7r78oau0sqy2" path="res://Scenes/npc/c_kidnapped.tscn" id="13_ifglg"]
 [ext_resource type="Texture2D" uid="uid://c3iosjxabekt0" path="res://Assets/Images/painting2.png" id="14_e8cml"]
 [ext_resource type="Texture2D" uid="uid://8wlua1thpqin" path="res://Assets/Images/jailbardark.png" id="14_hcied"]
@@ -27,13 +31,25 @@
 [ext_resource type="Texture2D" uid="uid://bt4ch0h1fcup3" path="res://Assets/Images/finalfoor.png" id="17_tq01t"]
 [ext_resource type="Texture2D" uid="uid://cphd0kpkeoj4m" path="res://Assets/Images/Group 167.png" id="22_lqeui"]
 [ext_resource type="Texture2D" uid="uid://7nc4mdm5ep0t" path="res://Assets/Images/poster.png" id="23_6ig1y"]
-[ext_resource type="Texture2D" uid="uid://c843pqnxa3qyq" path="res://Assets/Images/closebutton.png" id="24_penh4"]
+[ext_resource type="Texture2D" uid="uid://r1xi8kqkq3hs" path="res://Assets/Images/close_x.png" id="26_h60ld"]
 [ext_resource type="Texture2D" uid="uid://bxtxixate6gbn" path="res://Assets/Textures/map/map_circle.jpeg" id="27_5ghgl"]
 [ext_resource type="Script" path="res://Scenes/Levels/PlayerIndicator.gd" id="27_i5mts"]
 [ext_resource type="Texture2D" uid="uid://bi4lb4o5mr7v1" path="res://Assets/Textures/map/red_dot.png" id="29_qjy5m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26wly"]
 size = Vector2(15.2, 9.2)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tlqgk"]
+radius = 145.729
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iyn3j"]
+size = Vector2(244.102, 46.2499)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nltb5"]
+size = Vector2(204.379, 47.975)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tv78g"]
+radius = 712.25
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vd4m8"]
 texture = ExtResource("5_wqbaa")
@@ -1038,7 +1054,7 @@ physics_layer_0/collision_layer = 1
 sources/3 = SubResource("TileSetAtlasSource_s0osg")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_alnvl"]
-size = Vector2(548.69, 521.071)
+size = Vector2(773.042, 817.261)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ciuj"]
 size = Vector2(30.5557, 10.0305)
@@ -1144,12 +1160,60 @@ position = Vector2(1268, 282)
 [node name="C_kidnapped" parent="Level" instance=ExtResource("13_ifglg")]
 position = Vector2(1997, 279)
 
-[node name="clock_node2D" parent="Level" instance=ExtResource("9_0fim8")]
-position = Vector2(2892, 132)
-scale = Vector2(0.5, 0.5)
-
 [node name="D_phych" parent="Level" instance=ExtResource("14_rj8xu")]
 position = Vector2(2627, 282)
+
+[node name="Clock_Node2D" type="Node2D" parent="Level"]
+position = Vector2(2871, 116)
+scale = Vector2(0.4, 0.4)
+script = ExtResource("10_m53l3")
+
+[node name="clock_bg_no_hand" type="Sprite2D" parent="Level/Clock_Node2D"]
+scale = Vector2(1.41, 1.41)
+texture = ExtResource("10_j6082")
+
+[node name="clock_Area2D" type="Area2D" parent="Level/Clock_Node2D/clock_bg_no_hand"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Clock_Node2D/clock_bg_no_hand/clock_Area2D"]
+modulate = Color(0.121569, 1, 1, 1)
+shape = SubResource("CircleShape2D_tlqgk")
+
+[node name="clock_hand_long" type="Sprite2D" parent="Level/Clock_Node2D"]
+position = Vector2(-1, -1.81899e-12)
+rotation = 0.698132
+scale = Vector2(0.75608, 0.540541)
+texture = ExtResource("11_jocd3")
+centered = false
+offset = Vector2(-25, -25)
+
+[node name="hand_long_Area2D" type="Area2D" parent="Level/Clock_Node2D/clock_hand_long"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Clock_Node2D/clock_hand_long/hand_long_Area2D"]
+position = Vector2(102.793, -0.925049)
+shape = SubResource("RectangleShape2D_iyn3j")
+
+[node name="clock_hand_short" type="Sprite2D" parent="Level/Clock_Node2D"]
+unique_name_in_owner = true
+position = Vector2(1, -5.96047e-08)
+rotation = 1.74533
+scale = Vector2(0.540541, 0.540541)
+texture = ExtResource("12_ojc45")
+centered = false
+offset = Vector2(-38, -45)
+
+[node name="hand_short_Area2D" type="Area2D" parent="Level/Clock_Node2D/clock_hand_short"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Clock_Node2D/clock_hand_short/hand_short_Area2D"]
+position = Vector2(78.0875, 0.280762)
+shape = SubResource("RectangleShape2D_nltb5")
+
+[node name="Area2D_clock" type="Area2D" parent="Level/Clock_Node2D"]
+position = Vector2(-2, -6)
+scale = Vector2(0.291997, 0.348354)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Clock_Node2D/Area2D_clock"]
+scale = Vector2(1, -0.913739)
+shape = SubResource("CircleShape2D_tv78g")
 
 [node name="617scratchmark" type="TileMap" parent="Level"]
 scale = Vector2(0.1, 0.1)
@@ -1283,12 +1347,30 @@ theme_override_fonts/font = ExtResource("8_gwcy2")
 theme_override_font_sizes/font_size = 32
 text = "x 3"
 
-[node name="bang_Sprite2D" type="Sprite2D" parent="UserInterface/GameUI"]
-unique_name_in_owner = true
+[node name="bang_Sprite2D_UI" type="Sprite2D" parent="UserInterface/GameUI"]
 visible = false
 position = Vector2(849, 106)
 scale = Vector2(0.234642, 0.234642)
 texture = ExtResource("17_aahwe")
+
+[node name="clock_node2D_UI" parent="UserInterface/GameUI" instance=ExtResource("9_0fim8")]
+unique_name_in_owner = true
+visible = false
+position = Vector2(559, 272)
+scale = Vector2(0.8, 0.8)
+
+[node name="clock_exit_button" type="Sprite2D" parent="UserInterface/GameUI/clock_node2D_UI"]
+position = Vector2(261.25, -193.75)
+scale = Vector2(0.135706, 0.115224)
+texture = ExtResource("26_h60ld")
+
+[node name="clock_exit_Area2D" type="Area2D" parent="UserInterface/GameUI/clock_node2D_UI/clock_exit_button"]
+position = Vector2(9.21111, 43.3941)
+collision_layer = 256
+
+[node name="exitcollision" type="CollisionShape2D" parent="UserInterface/GameUI/clock_node2D_UI/clock_exit_button/clock_exit_Area2D"]
+position = Vector2(-55.2667, -32.5454)
+shape = SubResource("RectangleShape2D_alnvl")
 
 [node name="poster" type="Sprite2D" parent="UserInterface/GameUI"]
 unique_name_in_owner = true
@@ -1393,15 +1475,15 @@ shape = SubResource("RectangleShape2D_pwgbo")
 
 [node name="exit_button" type="Sprite2D" parent="UserInterface/GameUI/ChestInterface"]
 unique_name_in_owner = true
-position = Vector2(127.779, -91.7399)
-scale = Vector2(0.0882688, 0.0776868)
-texture = ExtResource("24_penh4")
+position = Vector2(135.304, -102.909)
+scale = Vector2(0.0591678, 0.0549369)
+texture = ExtResource("26_h60ld")
 
 [node name="Area2D" type="Area2D" parent="UserInterface/GameUI/ChestInterface/exit_button"]
 collision_layer = 256
 
 [node name="exitcollision" type="CollisionShape2D" parent="UserInterface/GameUI/ChestInterface/exit_button/Area2D"]
-position = Vector2(0.000488281, -5.78931)
+position = Vector2(-44.2997, -16.3603)
 shape = SubResource("RectangleShape2D_alnvl")
 
 [node name="Minimap" type="Node2D" parent="UserInterface/GameUI"]
@@ -1467,6 +1549,11 @@ color = Color(0.347817, 0.347817, 0.347817, 1)
 [connection signal="mouse_exited" from="Level/Chest/Area2D2" to="." method="change_to_idle_cursor"]
 [connection signal="mouse_exited" from="Level/Chest/Area2D2" to="Level/Chest" method="_mouse_off_box"]
 [connection signal="timeout" from="Level/Chest/ClickCooldownTimer" to="Level/Chest" method="_on_click_cooldown_timer_timeout"]
+[connection signal="input_event" from="Level/Clock_Node2D/Area2D_clock" to="Level/Clock_Node2D" method="_on_area_2d_clock_input_event"]
+[connection signal="input_event" from="UserInterface/GameUI/clock_node2D_UI/clock_exit_button/clock_exit_Area2D" to="Level/Chest" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="UserInterface/GameUI/clock_node2D_UI/clock_exit_button/clock_exit_Area2D" to="Level/Clock_Node2D" method="_on_clock_exit_area_2d_input_event"]
+[connection signal="mouse_entered" from="UserInterface/GameUI/clock_node2D_UI/clock_exit_button/clock_exit_Area2D" to="." method="change_to_action_cursor"]
+[connection signal="mouse_exited" from="UserInterface/GameUI/clock_node2D_UI/clock_exit_button/clock_exit_Area2D" to="." method="change_to_idle_cursor"]
 [connection signal="input_event" from="UserInterface/GameUI/poster/Area2D_poster" to="Level/Chest" method="_on_area_2d_poster_input_event"]
 [connection signal="input_event" from="UserInterface/GameUI/ChestInterface/Area2D_clear" to="Level/Chest" method="_on_area_2d_clear_input_event"]
 [connection signal="input_event" from="UserInterface/GameUI/ChestInterface/Area2D_one" to="Level/Chest" method="_on_area_2d_one_input_event"]

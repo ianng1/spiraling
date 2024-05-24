@@ -20,7 +20,7 @@ var clockwise_hover = false
 var counter_clockwise_hover = false
 
 # Elements to unlock when done.
-@onready var bang_Sprite2D = %bang_Sprite2D
+@onready var bang_Sprite2D = $"../bang_Sprite2D_UI"
 
 # Set up the hands to rotate.
 func _ready():
@@ -78,10 +78,12 @@ func _input(event):
 			and hand_long_deg_360 < 105
 			):
 			success = true
+			
 			hand_long.set_rotation_degrees(90)
 			hand_short.set_rotation_degrees(135)
 			print("Clock time correct. Bang unlocked")
 			# Unlock for next.
+			print(bang_Sprite2D)
 			bang_Sprite2D.visible = true
 			get_node("/root/Level_01/").unlock_level1()
 
@@ -94,15 +96,13 @@ func _on_clock_area_2d_mouse_exited():
 	clock_hover = false
 
 func _on_counterclockwise_area_2d_mouse_entered():
-	counter_clockwise_hover = true
-
-func _on_counterclockwise_area_2d_mouse_exited():
-	counter_clockwise_hover = false
-
-func _on_clockwise_area_2d_mouse_entered():
 	clockwise_hover = true
 
-func _on_clockwise_area_2d_mouse_exited():
+func _on_counterclockwise_area_2d_mouse_exited():
 	clockwise_hover = false
 
+func _on_clockwise_area_2d_mouse_entered():
+	counter_clockwise_hover = true
 
+func _on_clockwise_area_2d_mouse_exited():
+	counter_clockwise_hover = false
