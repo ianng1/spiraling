@@ -1154,13 +1154,13 @@ up_direction = Vector2(0, 1)
 [node name="A_wife" parent="Level" instance=ExtResource("5_7cr6o")]
 position = Vector2(524, 282)
 
-[node name="b_sibling" parent="Level" instance=ExtResource("6_xye2r")]
+[node name="B_sibling" parent="Level" instance=ExtResource("6_xye2r")]
 position = Vector2(1268, 282)
 
-[node name="c_kidnapped" parent="Level" instance=ExtResource("13_ifglg")]
+[node name="C_kidnapped" parent="Level" instance=ExtResource("13_ifglg")]
 position = Vector2(1997, 279)
 
-[node name="d_phych" parent="Level" instance=ExtResource("14_rj8xu")]
+[node name="D_phych" parent="Level" instance=ExtResource("14_rj8xu")]
 position = Vector2(2627, 282)
 
 [node name="Clock_Node2D" type="Node2D" parent="Level"]
@@ -1242,6 +1242,7 @@ scale = Vector2(0.157256, 0.132721)
 texture = ExtResource("14_e8cml")
 
 [node name="mc_jail" type="Sprite2D" parent="Level"]
+unique_name_in_owner = true
 texture_filter = 1
 position = Vector2(-26, 278)
 scale = Vector2(0.80404, 0.865079)

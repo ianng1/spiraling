@@ -1,17 +1,35 @@
 ~ level1
-if not NpcStates.level_unlocked["C_kidnapped"]:
-	???: Birthday...
-	???: when is it?
-	???: ...
-	???: ...no. I can't forget. I can't forget. I HAVE TO REMEMBER! 
-	???: WHEN IS IT?
+if not GameStates.level_unlocked["C_kidnapped"]:
+	if GameStates.l1_box_opened:
+		???: June 17... I remembered there was a party then...
+		???: WHEN IS IT??? That's the only thing I remember. I can not forget!
+	else:
+		???: Birthday...
+		???: when is it?
+		???: ...
+		???: ...no. I can't forget. I can't forget.
+		???: NO WAY I CAN NOT FORGOT MY BIRTHDAY! WHEN IS IT?
 else:
 	???: June 17... Already 15 years...These scratches are the only things staying with me..
 	???: Will my whole life be like this...No way....Dark as always.
 
 => END
 
-~ repeat
-% ???: Hey! you need to add dialogue for me starting level 2. Do you hear me????
+~ level1_repeat
+% ???: ...Remember your identity. That's the most important thing to do if you've been...
 
+=> END
+
+~ level2
+???: ...Birthday.
+???: ...June 17. 
+???: ...1991.
+???: ...Remember your identity. That's the most important thing to do if you've been...
+???: ...been what?
+???: ...what happened to me?
+=> END
+
+~ level2_repeat
+???: ...Birthday...June 17...1991...Remember your identity. That's the most important thing to do if you've been...been what? What happened to me?
+% ???: ...Remember your identity. That's the most important thing to do if you've been...
 => END

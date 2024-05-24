@@ -24,7 +24,7 @@ GameManager="*res://Scripts/GameManager.gd"
 SceneTransition="*res://Scenes/Managers/SceneTransition.tscn"
 AudioManager="*res://Scenes/Managers/AudioManager.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-NpcStates="*res://Scripts/npc_states.gd"
+GameStates="*res://Scripts/game_states.gd"
 
 [display]
 
