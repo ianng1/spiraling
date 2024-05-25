@@ -1,27 +1,60 @@
-~ level1
-
-???: ...Am I alone here?
-???: ...No. The voices are here with me.
-???: ...They're in the walls. And the ceiling. And the floor.
-???: ...Why can't I see them?
-???: ...Heh.
-
-=> END
-
-~ level1_repeat
-% ???: ..haha...ha....hahaha.....
-% ???: ...Heh
+~ floor1
+if GameStates.player_max_level == 3:
+	???: Some of the voices sound like me. I wonder why.
+	???: I wonder..can I pass messages to them?
+else:
+	# level 1, 2, and others
+	???: ...Am I alone here?
+	???: ...No. The voices are here with me.
+	???: ...They're in the walls. And the ceiling. And the floor.
+	???: ...Why can't I see them?
+	???: ...Heh.
 
 => END
 
-~ level2
-???: ...the voices are quiet. 
-???: ...I miss the voices. I talked to them.
-???: ...ha....ha............ha......
-???: You hear the sounds? I comes back up again, but still quiet. WHERE ARE THEY FROM?
+~ floor1_repeat
+if GameStates.player_max_level == 3:
+	if not GameStates.level_unlocked["B_sibling"]:
+		# TODO: puzzle for level 3
+		???: Maybe I can talk to them. Can you help?
+	else:
+		???: "Brother". You. It was you.
+else:
+	# level 1, 2, or others
+	% ???: voices...voices everywhere...
+
 => END
 
-~ level2_repeat
-% ???: ..haha...ha....hahaha.....
-% ???: ...Heh
+~ floor2
+if GameStates.player_max_level == 3:
+	???: Some of the voices sound like me. I wonder why.
+	???: I wonder..can I pass messages to them?
+else:
+	# level 2 or others
+	???: The voices are quiet today. Sometimes they're just quiet, though. That's nothing special. 
+=> END
+
+~ floor2_repeat
+if GameStates.player_max_level == 3:
+	if not GameStates.level_unlocked["B_sibling"]:
+		# TODO: puzzle for level 3
+		???: Maybe I can talk to them. Can you help?
+	else:
+		???: "Brother". You. It was you.
+else:
+	# level 2 or others
+	???: The voices are quiet today. Sometimes they're just quiet, though. That's nothing special. 
+=> END
+
+~ floor3
+???: Some of the voices sound like me. I wonder why.
+???: I wonder..can I pass messages to them?
+=> END
+
+~ floor3_repeat
+if not GameStates.level_unlocked["B_sibling"]:
+	# TODO: puzzle for level 3
+	???: Maybe I can talk to them. Can you help?
+else:
+	???: "Brother". You. It was you.
 => END

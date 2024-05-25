@@ -72,7 +72,7 @@ func load_dialogue():
 	
 	# Only play the full dialogue for NPCs related to the puzzle
 	# or whose dialogue is not played before.
-	dialogue_level = "level" + level
+	dialogue_level = "floor" + level
 	if (not npcId in npc_clues[level]) and completed_dialogue:
 		DialogueManager.show_example_dialogue_balloon(load(dialogue_file), dialogue_level + "_" + repeat_dialogue_id)
 	else:
