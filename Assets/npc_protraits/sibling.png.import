@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6aus6i6x4vmk"
-path="res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex"
+uid="uid://clemo02piyey1"
+path="res://.godot/imported/sibling.png-41a35e8ed6372d3517dd98f2092608e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=["res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex"]
+source_file="res://Assets/npc_protraits/sibling.png"
+dest_files=["res://.godot/imported/sibling.png-41a35e8ed6372d3517dd98f2092608e0.ctex"]
 
 [params]
 

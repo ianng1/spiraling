@@ -20,6 +20,8 @@ var clockwise_hover = false
 var counter_clockwise_hover = false
 
 # Elements to unlock when done.
+
+@onready var c_kidnapped = $"../../../Level/C_kidnapped"
 @onready var bang_Sprite2D = $"../bang_Sprite2D_UI"
 
 # Set up the hands to rotate.
@@ -86,6 +88,8 @@ func _input(event):
 			print(bang_Sprite2D)
 			bang_Sprite2D.visible = true
 			get_node("/root/Level_01/").unlock_level1()
+			# Auto load dialogue for C
+			c_kidnapped.load_dialogue()
 
 # --------- SIGNALS ---------- #
 
