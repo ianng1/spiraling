@@ -11,6 +11,9 @@ var npc_names = [
 	"D_phych",
 ]
 
+# The dialogue balloon in screen
+var active_dialogue_balloon
+
 # The floor that the player is at and the maximal floor he can go to.
 # TODO: clearer naming when not need to worry about merge conflict
 var player_level = 1
