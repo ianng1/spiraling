@@ -26,4 +26,4 @@ func get_player_pos_in_canvas():
 	var player_pos = player.global_position.x
 	var canvas_size = level.canvas_size
 	var player_canvas_ratio = player_pos / canvas_size * 360
-	return int(player_canvas_ratio + (floor(abs(player_canvas_ratio/360)) + 1) * 360) % 360
+	return (int(player_canvas_ratio + (floor(abs(player_canvas_ratio/360)) + 1) * 360) % 360)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6aus6i6x4vmk"
-path="res://.godot/imported/Icon.png-33e63688031d53466d4d656c73cf10ca.ctex"
+uid="uid://bfnsje8vnmlvd"
+path="res://.godot/imported/npc-dark-blue.png-a4d31d989febe649c6c6d2ecb554a3cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Icon.png"
-dest_files=["res://.godot/imported/Icon.png-33e63688031d53466d4d656c73cf10ca.ctex"]
+source_file="res://Assets/Images/npc-dark-blue.png"
+dest_files=["res://.godot/imported/npc-dark-blue.png-a4d31d989febe649c6c6d2ecb554a3cf.ctex"]
 
 [params]
 

@@ -20,7 +20,12 @@ func unlock_level1():
 	GameStates.player_max_level = 2
 
 func _process(delta):
-	if ($"Level/Chest".is_interface_open or $"Level/Chest".is_poster_open):
+	if ($"Level/Chest".is_interface_open or $"Level/Chest".is_poster_open or $"Level/Clock_Node2D".is_interface_open):
+		freeze_player_movement = true
+	else:
+		freeze_player_movement = false
+	
+	if ($"UserInterface/GameUI/Map_Icon".is_map_open):
 		freeze_player_movement = true
 	else:
 		freeze_player_movement = false
