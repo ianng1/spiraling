@@ -24,6 +24,11 @@ func _process(delta):
 	else:
 		freeze_player_movement = false
 	
+	if ($"UserInterface/GameUI/Map_Icon".is_map_open):
+		freeze_player_movement = true
+	else:
+		freeze_player_movement = false
+	
 	if max_level == 2 && player:
 		pass
 		# TODO: go to level 2
