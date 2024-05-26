@@ -1105,8 +1105,8 @@ size = Vector2(36.2112, 12.3675)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pwgbo"]
 size = Vector2(33.59, 12.3675)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ncy4h"]
-size = Vector2(180, 137.5)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ohsnj"]
+radius = 14.5228
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mu4gx"]
 size = Vector2(1080, 1000)
@@ -1522,16 +1522,17 @@ texture = ExtResource("29_qjy5m")
 offset = Vector2(0, -2800)
 
 [node name="Map_Icon" type="Sprite2D" parent="UserInterface/GameUI"]
-position = Vector2(93, 539)
-scale = Vector2(0.4, 0.4)
+position = Vector2(970, 539)
+scale = Vector2(0.241, 0.245)
 texture = ExtResource("30_l4k2s")
 script = ExtResource("31_karw2")
 
 [node name="Area2D" type="Area2D" parent="UserInterface/GameUI/Map_Icon"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UserInterface/GameUI/Map_Icon/Area2D"]
-position = Vector2(0, -1.25)
-shape = SubResource("RectangleShape2D_ncy4h")
+position = Vector2(-4.14918, 4.08163)
+scale = Vector2(10, 9.855)
+shape = SubResource("CircleShape2D_ohsnj")
 
 [node name="Map_Level_1" type="Sprite2D" parent="UserInterface/GameUI"]
 visible = false
