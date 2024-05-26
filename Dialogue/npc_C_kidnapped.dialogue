@@ -2,47 +2,47 @@
 if (not GameStates.level_unlocked["C_kidnapped"]) and GameStates.player_max_level == 1:
 	if GameStates.l1_box_opened:
 		# clues for time and clock
-		???: June 17... I remembered there was a party then...
-		???: WHEN IS THE PARTY??? That's the only thing I remember. I can not forget!
+		kidnapped: June 17... I remembered there was a party then...
+		kidnapped: WHEN IS THE PARTY??? That's the only thing I remember. I can not forget!
 	else:
 		# clue for chest
-		???: ...when is it? How can I forget my own birthday?
-		???: ...
-		???: ...no. I can't forget. I can't forget.
-		???: I CAN'T FORGET!
+		kidnapped: ...when is it? How can I forget my own birthday?
+		kidnapped: ...
+		kidnapped: ...no. I can't forget. I can't forget.
+		kidnapped: I CAN'T FORGET!
 else:
 	# After solve, same for all levels
-	???: June 17... June 17... June 17 ...
-	???: Fifteen years. More? How long have I been here?
-	???: ..June 17. Birthday. That's all I can remember...about myself...
+	kidnapped: June 17... June 17... June 17 ...
+	kidnapped: Fifteen years. More? How long have I been here?
+	kidnapped: ...June 17. Birthday. That's all I can remember...about myself...
 
 => END
 
 ~ floor1_repeat
-???: June 17... June 17... June 17 ...
+kidnapped: June 17... June 17... June 17 ...
 		Fifteen years. More? How long have I been here?
 		..June 17. Birthday. That's all I can remember...about myself...
 => END
 
 ~ floor2
-???: The most important thing when you've been kidnapped...Remember your identity. Hold onto it. Hold onto it.
-???: So why can't I?
+kidnapped: The most important thing when you've been kidnapped...Remember your identity. Hold onto it. Hold onto it.
+kidnapped: So why can't I?
 => END
 
 ~ floor2_repeat
-???: The most important thing when you've been kidnapped...Remember your identity. Hold onto it. Hold onto it.
+kidnapped: The most important thing when you've been kidnapped...Remember your identity. Hold onto it. Hold onto it.
 		So why can't I?
 => END
 
 ~ floor3
-???: I remember being kidnapped. 
-???: Who did it? Who took me?
+kidnapped: I remember being kidnapped. 
+kidnapped: Who did it? Who took me?
 => END
 
 ~ floor_repeat
 if not GameStates.level_unlocked["C_kidnapped"]:
-	???: I remember being kidnapped. 
+	kidnapped: I remember being kidnapped. 
 			Who did it? Who took me?
 else:
-	???: It was you.
+	kidnapped: It was you.
 => END

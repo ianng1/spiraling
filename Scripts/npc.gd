@@ -74,9 +74,10 @@ func load_dialogue():
 	# or whose dialogue is not played before.
 	dialogue_level = "floor" + level
 	if (not npcId in npc_clues[level]) and completed_dialogue:
-		DialogueManager.show_example_dialogue_balloon(load(dialogue_file), dialogue_level + "_" + repeat_dialogue_id)
+		var title = dialogue_level + "_" + repeat_dialogue_id
+		DialogueManager.show_dialogue_balloon(load(dialogue_file), title)
 	else:
-		DialogueManager.show_example_dialogue_balloon(load(dialogue_file), dialogue_level)
+		DialogueManager.show_dialogue_balloon(load(dialogue_file), dialogue_level)
 		dialogue_completed[level] = true
 
 # --------- SIGNALS ---------- #

@@ -1,44 +1,44 @@
 ~ floor1
-???: I've been here before.
-???: but when?
-???: who are these people?
-???: They seem familiar.
-???: The one on my left is loud.
-???: Scratching. Always scratching.
+phych: I've been here before.
+phych: but when?
+phych: who are these people?
+phych: They seem familiar.
+phych: The one on my left is loud.
+phych: Scratching. Always scratching.
 
 => END
 
 ~ floor1_repeat
 if GameStates.player_max_level in [2, 3]:
-	???: He isn't scratching anymore. Maybe you have brought him peace... Or maybe not.
+	phych: He isn't scratching anymore. Maybe you have brought him peace... Or maybe not.
 else:
 	# level 1 or others
-	% ???: He said he was trying to remember something. He used to say it whenever he was scratching. What was he trying to remember?
-	% ???: The one on my left is loud. Scratching. Always scratching.
+	% phych: He said he was trying to remember something. He used to say it whenever he was scratching. What was he trying to remember?
+	% phych: The one on my left is loud. Scratching. Always scratching.
 
 => END
 
 ~ floor2
-???: I think I'm going crazy...Just as crazy as that guy over there, the one that keeps scratching.
-???: That's ironic..why is that ironic?"
+phych: I think I'm going crazy...Just as crazy as that guy over there, the one that keeps scratching.
+phych: That's ironic..why is that ironic?"
 => END
 
 ~ floor2_repeat
-???: I think I'm going crazy...Just as crazy as that guy over there, the one that keeps scratching.
+phych: I think I'm going crazy...Just as crazy as that guy over there, the one that keeps scratching.
 		That's ironic..why is that ironic?"
 => END
 
 ~ floor3
-???: You're just as crazy as the rest of them, you know that? You might be the most, actually.
-???: Trust me. I've studied crazy. I've seen crazy.
-???: ...And I've seen you...before.You're from before.
+phych: You're just as crazy as the rest of them, you know that? You might be the most, actually.
+phych: Trust me. I've studied crazy. I've seen crazy.
+phych: ...And I've seen you...before.You're from before.
 => END
 
 ~ floor3_repeat
 if not GameStates.level_unlocked["D_phych"]:
-	???: You're just as crazy as the rest of them, you know that? You might be the most, actually.
+	phych: You're just as crazy as the rest of them, you know that? You might be the most, actually.
 			Trust me. I've studied crazy. I've seen crazy.
 			...And I've seen you...before. You're from before.
 else:
-	???: It was you.
+	phych: It was you.
 => END

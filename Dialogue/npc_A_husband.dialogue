@@ -1,70 +1,64 @@
 ~ floor1
 if GameStates.player_max_level == 2:
-	???: ...No. You're not new here.
-	???: ...I've seen you. You were here before. 
-	???: Last week? Last month?
-	???: I ... can't remember.
+	husband: ...No. You're not new here.
+	husband: ...I've seen you. You were here before. 
+	husband: Last week? Last month?
+	husband: I ... can't remember.
 elif GameStates.player_max_level == 3:
-	???: Stop tormenting us. I don't know who you are, but stop. Just leave us alone. Please.
-	???: You're always walking around here. You've...always been walking around here?
+	husband: Stop tormenting us. I don't know who you are, but stop. Just leave us alone. Please.
+	husband: You're always walking around here. You've...always been walking around here?
 else:
 	# level 1 and others
-	???: Oh... you're new here...
-	???: We've never seen a new prisoner here. And we've been here a long time.
-	???: How long have we even been here? It all blurs together...
-	???: Anyway. This is my wife.... 
-	???: hmmm...how do I know that?
-	???: Her name is...uh...
+	husband: Oh... you're new here...
+	husband: We've never seen a new prisoner here. And we've been here a long time.
+	husband: How long have we even been here? It all blurs together...
+	husband: Anyway. This is my wife.... 
+	husband: hmmm...how do I know that?
+	husband: Her name is...uh...
 => END
 
 ~ floor1_repeat
 if GameStates.player_max_level == 2:
-	???: You've been here before.
+	husband: You've been here before.
 elif GameStates.player_max_level == 3:
-	???: Stop tormenting us. I don't know who you are, but stop. Just leave us alone. Please.
+	husband: Stop tormenting us. I don't know who you are, but stop. Just leave us alone. Please.
 			You're always walking around here. You've...always been walking around here?
 else:
 	# level 1 and others
-	% ???: Oh... you're new here...
-			This is my wife...I don't know how I know that.
-			Where are you here again? Do not brother me!
-	% ???: Oh... you're new here...
-			This is my wife...I don't know how I know that.
-			Stay away from me!
-	% ???: Oh... you're new here...
-			This is my wife...I don't know how I know that.
-			Go find others OKAY?
+	% husband: Oh... you're new here...\nThis is my wife...I don't know how I know that.\nWhere are you here again? Do not brother me!
+	% husband: Oh... you're new here...\nThis is my wife...I don't know how I know that.\nStay away from me!
+	% husband: Oh... you're new here...\nThis is my wife...I don't know how I know that.\nGo find others OKAY?
 => END
 
 ~ floor2
 if GameStates.player_max_level == 3:
-	???: She knows you. She hates you. And... I do too?
+	husband: She knows you. She hates you. And... I do too?
 else:
 	# level 2 and others
-	???: You again. 
-	???: You were here last week. And before that. And before that?
-	???: Who are you? Why are you here again?
+	husband: You again. 
+	husband: You were here last week. And before that. And before that?
+	husband: Who are you? Why are you here again?
 => END
 
 ~ floor2_repeat
 if GameStates.player_max_level == 3:
-	???: She knows you. She hates you. And... I do too?
+	husband: She knows you. She hates you. And... I do too?
 else:
 	# level 2 and others
-	???: You're so...familiar...
+	husband: You're so...familiar...
 => END
 
 ~ floor3
-???: He took her.
-???: He said something. 
-???: "You parents are always so problematic."
-???: "But I suppose a mother never forgets."
-???: That's what you said.
+husband: He took her.
+husband: He said something. 
+husband: "You parents are always so problematic."
+husband: "But I suppose a mother never forgets."
+husband: That's what you said.
 => END
 
 ~ floor3_repeat
 if not GameStates.level_unlocked["A_husband"]:
-	???: He took her...You took her.
+	husband: He took her...You took her.
 else:
-	???: It was you.
+	husband: It was you.
 => END
