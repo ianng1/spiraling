@@ -15,7 +15,7 @@ config/tags=PackedStringArray("starterkit")
 run/main_scene="res://Scenes/menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
-boot_splash/image="res://Assets/Images/loading_screen.png"
+boot_splash/image="res://icon.png"
 config/icon="res://icon_no_word.jpeg"
 
 [autoload]
