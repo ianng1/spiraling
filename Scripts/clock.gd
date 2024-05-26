@@ -21,7 +21,7 @@ var counter_clockwise_hover = false
 
 # Elements to unlock when done.
 
-@onready var c_kidnapped = $"../C_kidnapped"
+@onready var c_kidnapped = $"../../../Level/C_kidnapped"
 @onready var bang_Sprite2D = $"../bang_Sprite2D_UI"
 
 # Set up the hands to rotate.
