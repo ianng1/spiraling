@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=62 format=3 uid="uid://cjanwm3sy2x37"]
-=======
-[gd_scene load_steps=69 format=3 uid="uid://cjanwm3sy2x37"]
->>>>>>> Stashed changes
+[gd_scene load_steps=77 format=3 uid="uid://cjanwm3sy2x37"]
 
 [ext_resource type="Script" path="res://Scripts/Level_01.gd" id="1_iaili"]
 [ext_resource type="PackedScene" uid="uid://bvkfp0ufwcrm" path="res://Scenes/npc/a_husband.tscn" id="2_irrk8"]
