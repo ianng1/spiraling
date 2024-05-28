@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://cjanwm3sy2x37"]
+[gd_scene load_steps=96 format=3 uid="uid://cjanwm3sy2x37"]
 
 [ext_resource type="Script" path="res://Scripts/Level_01.gd" id="1_iaili"]
 [ext_resource type="PackedScene" uid="uid://bvkfp0ufwcrm" path="res://Scenes/npc/a_husband.tscn" id="2_irrk8"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="4_v2uxj"]
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="4_vgfkr"]
 [ext_resource type="PackedScene" uid="uid://b3lep270jdeyv" path="res://Scenes/npc/a_wife.tscn" id="5_7cr6o"]
+[ext_resource type="AudioStream" uid="uid://dd2rscapjb3vy" path="res://Assets/Music/chest_open.mp3" id="5_pov5v"]
 [ext_resource type="Texture2D" uid="uid://jaegp53ccc7w" path="res://Assets/Spritesheet/platformPack_tilesheet.png" id="5_wqbaa"]
 [ext_resource type="Script" path="res://Scripts/GameUI.gd" id="6_66mfc"]
 [ext_resource type="PackedScene" uid="uid://3ycmmp474166" path="res://Scenes/npc/b_sibling.tscn" id="6_xye2r"]
@@ -25,12 +26,13 @@
 [ext_resource type="Texture2D" uid="uid://8wlua1thpqin" path="res://Assets/Images/jailbardark.png" id="14_hcied"]
 [ext_resource type="PackedScene" uid="uid://cap0vf4rc5ks7" path="res://Scenes/npc/d_phych.tscn" id="14_rj8xu"]
 [ext_resource type="Texture2D" uid="uid://cuw4mq1lw5uwx" path="res://Assets/Images/jailbaropen.png" id="14_wcwlw"]
+[ext_resource type="AudioStream" uid="uid://c80bpp2xg7ylb" path="res://Assets/Music/bang_sound.mp3" id="15_cpbr3"]
 [ext_resource type="PackedScene" uid="uid://35qculf7vxrt" path="res://Scenes/Levels/chest.tscn" id="15_x4ydl"]
 [ext_resource type="Texture2D" uid="uid://kce0kr4wu0yr" path="res://Assets/Images/darkbackground.png" id="16_s0hr7"]
 [ext_resource type="Texture2D" uid="uid://bpiagwfga4rr8" path="res://Assets/Textures/bang.png" id="17_aahwe"]
 [ext_resource type="Texture2D" uid="uid://bt4ch0h1fcup3" path="res://Assets/Images/finalfoor.png" id="17_tq01t"]
 [ext_resource type="Texture2D" uid="uid://bycdnqvgludoc" path="res://Assets/doll/doll_body.png" id="21_bbspu"]
-[ext_resource type="PackedScene" uid="uid://xyq0nbibm7mp" path="res://clickable_doll.tscn" id="21_jhfqm"]
+[ext_resource type="PackedScene" path="res://clickable_doll.tscn" id="21_jhfqm"]
 [ext_resource type="Texture2D" uid="uid://bnmkr2m8ftadm" path="res://Assets/doll/blue_eyes.png" id="22_2gcol"]
 [ext_resource type="Texture2D" uid="uid://cphd0kpkeoj4m" path="res://Assets/Images/Group 167.png" id="22_lqeui"]
 [ext_resource type="Texture2D" uid="uid://7nc4mdm5ep0t" path="res://Assets/Images/poster.png" id="23_6ig1y"]
@@ -42,6 +44,7 @@
 [ext_resource type="Script" path="res://Scenes/Levels/PlayerIndicator.gd" id="27_i5mts"]
 [ext_resource type="Texture2D" uid="uid://bi4lb4o5mr7v1" path="res://Assets/Textures/map/red_dot.png" id="29_qjy5m"]
 [ext_resource type="Texture2D" uid="uid://cbe5cmbi8jbgs" path="res://Assets/Images/idle_map.png" id="30_l4k2s"]
+[ext_resource type="AudioStream" uid="uid://cy3u7ag7cl1ln" path="res://Assets/Music/clock_winding.mp3" id="30_pg6qo"]
 [ext_resource type="Script" path="res://Scenes/Levels/Map_Icon.gd" id="31_karw2"]
 [ext_resource type="Texture2D" uid="uid://chkp18ab0au1n" path="res://Assets/Images/L1Map.png" id="32_1bi1n"]
 [ext_resource type="Texture2D" uid="uid://teactwk3pb0q" path="res://Assets/Images/cross.png" id="33_t513p"]
@@ -49,6 +52,7 @@
 [ext_resource type="Texture2D" uid="uid://djwf3xo1br83v" path="res://Assets/Images/npc-pink.png" id="35_b5ks3"]
 [ext_resource type="Texture2D" uid="uid://c3rrkxpub1fwd" path="res://Assets/Images/new-moon (1) (1).png" id="35_tu7gf"]
 [ext_resource type="Texture2D" uid="uid://ijt2befmqcsg" path="res://Assets/Images/npc-blue.png" id="36_448eb"]
+[ext_resource type="AudioStream" uid="uid://fl4vh87033bc" path="res://Assets/Music/walking.wav" id="37_ebhll"]
 [ext_resource type="Texture2D" uid="uid://2fxqv88nbgdx" path="res://Assets/Images/npc-red.png" id="37_tcg6t"]
 [ext_resource type="Texture2D" uid="uid://b7b8w801rwb7u" path="res://Assets/Images/npc-green.png" id="38_hopuj"]
 [ext_resource type="Texture2D" uid="uid://bfnsje8vnmlvd" path="res://Assets/Images/npc-dark-blue.png" id="39_iirdv"]
@@ -1192,6 +1196,9 @@ shape = SubResource("RectangleShape2D_26wly")
 wait_time = 0.25
 one_shot = true
 
+[node name="chest_open_player" type="AudioStreamPlayer" parent="Level/Chest"]
+stream = ExtResource("5_pov5v")
+
 [node name="A_husband" parent="Level" instance=ExtResource("2_irrk8")]
 position = Vector2(631, 283)
 up_direction = Vector2(0, 1)
@@ -1420,6 +1427,14 @@ collision_layer = 256
 [node name="exitcollision" type="CollisionShape2D" parent="UserInterface/GameUI/clock_node2D_UI/clock_exit_button/clock_exit_Area2D"]
 position = Vector2(-55.2667, -32.5454)
 shape = SubResource("RectangleShape2D_alnvl")
+
+[node name="clock_player" type="AudioStreamPlayer" parent="UserInterface/GameUI/clock_node2D_UI"]
+stream = ExtResource("30_pg6qo")
+
+[node name="bang_player" type="AudioStreamPlayer" parent="UserInterface/GameUI/clock_node2D_UI"]
+unique_name_in_owner = true
+stream = ExtResource("15_cpbr3")
+volume_db = 1.034
 
 [node name="poster" type="Sprite2D" parent="UserInterface/GameUI"]
 unique_name_in_owner = true
@@ -1777,6 +1792,10 @@ collision_layer = 256
 [node name="PlayerNearChest" type="CollisionShape2D" parent="Player/Area2D"]
 position = Vector2(-10.5, 49)
 shape = SubResource("RectangleShape2D_q0vah")
+
+[node name="footstep_player" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("37_ebhll")
+volume_db = 3.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.347817, 0.347817, 0.347817, 1)

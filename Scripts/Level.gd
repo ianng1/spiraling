@@ -14,7 +14,6 @@ var jail_offset = 2013
 
 # Level related items to show or hide.
 @onready var bang_Sprite2D = %bang_Sprite2D_UI
-@onready var doll = %ClickableDoll # %ClickableDoll
 
 func _ready():
 	pass
@@ -48,7 +47,6 @@ func update_scene():
 	match GameStates.player_level:
 		2:
 			bang_Sprite2D.visible = false
-			doll.visible = true
 		_:
-			doll.visible = false
+			pass
 		

@@ -18,12 +18,13 @@ var clock_hover = false
 
 var clockwise_hover = false
 var counter_clockwise_hover = false
+@onready var audio_bang_player = $bang_player
 
 # Elements to unlock when done.
 
 @onready var c_kidnapped = $"../../../Level/C_kidnapped"
 @onready var bang_Sprite2D = $"../bang_Sprite2D_UI"
-
+@onready var audio_player = $clock_player
 # Set up the hands to rotate.
 func _ready():
 	hand_short = get_node("clock_hand_short")
@@ -59,8 +60,10 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
 			is_dragging = true
+			audio_player.play()
 		else:
 			is_dragging = false
+			audio_player.stop()
 	
 	if is_dragging and "position" in event:
 		movement_delta = click_position - event.position
@@ -87,6 +90,7 @@ func _input(event):
 			# Unlock for next.
 			print(bang_Sprite2D)
 			bang_Sprite2D.visible = true
+			audio_bang_player.play()
 			get_node("/root/Level_01/").unlock_level1()
 			# Auto load dialogue for C
 			c_kidnapped.load_dialogue()
