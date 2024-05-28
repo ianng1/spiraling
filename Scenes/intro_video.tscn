@@ -1024,4 +1024,14 @@ scale = Vector2(0.56539, 0.610653)
 stream = ExtResource("1_q70ig")
 autoplay = true
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 661.0
+offset_top = 546.0
+offset_right = 988.0
+offset_bottom = 638.0
+text = "Skip
+"
+
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
