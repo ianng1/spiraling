@@ -1198,6 +1198,7 @@ one_shot = true
 
 [node name="chest_open_player" type="AudioStreamPlayer" parent="Level/Chest"]
 stream = ExtResource("5_pov5v")
+volume_db = 3.0
 
 [node name="A_husband" parent="Level" instance=ExtResource("2_irrk8")]
 position = Vector2(631, 283)

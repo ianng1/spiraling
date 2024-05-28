@@ -13,7 +13,7 @@ if (not GameStates.level_unlocked["C_kidnapped"]) and GameStates.player_max_leve
 else:
 	# After solve, same for all levels
 	kidnapped: June 17... June 17... June 17 ...
-	kidnapped: Fifteen years. More? How long have I been here? aaa
+	kidnapped: Fifteen years. More? How long have I been here?
 	kidnapped: ...June 17. Birthday. That's all I can remember...about myself...
 
 => END
