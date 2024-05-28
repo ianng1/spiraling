@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://xyq0nbibm7mp"]
+
+[ext_resource type="Texture2D" uid="uid://nr217cqtclqn" path="res://Assets/doll/doll_clickable_clear.png" id="1_xduux"]
+[ext_resource type="Script" path="res://Scenes/Levels/ClickableDoll.gd" id="2_hgi3d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6q7n5"]
+size = Vector2(193.772, 20)
+
+[node name="ClickableDoll" type="Sprite2D"]
+position = Vector2(772, 434)
+scale = Vector2(0.0522329, 0.0563626)
+texture = ExtResource("1_xduux")
+script = ExtResource("2_hgi3d")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(8.49696, -74.1888)
+shape = SubResource("RectangleShape2D_6q7n5")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
