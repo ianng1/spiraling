@@ -7,7 +7,7 @@ var is_opened: bool = false
 @onready var interface =  get_node("/root/Level_01/UserInterface/GameUI/DollInterface")
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("INTERFACE:", interface)
+	pass
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if !(event is InputEventMouseButton) or event.button_index != MOUSE_BUTTON_LEFT:

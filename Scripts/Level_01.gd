@@ -5,7 +5,7 @@ var max_level = 1
 
 var action_cursor = preload("res://Assets/Images/action_cursor.png")
 var idle_cursor = preload("res://Assets/Images/idle_cursor.png")
-
+@onready var a_wife = $"Level/A_wife"
 @onready var player = $Player
 
 # Called when the node enters the scene tree for the first time.
@@ -18,6 +18,12 @@ func _test():
 func unlock_level1():
 	max_level = 2
 	GameStates.player_max_level = 2
+	
+func unlock_level2():
+	GameStates.l2_doll_solved = true
+	a_wife.load_dialogue()
+	max_level = 3
+	GameStates.player_max_level = 3
 
 func _process(delta):
 	if ($"Level/Chest".is_interface_open or $"Level/Chest".is_poster_open or 
