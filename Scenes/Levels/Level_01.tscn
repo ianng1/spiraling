@@ -33,7 +33,6 @@
 [ext_resource type="Texture2D" uid="uid://bt4ch0h1fcup3" path="res://Assets/Images/finalfoor.png" id="17_tq01t"]
 [ext_resource type="Texture2D" uid="uid://bycdnqvgludoc" path="res://Assets/doll/doll_body.png" id="21_bbspu"]
 [ext_resource type="PackedScene" path="res://clickable_doll.tscn" id="21_jhfqm"]
-[ext_resource type="Texture2D" uid="uid://bnmkr2m8ftadm" path="res://Assets/doll/blue_eyes.png" id="22_2gcol"]
 [ext_resource type="Texture2D" uid="uid://cphd0kpkeoj4m" path="res://Assets/Images/Group 167.png" id="22_lqeui"]
 [ext_resource type="Texture2D" uid="uid://7nc4mdm5ep0t" path="res://Assets/Images/poster.png" id="23_6ig1y"]
 [ext_resource type="Script" path="res://Scenes/Levels/Doll_Eyes.gd" id="23_rogv6"]
@@ -1794,7 +1793,7 @@ shape = SubResource("RectangleShape2D_q0vah")
 
 [node name="footstep_player" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource("37_ebhll")
-volume_db = 3.0
+volume_db = 5.5
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.347817, 0.347817, 0.347817, 1)
