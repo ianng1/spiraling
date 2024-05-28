@@ -1,35 +1,48 @@
-~ level1
-if not GameStates.level_unlocked["C_kidnapped"]:
+~ floor1
+if (not GameStates.level_unlocked["C_kidnapped"]) and GameStates.player_max_level == 1:
 	if GameStates.l1_box_opened:
-		???: June 17... I remembered there was a party then...
-		???: WHEN IS IT??? That's the only thing I remember. I can not forget!
+		# clues for time and clock
+		kidnapped: June 17... I remembered there was a party then...
+		kidnapped: WHEN IS THE PARTY??? That's the only thing I remember. I can not forget!
 	else:
-		???: Birthday...
-		???: when is it?
-		???: ...
-		???: ...no. I can't forget. I can't forget.
-		???: NO WAY I CAN NOT FORGOT MY BIRTHDAY! WHEN IS IT?
+		# clue for chest
+		kidnapped: ...when is it? How can I forget my own birthday?
+		kidnapped: ...
+		kidnapped: ...no. I can't forget. I can't forget.
+		kidnapped: I CAN'T FORGET!
 else:
-	???: June 17... Already 15 years...These scratches are the only things staying with me..
-	???: Will my whole life be like this...No way....Dark as always.
+	# After solve, same for all levels
+	kidnapped: June 17... June 17... June 17 ...
+	kidnapped: Fifteen years. More? How long have I been here?
+	kidnapped: ...June 17. Birthday. That's all I can remember...about myself...
 
 => END
 
-~ level1_repeat
-% ???: ...Remember your identity. That's the most important thing to do if you've been...
-
+~ floor1_repeat
+kidnapped: June 17... June 17... June 17 ...
+		Fifteen years. More? How long have I been here?
+		..June 17. Birthday. That's all I can remember...about myself...
 => END
 
-~ level2
-???: ...Birthday.
-???: ...June 17. 
-???: ...1991.
-???: ...Remember your identity. That's the most important thing to do if you've been...
-???: ...been what?
-???: ...what happened to me?
+~ floor2
+kidnapped: The most important thing when you've been kidnapped...Remember your identity. Hold onto it. Hold onto it.
+kidnapped: So why can't I?
 => END
 
-~ level2_repeat
-???: ...Birthday...June 17...1991...Remember your identity. That's the most important thing to do if you've been...been what? What happened to me?
-% ???: ...Remember your identity. That's the most important thing to do if you've been...
+~ floor2_repeat
+kidnapped: The most important thing when you've been kidnapped...Remember your identity. Hold onto it. Hold onto it.
+		So why can't I?
+=> END
+
+~ floor3
+kidnapped: I remember being kidnapped. 
+kidnapped: Who did it? Who took me?
+=> END
+
+~ floor_repeat
+if not GameStates.level_unlocked["C_kidnapped"]:
+	kidnapped: I remember being kidnapped. 
+			Who did it? Who took me?
+else:
+	kidnapped: It was you.
 => END

@@ -1,32 +1,64 @@
-~ level1
-
-???: Oh... you're new here...
-???: We've never seen a new prisoner here. And we've been here a long time.
-???: How long have we even been here? It all blurs together...
-???: Anyway. This is my wife.... 
-???: hmmm...how do I know that?
-???: Her name is...uh...
-
+~ floor1
+if GameStates.player_max_level == 2:
+	husband: ...No. You're not new here.
+	husband: ...I've seen you. You were here before. 
+	husband: Last week? Last month?
+	husband: I ... can't remember.
+elif GameStates.player_max_level == 3:
+	husband: Stop tormenting us. I don't know who you are, but stop. Just leave us alone. Please.
+	husband: You're always walking around here. You've...always been walking around here?
+else:
+	# level 1 and others
+	husband: Oh... you're new here...
+	husband: We've never seen a new prisoner here. And we've been here a long time.
+	husband: How long have we even been here? It all blurs together...
+	husband: Anyway. This is my wife.... 
+	husband: hmmm...how do I know that?
+	husband: Her name is...uh...
 => END
 
-~ level1_repeat
-???: Oh... you're new here... We've never seen a new prisoner here. And we've been here a long time. How long have we even been here? It all blurs together... Anyway. This is my wife.... hmmm...how do I know that? Her name is...uh...
-% ???: Where are you here again? Do not brother me!
-% ???: Stay away from me!
-% ???: Go find others OKAY?
-
+~ floor1_repeat
+if GameStates.player_max_level == 2:
+	husband: You've been here before.
+elif GameStates.player_max_level == 3:
+	husband: Stop tormenting us. I don't know who you are, but stop. Just leave us alone. Please.
+			You're always walking around here. You've...always been walking around here?
+else:
+	# level 1 and others
+	% husband: Oh... you're new here...\nThis is my wife...I don't know how I know that.\nWhere are you here again? Do not brother me!
+	% husband: Oh... you're new here...\nThis is my wife...I don't know how I know that.\nStay away from me!
+	% husband: Oh... you're new here...\nThis is my wife...I don't know how I know that.\nGo find others OKAY?
 => END
 
-~ level2
-???: Oh... you're new here...
-???: This is my wife. 
-???: Did I have a child? I think I have.
-???: Why can't I remember?
+~ floor2
+if GameStates.player_max_level == 3:
+	husband: She knows you. She hates you. And... I do too?
+else:
+	# level 2 and others
+	husband: You again. 
+	husband: You were here last week. And before that. And before that?
+	husband: Who are you? Why are you here again?
 => END
 
-~ level2_repeat
-???: Oh... you're new here. This is my wife. Did I have a child? I think I have. Why can't I remember?
-% ???: Where are you here again? Do not brother me!
-% ???: Stay away from me!
-% ???: Go find others OKAY?
+~ floor2_repeat
+if GameStates.player_max_level == 3:
+	husband: She knows you. She hates you. And... I do too?
+else:
+	# level 2 and others
+	husband: You're so...familiar...
+=> END
+
+~ floor3
+husband: He took her.
+husband: He said something. 
+husband: "You parents are always so problematic."
+husband: "But I suppose a mother never forgets."
+husband: That's what you said.
+=> END
+
+~ floor3_repeat
+if not GameStates.level_unlocked["A_husband"]:
+	husband: He took her...You took her.
+else:
+	husband: It was you.
 => END

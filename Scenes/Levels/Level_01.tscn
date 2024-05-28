@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://cjanwm3sy2x37"]
+[gd_scene load_steps=92 format=3 uid="uid://cjanwm3sy2x37"]
 
 [ext_resource type="Script" path="res://Scripts/Level_01.gd" id="1_iaili"]
 [ext_resource type="PackedScene" uid="uid://bvkfp0ufwcrm" path="res://Scenes/npc/a_husband.tscn" id="2_irrk8"]
@@ -41,6 +41,22 @@
 [ext_resource type="Texture2D" uid="uid://bxtxixate6gbn" path="res://Assets/Textures/map/map_circle.jpeg" id="27_5ghgl"]
 [ext_resource type="Script" path="res://Scenes/Levels/PlayerIndicator.gd" id="27_i5mts"]
 [ext_resource type="Texture2D" uid="uid://bi4lb4o5mr7v1" path="res://Assets/Textures/map/red_dot.png" id="29_qjy5m"]
+[ext_resource type="Texture2D" uid="uid://cbe5cmbi8jbgs" path="res://Assets/Images/idle_map.png" id="30_l4k2s"]
+[ext_resource type="Script" path="res://Scenes/Levels/Map_Icon.gd" id="31_karw2"]
+[ext_resource type="Texture2D" uid="uid://chkp18ab0au1n" path="res://Assets/Images/L1Map.png" id="32_1bi1n"]
+[ext_resource type="Texture2D" uid="uid://teactwk3pb0q" path="res://Assets/Images/cross.png" id="33_t513p"]
+[ext_resource type="Texture2D" uid="uid://chqbl5340h65b" path="res://Assets/Images/map_circle-removebg-preview.png" id="34_mgc6f"]
+[ext_resource type="Texture2D" uid="uid://djwf3xo1br83v" path="res://Assets/Images/npc-pink.png" id="35_b5ks3"]
+[ext_resource type="Texture2D" uid="uid://c3rrkxpub1fwd" path="res://Assets/Images/new-moon (1) (1).png" id="35_tu7gf"]
+[ext_resource type="Texture2D" uid="uid://ijt2befmqcsg" path="res://Assets/Images/npc-blue.png" id="36_448eb"]
+[ext_resource type="Texture2D" uid="uid://2fxqv88nbgdx" path="res://Assets/Images/npc-red.png" id="37_tcg6t"]
+[ext_resource type="Texture2D" uid="uid://b7b8w801rwb7u" path="res://Assets/Images/npc-green.png" id="38_hopuj"]
+[ext_resource type="Texture2D" uid="uid://bfnsje8vnmlvd" path="res://Assets/Images/npc-dark-blue.png" id="39_iirdv"]
+[ext_resource type="Texture2D" uid="uid://b30hhqqptedqb" path="res://Assets/Images/treasure-chest.png" id="39_krob3"]
+[ext_resource type="Texture2D" uid="uid://ltindicws031" path="res://Assets/Images/clock.png" id="41_eev72"]
+[ext_resource type="Texture2D" uid="uid://bcdocdhfrfl5b" path="res://Assets/Images/help_icon.png" id="47_jatsm"]
+[ext_resource type="Texture2D" uid="uid://474ptokboh7t" path="res://Assets/Images/onboarding.png" id="47_k0rku"]
+[ext_resource type="Script" path="res://Scripts/Help_Icon.gd" id="48_nrs0c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26wly"]
 size = Vector2(15.2, 9.2)
@@ -1112,6 +1128,15 @@ size = Vector2(36.2112, 12.3675)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pwgbo"]
 size = Vector2(33.59, 12.3675)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ohsnj"]
+radius = 14.5228
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mu4gx"]
+size = Vector2(1080, 1000)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tjv3j"]
+radius = 46.1774
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4lnhe"]
 light_mode = 2
 
@@ -1418,6 +1443,7 @@ position = Vector2(447, 290)
 
 [node name="DollInterface" type="Node2D" parent="UserInterface/GameUI"]
 unique_name_in_owner = true
+visible = false
 position = Vector2(563, 303)
 scale = Vector2(0.735109, 0.639466)
 
@@ -1466,7 +1492,6 @@ shape = SubResource("RectangleShape2D_vpql1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UserInterface/GameUI/DollInterface/Doll_Hair/Area2D"]
 position = Vector2(4.21112, -46.0035)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_d0ils")
 
 [node name="Doll_Exit" type="Sprite2D" parent="UserInterface/GameUI/DollInterface"]
@@ -1583,6 +1608,7 @@ position = Vector2(-44.2997, -16.3603)
 shape = SubResource("RectangleShape2D_alnvl")
 
 [node name="Minimap" type="Node2D" parent="UserInterface/GameUI"]
+position = Vector2(1, -16)
 script = ExtResource("27_i5mts")
 
 [node name="Sprite2D" type="Sprite2D" parent="UserInterface/GameUI/Minimap"]
@@ -1595,6 +1621,122 @@ position = Vector2(969, 557)
 scale = Vector2(0.010592, 0.0104166)
 texture = ExtResource("29_qjy5m")
 offset = Vector2(0, -2800)
+
+[node name="Map_Icon" type="Sprite2D" parent="UserInterface/GameUI"]
+position = Vector2(970, 539)
+scale = Vector2(0.241, 0.245)
+texture = ExtResource("30_l4k2s")
+script = ExtResource("31_karw2")
+
+[node name="Area2D" type="Area2D" parent="UserInterface/GameUI/Map_Icon"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UserInterface/GameUI/Map_Icon/Area2D"]
+position = Vector2(-4.14918, 4.08163)
+scale = Vector2(10, 9.855)
+shape = SubResource("CircleShape2D_ohsnj")
+
+[node name="Map_Level_1" type="Sprite2D" parent="UserInterface/GameUI"]
+visible = false
+position = Vector2(525, 278)
+texture = ExtResource("32_1bi1n")
+
+[node name="Exit_Map" type="Sprite2D" parent="UserInterface/GameUI/Map_Level_1"]
+position = Vector2(212, -196)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("33_t513p")
+
+[node name="Area2D_Exit" type="Area2D" parent="UserInterface/GameUI/Map_Level_1/Exit_Map"]
+position = Vector2(0, -0.000305176)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UserInterface/GameUI/Map_Level_1/Exit_Map/Area2D_Exit"]
+position = Vector2(7.62939e-06, 7.62939e-06)
+shape = SubResource("RectangleShape2D_mu4gx")
+
+[node name="Minimap_Inside" type="Node2D" parent="UserInterface/GameUI/Map_Level_1"]
+position = Vector2(-1546, -886)
+scale = Vector2(1.6, 1.6)
+script = ExtResource("27_i5mts")
+
+[node name="Sprite2D" type="Sprite2D" parent="UserInterface/GameUI/Map_Level_1/Minimap_Inside"]
+position = Vector2(969, 557)
+scale = Vector2(0.8, 0.796)
+texture = ExtResource("34_mgc6f")
+
+[node name="playerDot_Sprite2D" type="Sprite2D" parent="UserInterface/GameUI/Map_Level_1/Minimap_Inside"]
+position = Vector2(968.75, 556.25)
+scale = Vector2(0.046, 0.043)
+texture = ExtResource("35_tu7gf")
+offset = Vector2(0, -2800)
+
+[node name="npc1" type="Sprite2D" parent="UserInterface/GameUI/Map_Level_1"]
+position = Vector2(168, -86)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("35_b5ks3")
+
+[node name="npc2" type="Sprite2D" parent="UserInterface/GameUI/Map_Level_1"]
+position = Vector2(185, -48)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("36_448eb")
+
+[node name="npc3" type="Sprite2D" parent="UserInterface/GameUI/Map_Level_1"]
+position = Vector2(122, 144)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("37_tcg6t")
+
+[node name="npc4" type="Sprite2D" parent="UserInterface/GameUI/Map_Level_1"]
+position = Vector2(-119, 143)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("38_hopuj")
+
+[node name="npc5" type="Sprite2D" parent="UserInterface/GameUI/Map_Level_1"]
+position = Vector2(-168, -84)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("39_iirdv")
+
+[node name="chesticon" type="Sprite2D" parent="UserInterface/GameUI/Map_Level_1"]
+position = Vector2(-56, 180)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("39_krob3")
+
+[node name="clock" type="Sprite2D" parent="UserInterface/GameUI/Map_Level_1"]
+position = Vector2(-129, -133)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("41_eev72")
+
+[node name="Help_Icon" type="Sprite2D" parent="UserInterface/GameUI"]
+position = Vector2(875, 539)
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("47_jatsm")
+script = ExtResource("48_nrs0c")
+
+[node name="Area2D" type="Area2D" parent="UserInterface/GameUI/Help_Icon"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UserInterface/GameUI/Help_Icon/Area2D"]
+shape = SubResource("CircleShape2D_tjv3j")
+
+[node name="Help" type="Sprite2D" parent="UserInterface/GameUI"]
+visible = false
+texture_filter = 1
+position = Vector2(554, 271)
+scale = Vector2(1.5, 1)
+texture = ExtResource("32_1bi1n")
+
+[node name="Instruction" type="Sprite2D" parent="UserInterface/GameUI/Help"]
+position = Vector2(1.33333, 21)
+scale = Vector2(0.2, 0.3)
+texture = ExtResource("47_k0rku")
+
+[node name="Exit_Map" type="Sprite2D" parent="UserInterface/GameUI/Help"]
+position = Vector2(212, -196)
+scale = Vector2(0.07, 0.1)
+texture = ExtResource("33_t513p")
+
+[node name="Area2D_Exit_Map" type="Area2D" parent="UserInterface/GameUI/Help/Exit_Map"]
+position = Vector2(0, -0.000305176)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UserInterface/GameUI/Help/Exit_Map/Area2D_Exit_Map"]
+position = Vector2(7.62939e-06, 7.62939e-06)
+shape = SubResource("RectangleShape2D_mu4gx")
 
 [node name="Player" parent="." instance=ExtResource("2_pay8t")]
 unique_name_in_owner = true
@@ -1669,4 +1811,12 @@ color = Color(0.347817, 0.347817, 0.347817, 1)
 [connection signal="input_event" from="UserInterface/GameUI/ChestInterface/exit_button/Area2D" to="Level/Chest" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="UserInterface/GameUI/ChestInterface/exit_button/Area2D" to="." method="change_to_action_cursor"]
 [connection signal="mouse_exited" from="UserInterface/GameUI/ChestInterface/exit_button/Area2D" to="." method="change_to_idle_cursor"]
+[connection signal="input_event" from="UserInterface/GameUI/Map_Icon/Area2D" to="UserInterface/GameUI/Map_Icon" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="UserInterface/GameUI/Map_Icon/Area2D" to="UserInterface/GameUI/Map_Icon" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="UserInterface/GameUI/Map_Icon/Area2D" to="UserInterface/GameUI/Map_Icon" method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="UserInterface/GameUI/Map_Level_1/Exit_Map/Area2D_Exit" to="UserInterface/GameUI/Map_Icon" method="_on_area_2d_exit_input_event"]
+[connection signal="input_event" from="UserInterface/GameUI/Help_Icon/Area2D" to="UserInterface/GameUI/Help_Icon" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="UserInterface/GameUI/Help_Icon/Area2D" to="UserInterface/GameUI/Help_Icon" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="UserInterface/GameUI/Help_Icon/Area2D" to="UserInterface/GameUI/Help_Icon" method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="UserInterface/GameUI/Help/Exit_Map/Area2D_Exit_Map" to="UserInterface/GameUI/Help_Icon" method="_on_area_2d_exit_map_input_event"]
 [connection signal="area_entered" from="Player/Area2D" to="Level/Chest" method="_on_area_2d_area_entered"]

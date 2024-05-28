@@ -65,6 +65,10 @@ func _process(_delta):
 
 # Load the dialogue for the NPC.
 func load_dialogue():
+	# Not load a new dialogue if the previous one is active.
+	if GameStates.active_dialogue_balloon != null:
+		return
+	
 	# Check whether the full dialogue is played at least once before.
 	var completed_dialogue = false
 	if level in dialogue_completed and dialogue_completed[level]:
@@ -72,11 +76,12 @@ func load_dialogue():
 	
 	# Only play the full dialogue for NPCs related to the puzzle
 	# or whose dialogue is not played before.
-	dialogue_level = "level" + level
+	dialogue_level = "floor" + level
 	if (not npcId in npc_clues[level]) and completed_dialogue:
-		DialogueManager.show_example_dialogue_balloon(load(dialogue_file), dialogue_level + "_" + repeat_dialogue_id)
+		var title = dialogue_level + "_" + repeat_dialogue_id
+		GameStates.active_dialogue_balloon = DialogueManager.show_dialogue_balloon(load(dialogue_file), title)
 	else:
-		DialogueManager.show_example_dialogue_balloon(load(dialogue_file), dialogue_level)
+		GameStates.active_dialogue_balloon = DialogueManager.show_dialogue_balloon(load(dialogue_file), dialogue_level)
 		dialogue_completed[level] = true
 
 # --------- SIGNALS ---------- #
