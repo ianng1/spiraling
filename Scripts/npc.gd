@@ -25,7 +25,8 @@ var is_special_movement = false
 # The NPC related to puzzles on each levels
 var npc_clues = {
 	"1": ["C_kidnapped"],
-	"2": ["A_wife"]
+	"2": ["A_wife"],
+	"3": []
 }
 # Whether the current level is unlocked.
 var level_unlocked = false
@@ -89,7 +90,7 @@ func load_dialogue():
 	
 func start_light_flicker():
 	# Start light flickering when player talk to level 2 wife
-	if npcId == "A_wife" and level == "2":
+	if npcId == "A_wife" and level == "2" and GameStates.player_max_level != 3:
 		flicker_light.turn_on_flickering = true
 		flicker_light.target_wife_level = 1
 		flicker_light.revert_h = true
