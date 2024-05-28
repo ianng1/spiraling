@@ -47,6 +47,7 @@
 [ext_resource type="AudioStream" uid="uid://cy3u7ag7cl1ln" path="res://Assets/Music/clock_winding.mp3" id="30_pg6qo"]
 [ext_resource type="Script" path="res://Scenes/Levels/Map_Icon.gd" id="31_karw2"]
 [ext_resource type="Texture2D" uid="uid://chkp18ab0au1n" path="res://Assets/Images/L1Map.png" id="32_1bi1n"]
+[ext_resource type="Texture2D" uid="uid://ddmpeu70axfb" path="res://Assets/doll/grey_eyes.png" id="32_xgyj4"]
 [ext_resource type="Texture2D" uid="uid://teactwk3pb0q" path="res://Assets/Images/cross.png" id="33_t513p"]
 [ext_resource type="Texture2D" uid="uid://chqbl5340h65b" path="res://Assets/Images/map_circle-removebg-preview.png" id="34_mgc6f"]
 [ext_resource type="Texture2D" uid="uid://djwf3xo1br83v" path="res://Assets/Images/npc-pink.png" id="35_b5ks3"]
@@ -1362,10 +1363,8 @@ script = ExtResource("4_vgfkr")
 layout_mode = 3
 anchor_right = 1.064
 anchor_bottom = 0.882
-offset_left = -88.0
-offset_top = -5.0
-offset_right = -1216.0
-offset_bottom = -365.4
+offset_right = -1128.0
+offset_bottom = -360.4
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -1477,7 +1476,7 @@ unique_name_in_owner = true
 light_mask = 3
 position = Vector2(-7.5, -175)
 scale = Vector2(0.356412, 0.419079)
-texture = ExtResource("22_2gcol")
+texture = ExtResource("32_xgyj4")
 script = ExtResource("23_rogv6")
 
 [node name="Area2D" type="Area2D" parent="UserInterface/GameUI/DollInterface/Doll_Eyes"]
@@ -1732,7 +1731,7 @@ shape = SubResource("CircleShape2D_tjv3j")
 [node name="Help" type="Sprite2D" parent="UserInterface/GameUI"]
 visible = false
 texture_filter = 1
-position = Vector2(554, 271)
+position = Vector2(529, 291)
 scale = Vector2(1.5, 1)
 texture = ExtResource("32_1bi1n")
 

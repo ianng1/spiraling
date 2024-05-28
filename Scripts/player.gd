@@ -29,7 +29,10 @@ func _process(_delta):
 	if(get_parent().name == "Level_01" and !get_parent().freeze_player_movement):
 		movement()
 		player_animations()
-		flip_player()
+	else:
+		# Freeze movement, play idle.
+		player_sprite.play("Idle")
+	flip_player()
 	
 	# Determine player's level
 	update_level()

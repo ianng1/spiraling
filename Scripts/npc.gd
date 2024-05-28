@@ -25,7 +25,7 @@ var is_special_movement = false
 # The NPC related to puzzles on each levels
 var npc_clues = {
 	"1": ["C_kidnapped"],
-	"2": ["B_sibling"]
+	"2": ["A_wife"]
 }
 # Whether the current level is unlocked.
 var level_unlocked = false
@@ -77,7 +77,7 @@ func load_dialogue():
 	# Only play the full dialogue for NPCs related to the puzzle
 	# or whose dialogue is not played before.
 	dialogue_level = "floor" + level
-	if (not npcId in npc_clues[level]) and completed_dialogue:
+	if (not npcId in npc_clues[str(level_globals.max_level)]) and completed_dialogue:
 		var title = dialogue_level + "_" + repeat_dialogue_id
 		GameStates.active_dialogue_balloon = DialogueManager.show_dialogue_balloon(load(dialogue_file), title)
 	else:
