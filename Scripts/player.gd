@@ -85,4 +85,3 @@ func update_level():
 		elif (!move_right) and level > 1:
 			level -= 1
 	GameStates.player_level = level
-
