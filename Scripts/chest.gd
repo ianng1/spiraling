@@ -18,7 +18,7 @@ var is_poster_open: bool = false
 @onready var tween = get_tree().create_tween()
 @onready var poster = %poster
 @onready var audio_player = $chest_open_player
-
+@onready var c_kidnapped = $"../C_kidnapped"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -42,6 +42,7 @@ func _open_box():
 		poster.visible = true
 		is_poster_open = true
 	GameStates.l1_box_opened = true
+	c_kidnapped.load_dialogue()
 
 func _reset_keypad():
 	show_clear_digits = true

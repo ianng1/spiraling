@@ -138,10 +138,10 @@ size_flags_horizontal = 8
 
 [node name="click_to_skip" type="RichTextLabel" parent="Balloon/Panel/Dialogue/HBoxContainer/VBoxContainer/VBoxContainer_helper"]
 modulate = Color(0.359069, 0.359069, 0.359069, 1)
-custom_minimum_size = Vector2(350, 30)
+custom_minimum_size = Vector2(129, 30)
 layout_mode = 2
 mouse_filter = 2
-text = "Click to skip loading and continue..."
+text = "Click to skip"
 scroll_active = false
 
 [node name="Responses" type="MarginContainer" parent="Balloon"]
