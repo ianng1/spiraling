@@ -1715,7 +1715,7 @@ shape = SubResource("CircleShape2D_tjv3j")
 [node name="Help" type="Sprite2D" parent="UserInterface/GameUI"]
 visible = false
 texture_filter = 1
-position = Vector2(554, 271)
+position = Vector2(529, 291)
 scale = Vector2(1.5, 1)
 texture = ExtResource("32_1bi1n")
 
