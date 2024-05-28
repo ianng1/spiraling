@@ -23,9 +23,9 @@ func unlock_level1():
 func unlock_level2():
 	GameStates.l2_doll_solved = true
 	max_level = 3
-	GameStates.player_max_level = 3
 	wife_bang_player.play()
 	a_wife.load_dialogue()
+	GameStates.player_max_level = 3
 
 func _process(delta):
 	if ($"Level/Chest".is_interface_open or $"Level/Chest".is_poster_open or 

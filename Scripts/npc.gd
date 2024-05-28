@@ -90,7 +90,7 @@ func load_dialogue():
 	
 func start_light_flicker():
 	# Start light flickering when player talk to level 2 wife
-	if npcId == "A_wife" and level == "2" and GameStates.player_max_level != 3:
+	if npcId == "A_wife" and level == "2" and !GameStates.l2_doll_solved:
 		flicker_light.turn_on_flickering = true
 		flicker_light.target_wife_level = 1
 		flicker_light.revert_h = true
