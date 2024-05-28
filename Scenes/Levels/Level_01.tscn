@@ -32,7 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://bpiagwfga4rr8" path="res://Assets/Textures/bang.png" id="17_aahwe"]
 [ext_resource type="Texture2D" uid="uid://bt4ch0h1fcup3" path="res://Assets/Images/finalfoor.png" id="17_tq01t"]
 [ext_resource type="Texture2D" uid="uid://bycdnqvgludoc" path="res://Assets/doll/doll_body.png" id="21_bbspu"]
-[ext_resource type="PackedScene" path="res://clickable_doll.tscn" id="21_jhfqm"]
+[ext_resource type="PackedScene" uid="uid://xyq0nbibm7mp" path="res://clickable_doll.tscn" id="21_jhfqm"]
 [ext_resource type="Texture2D" uid="uid://cphd0kpkeoj4m" path="res://Assets/Images/Group 167.png" id="22_lqeui"]
 [ext_resource type="Texture2D" uid="uid://7nc4mdm5ep0t" path="res://Assets/Images/poster.png" id="23_6ig1y"]
 [ext_resource type="Script" path="res://Scenes/Levels/Doll_Eyes.gd" id="23_rogv6"]
@@ -1352,6 +1352,7 @@ centered = false
 
 [node name="ClickableDoll" parent="Level" instance=ExtResource("21_jhfqm")]
 unique_name_in_owner = true
+visible = false
 
 [node name="GameManager" type="Node2D" parent="."]
 script = ExtResource("4_vgfkr")

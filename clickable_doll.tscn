@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://xyq0nbibm7mp"]
+[gd_scene load_steps=5 format=3 uid="uid://xyq0nbibm7mp"]
 
 [ext_resource type="Texture2D" uid="uid://nr217cqtclqn" path="res://Assets/doll/doll_clickable_clear.png" id="1_xduux"]
 [ext_resource type="Script" path="res://Scenes/Levels/ClickableDoll.gd" id="2_hgi3d"]
+[ext_resource type="AudioStream" uid="uid://cgt34sle3pfn7" path="res://Assets/Music/repeated_banging.mp3" id="3_xovn8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6q7n5"]
 size = Vector2(193.772, 20)
@@ -17,5 +18,10 @@ script = ExtResource("2_hgi3d")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(8.49696, -74.1888)
 shape = SubResource("RectangleShape2D_6q7n5")
+
+[node name="WifeBangPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_xovn8")
+volume_db = 5.153
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
