@@ -18,7 +18,7 @@ var max_level = 1
 @onready var particle_trails = $ParticleTrails
 @onready var level_globals = get_node("/root/Level_01")
 @onready var player_jail = %mc_jail
-
+@onready var audio_player = $footstep_player
 # --------- BUILT-IN FUNCTIONS ---------- #
 
 func _ready():
@@ -47,6 +47,12 @@ func movement():
 	# velocity = Vector2(inputAxis * move_speed, velocity.y)
 	velocity = Vector2(inputAxis * move_speed, 0)
 	move_and_slide()
+	if abs(velocity.x) > 0:
+		if not audio_player.playing:
+			audio_player.play()
+	else:
+		if audio_player.playing:
+			audio_player.stop()
 
 # Handle Player Animations
 func player_animations():

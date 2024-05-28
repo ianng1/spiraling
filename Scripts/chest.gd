@@ -17,6 +17,7 @@ var is_poster_open: bool = false
 @onready var animation_player: AnimationPlayer = get_node("AnimationPlayer")
 @onready var tween = get_tree().create_tween()
 @onready var poster = %poster
+@onready var audio_player = $chest_open_player
 
 
 # Called when the node enters the scene tree for the first time.
@@ -36,6 +37,7 @@ func _open_box():
 	%Lockbox.visible = false
 	is_interface_open = false
 	animation_player.play("open")
+	audio_player.play()
 	if poster:
 		poster.visible = true
 		is_poster_open = true

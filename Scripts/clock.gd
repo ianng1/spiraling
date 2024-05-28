@@ -18,11 +18,13 @@ var clock_hover = false
 
 var clockwise_hover = false
 var counter_clockwise_hover = false
+@onready var audio_bang_player = $bang_player
 
 # Elements to unlock when done.
 
 @onready var c_kidnapped = $"../../../Level/C_kidnapped"
 @onready var flicker_light = $"../flickering_light"
+@onready var audio_player = $clock_player
 
 # Set up the hands to rotate.
 func _ready():
@@ -59,8 +61,10 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
 			is_dragging = true
+			audio_player.play()
 		else:
 			is_dragging = false
+			audio_player.stop()
 	
 	if is_dragging and "position" in event:
 		movement_delta = click_position - event.position
@@ -85,6 +89,7 @@ func _input(event):
 			hand_short.set_rotation_degrees(135)
 			print("Clock time correct. Bang unlocked")
 			# Unlock for next.
+			audio_bang_player.play()
 			get_node("/root/Level_01/").unlock_level1()
 			flicker_light.turn_on_flickering = true
 			flicker_light.target_wife_level = 2

@@ -7,7 +7,7 @@ var action_cursor = preload("res://Assets/Images/action_cursor.png")
 var idle_cursor = preload("res://Assets/Images/idle_cursor.png")
 @onready var a_wife = $"Level/A_wife"
 @onready var player = $Player
-
+@onready var wife_bang_player = $"Level/ClickableDoll/WifeBangPlayer"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -22,6 +22,7 @@ func unlock_level1():
 	
 func unlock_level2():
 	GameStates.l2_doll_solved = true
+	wife_bang_player.play()
 	a_wife.load_dialogue()
 	max_level = 3
 	GameStates.player_max_level = 3
