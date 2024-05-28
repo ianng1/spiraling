@@ -32,6 +32,7 @@ var level_unlocked = false
 var repeat_dialogue_id = "repeat"
 
 @onready var level_globals = get_node("/root/Level_01")
+@onready var flicker_light = $"../../UserInterface/GameUI/flickering_light"
 
 enum {
 	IDLE,
@@ -83,6 +84,16 @@ func load_dialogue():
 	else:
 		GameStates.active_dialogue_balloon = DialogueManager.show_dialogue_balloon(load(dialogue_file), dialogue_level)
 		dialogue_completed[level] = true
+	
+	self.start_light_flicker()
+	
+func start_light_flicker():
+	# Start light flickering when player talk to level 2 wife
+	if npcId == "A_wife" and level == "2":
+		flicker_light.turn_on_flickering = true
+		flicker_light.target_wife_level = 1
+		flicker_light.revert_h = true
+			
 
 # --------- SIGNALS ---------- #
 # Detect whetehr the mouse is hover on NPC

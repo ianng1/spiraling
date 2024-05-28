@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://cjanwm3sy2x37"]
+[gd_scene load_steps=93 format=3 uid="uid://cjanwm3sy2x37"]
 
 [ext_resource type="Script" path="res://Scripts/Level_01.gd" id="1_iaili"]
 [ext_resource type="PackedScene" uid="uid://bvkfp0ufwcrm" path="res://Scenes/npc/a_husband.tscn" id="2_irrk8"]
@@ -57,6 +57,7 @@
 [ext_resource type="Texture2D" uid="uid://bcdocdhfrfl5b" path="res://Assets/Images/help_icon.png" id="47_jatsm"]
 [ext_resource type="Texture2D" uid="uid://474ptokboh7t" path="res://Assets/Images/onboarding.png" id="47_k0rku"]
 [ext_resource type="Script" path="res://Scripts/Help_Icon.gd" id="48_nrs0c"]
+[ext_resource type="Script" path="res://Scripts/flickering_light.gd" id="56_sh8rw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26wly"]
 size = Vector2(15.2, 9.2)
@@ -1137,9 +1138,6 @@ size = Vector2(1080, 1000)
 [sub_resource type="CircleShape2D" id="CircleShape2D_tjv3j"]
 radius = 46.1774
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4lnhe"]
-light_mode = 2
-
 [sub_resource type="Gradient" id="Gradient_y8247"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0, 0.595432, 0.995106)
@@ -1150,6 +1148,9 @@ gradient = SubResource("Gradient_y8247")
 fill_from = Vector2(0.619658, 0)
 fill_to = Vector2(0.967949, 0.196581)
 metadata/_snap_count = 13
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4lnhe"]
+light_mode = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q0vah"]
 size = Vector2(273, 287)
@@ -1735,6 +1736,16 @@ position = Vector2(0, -0.000305176)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UserInterface/GameUI/Help/Exit_Map/Area2D_Exit_Map"]
 position = Vector2(7.62939e-06, 7.62939e-06)
 shape = SubResource("RectangleShape2D_mu4gx")
+
+[node name="flickering_light" type="PointLight2D" parent="UserInterface/GameUI"]
+visible = false
+position = Vector2(539, 260)
+scale = Vector2(0.172005, 0.236877)
+energy = 5.92
+texture = SubResource("GradientTexture2D_di8t3")
+offset = Vector2(1500, 0)
+texture_scale = 47.95
+script = ExtResource("56_sh8rw")
 
 [node name="Player" parent="." instance=ExtResource("2_pay8t")]
 unique_name_in_owner = true

@@ -22,7 +22,7 @@ var counter_clockwise_hover = false
 # Elements to unlock when done.
 
 @onready var c_kidnapped = $"../../../Level/C_kidnapped"
-@onready var bang_Sprite2D = $"../bang_Sprite2D_UI"
+@onready var flicker_light = $"../flickering_light"
 
 # Set up the hands to rotate.
 func _ready():
@@ -85,9 +85,9 @@ func _input(event):
 			hand_short.set_rotation_degrees(135)
 			print("Clock time correct. Bang unlocked")
 			# Unlock for next.
-			print(bang_Sprite2D)
-			bang_Sprite2D.visible = true
 			get_node("/root/Level_01/").unlock_level1()
+			flicker_light.turn_on_flickering = true
+			flicker_light.target_wife_level = 2
 			# Auto load dialogue for C
 			c_kidnapped.load_dialogue()
 

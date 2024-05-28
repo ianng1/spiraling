@@ -18,6 +18,7 @@ func _test():
 func unlock_level1():
 	max_level = 2
 	GameStates.player_max_level = 2
+	print("unlocked")
 	
 func unlock_level2():
 	GameStates.l2_doll_solved = true
