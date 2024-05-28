@@ -1,14 +1,11 @@
 ~ floor1
 if GameStates.player_max_level == 2:
-	if not GameStates.level_unlocked["A_wife"]:
-		wife: ...Wait. I remember more.
-		wife: ...Blue eyes. So blue. Just like...
-		wife: ...My husband.
-		wife: I remember them from before.
-		wife: ... what was before?
-	else:
-		# After solve
-		wife: Reminds me your eyes, actually. Yours are blue, too. Striking. Just like...just like who?
+	wife: ...Wait. I remember more.
+	wife: ...Blue eyes. So blue. Just like...
+	wife: ...My husband.
+	wife: I remember them from before.
+	wife: ... what was before?
+	wife: Reminds me of your eyes, actually. Yours are blue, too. Striking. Just like...just like who?
 elif GameStates.player_max_level == 3:	
 	wife: Such beautiful blue eyes. I miss him sometimes. He was insane. But a mother's love can ignore that.
 else:
