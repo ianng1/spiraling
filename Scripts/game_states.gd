@@ -2,6 +2,7 @@ extends Node
 
 # Level related states
 var l1_box_opened = false
+var l2_doll_solved = false
 
 var npc_names = [
 	"A_husband",
