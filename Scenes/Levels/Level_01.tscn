@@ -31,7 +31,6 @@
 [ext_resource type="Texture2D" uid="uid://bt4ch0h1fcup3" path="res://Assets/Images/finalfoor.png" id="17_tq01t"]
 [ext_resource type="Texture2D" uid="uid://bycdnqvgludoc" path="res://Assets/doll/doll_body.png" id="21_bbspu"]
 [ext_resource type="PackedScene" uid="uid://xyq0nbibm7mp" path="res://clickable_doll.tscn" id="21_jhfqm"]
-[ext_resource type="Texture2D" uid="uid://bnmkr2m8ftadm" path="res://Assets/doll/blue_eyes.png" id="22_2gcol"]
 [ext_resource type="Texture2D" uid="uid://cphd0kpkeoj4m" path="res://Assets/Images/Group 167.png" id="22_lqeui"]
 [ext_resource type="Texture2D" uid="uid://7nc4mdm5ep0t" path="res://Assets/Images/poster.png" id="23_6ig1y"]
 [ext_resource type="Script" path="res://Scenes/Levels/Doll_Eyes.gd" id="23_rogv6"]
@@ -44,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://cbe5cmbi8jbgs" path="res://Assets/Images/idle_map.png" id="30_l4k2s"]
 [ext_resource type="Script" path="res://Scenes/Levels/Map_Icon.gd" id="31_karw2"]
 [ext_resource type="Texture2D" uid="uid://chkp18ab0au1n" path="res://Assets/Images/L1Map.png" id="32_1bi1n"]
+[ext_resource type="Texture2D" uid="uid://ddmpeu70axfb" path="res://Assets/doll/grey_eyes.png" id="32_xgyj4"]
 [ext_resource type="Texture2D" uid="uid://teactwk3pb0q" path="res://Assets/Images/cross.png" id="33_t513p"]
 [ext_resource type="Texture2D" uid="uid://chqbl5340h65b" path="res://Assets/Images/map_circle-removebg-preview.png" id="34_mgc6f"]
 [ext_resource type="Texture2D" uid="uid://djwf3xo1br83v" path="res://Assets/Images/npc-pink.png" id="35_b5ks3"]
@@ -1460,7 +1460,7 @@ unique_name_in_owner = true
 light_mask = 3
 position = Vector2(-7.5, -175)
 scale = Vector2(0.356412, 0.419079)
-texture = ExtResource("22_2gcol")
+texture = ExtResource("32_xgyj4")
 script = ExtResource("23_rogv6")
 
 [node name="Area2D" type="Area2D" parent="UserInterface/GameUI/DollInterface/Doll_Eyes"]
