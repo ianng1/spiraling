@@ -4,12 +4,21 @@ if GameStates.player_max_level == 3:
 		if GameStates.l3_step == 0:
 			sibling: Some of the voices sound like me. I wonder why.
 			sibling: I wonder..can I pass messages to them?
+			
 		elif GameStates.l3_step == 2:
 			sibling: "B"? Okay. There's a voice...right above me. For some reason, I think I need to tell him..."R".
 			set GameStates.l3_step = 3
+		elif GameStates.l3_step == 3:
+			sibling: "B"? Okay. There's a voice...right above me. For some reason, I think I need to tell him..."R".
+			set GameStates.l3_step = 3			
+			
 		elif GameStates.l3_step == 6
 			sibling: "H." Now the voice is so far away...so far above me. I think I need to tell him..."E".
 			set GameStates.l3_step = 7
+		elif GameStates.l3_step == 7
+			sibling: "H." Now the voice is so far away...so far above me. I think I need to tell him..."E".
+			set GameStates.l3_step = 7
+			
 		else:
 			sibling: Huh...That doesn't make sense. The message...it's so broken. Maybe try again?
 			set GameStates.l3_step = 1
@@ -47,7 +56,14 @@ if GameStates.player_max_level == 3:
 		elif GameStates.l3_step == 3:
 			sibling: The voice said "R"? ... There's another one. Above me. My mind says I need to tell him..."O".
 			set GameStates.l3_step = 4
+		elif GameStates.l3_step == 4:
+			sibling: The voice said "R"? ... There's another one. Above me. My mind says I need to tell him..."O".
+			set GameStates.l3_step = 4
+			
 		elif GameStates.l3_step == 5:
+			sibling: "T." Now the voice is below me. Tell it..."H".
+			set GameStates.l3_step = 6
+		elif GameStates.l3_step == 6:
 			sibling: "T." Now the voice is below me. Tell it..."H".
 			set GameStates.l3_step = 6
 		else:
@@ -80,15 +96,20 @@ if GameStates.player_max_level == 3:
 			sibling: I wonder..can I pass messages to them?
 			sibling: I can hear one...so far below me. Far away. But I think... I should tell him..."B".
 			set GameStates.l3_step = 2
+			
 		elif GameStates.l3_step == 1:
 			sibling: I can hear one...so far below me. Far away. But I think... I should tell him..."B".		
 			set GameStates.l3_step = 2
+		elif GameStates.l3_step == 2:
+			sibling: I can hear one...so far below me. Far away. But I think... I should tell him..."B".		
+			set GameStates.l3_step = 2
+			
 		elif GameStates.l3_step == 4:
 			sibling: The voice said "O"? ... There's another one. Just below me. My mind says I need to tell him..."T".
 			set GameStates.l3_step = 5
 		elif GameStates.l3_step == 5:
-			sibling: "H." Now the voice is so far away...so far above me. I think I need to tell him..."E".
-			set GameStates.l3_step = 6
+			sibling: The voice said "O"? ... There's another one. Just below me. My mind says I need to tell him..."T".
+			set GameStates.l3_step = 5
 		elif GameStates.l3_step == 7:
 			sibling: 'E.'
 			sibling: "B-R-O-T-H-E-"...
