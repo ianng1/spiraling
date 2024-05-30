@@ -1,5 +1,20 @@
 Work in progress...
 
+## Iteration 3.1 Lecture 9B
+- Only stop flickering light after talking to the wife on the expected level, revert the light direction when the player goes past the wife but does not talk to her
+- Fix a bug on disappearing doll
+- Add a hint to skip dialogue loading by clicking
+
+## Iteration 3 Lecture 9A
+- Enable leveling and add a doll for the puzzle in level 2
+- Add flickering light to direct the player to talk to wife
+- Add onboarding screen, onboarding video with skip button, helper screen with a help icon in-game
+- Update the map to click to show more details on where players are at
+- Update the loading screen to have a bit higher fidelity
+- Add background music and sound effects (e.g. walking, open chest, etc.)
+- Updates and add dialogues for upper levels, enable dialogue on the same floor to be different when the player goes to higher levels
+- Add portraits to the dialogue balloon to show which character the player is talking to
+
 ## Iteration 2 Lecture 8A
 
 Update from last week
