@@ -49,15 +49,18 @@ else:
 => END
 
 ~ floor3
-husband: He took her.
-husband: He said something. 
-husband: "You parents are always so problematic."
-husband: "But I suppose a mother never forgets."
-husband: That's what you said.
+if not GameStates.l3_dialogue_solved:
+	husband: He took her.
+	husband: He said something. 
+	husband: "You parents are always so problematic."
+	husband: "But I suppose a mother never forgets."
+	husband: That's what you said.
+else:
+	husband: It was you.
 => END
 
 ~ floor3_repeat
-if not GameStates.level_unlocked["A_husband"]:
+if not GameStates.l3_dialogue_solved:
 	husband: He took her...You took her.
 else:
 	husband: It was you.

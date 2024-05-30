@@ -5,6 +5,11 @@ extends Node
 # Level related states
 var l1_box_opened = false
 var l2_doll_solved = false
+var l3_step = 0
+var l3_dialogue_solved = false
+
+var l3_ordering = [3, 1, 2, 3, 2, 1, 3]
+
 
 var npc_names = [
 	"A_husband",

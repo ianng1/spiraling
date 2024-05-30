@@ -26,7 +26,7 @@ var is_special_movement = false
 var npc_clues = {
 	"1": ["C_kidnapped"],
 	"2": ["A_wife"],
-	"3": []
+	"3": ["B_sibling"]
 }
 # Whether the current level is unlocked.
 var level_unlocked = false

@@ -3,7 +3,7 @@ if (not GameStates.level_unlocked["C_kidnapped"]) and GameStates.player_max_leve
 	if GameStates.l1_box_opened:
 		# clues for time and clock
 		kidnapped: June 17... I remembered there was a party then...
-		kidnapped: WHEN IS THE PARTY??? That's the only thing I remember. I can not forget! I REALLY WANT TO GO BACK TO THAT TIME!
+		kidnapped: WHEN IS THE PARTY??? That's the only thing I remember. I REALLY WANT TO GO BACK TO THAT TIME!
 	else:
 		# clue for chest
 		kidnapped: ...when is it? How can I forget my own birthday?
@@ -35,12 +35,15 @@ kidnapped: The most important thing when you've been kidnapped...Remember your i
 => END
 
 ~ floor3
-kidnapped: I remember being kidnapped. 
-kidnapped: Who did it? Who took me?
+if not GameStates.l3_dialogue_solved:
+	kidnapped: I remember being kidnapped. 
+	kidnapped: Who did it? Who took me?
+else:
+	kidnapped: It was you.
 => END
 
-~ floor_repeat
-if not GameStates.level_unlocked["C_kidnapped"]:
+~ floor3_repeat
+if not GameStates.l3_dialogue_solved:
 	kidnapped: I remember being kidnapped. 
 			Who did it? Who took me?
 else:

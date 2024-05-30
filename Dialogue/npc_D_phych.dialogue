@@ -1,10 +1,14 @@
 ~ floor1
-phych: I've been here before.
-phych: but when?
-phych: who are these people?
-phych: They seem familiar.
-phych: The one on my left is loud.
-phych: Scratching. Always scratching.
+if GameStates.player_max_level in [2, 3]:
+	phych: The one on my left isn't scratching anymore. Maybe you have brought him peace...
+	phych: Or maybe not.
+else:
+	phych: I've been here before.
+	phych: but when?
+	phych: who are these people?
+	phych: They seem familiar.
+	phych: The one on my left is loud.
+	phych: Scratching. Always scratching.
 
 => END
 
@@ -19,23 +23,26 @@ else:
 => END
 
 ~ floor2
-phych: I think I'm going crazy...Just as crazy as that guy over there, the one that keeps scratching.
-phych: That's ironic..why is that ironic?"
+phych: I think I'm going crazy...Just as crazy as the one that keeps scratching.
+phych: That's ironic. I used to study crazy. Look at me now...ha.
 => END
 
 ~ floor2_repeat
 phych: I think I'm going crazy...Just as crazy as that guy over there, the one that keeps scratching.
-		That's ironic..why is that ironic?"
+		That's ironic. I used to study crazy. Look at me now...ha.
 => END
 
 ~ floor3
-phych: You're just as crazy as the rest of them, you know that? You might be the most, actually.
-phych: Trust me. I've studied crazy. I've seen crazy.
-phych: ...And I've seen you...before.You're from before.
+if not GameStates.l3_dialogue_solved:
+	phych: You're just as crazy as the rest of them, you know that? You might be the most, actually.
+	phych: Trust me. I've studied crazy. I've seen crazy.
+	phych: ...And I've seen you...before. You're from before.
+else:
+	phych: It was you.
 => END
 
 ~ floor3_repeat
-if not GameStates.level_unlocked["D_phych"]:
+if not GameStates.l3_dialogue_solved:
 	phych: You're just as crazy as the rest of them, you know that? You might be the most, actually.
 			Trust me. I've studied crazy. I've seen crazy.
 			...And I've seen you...before. You're from before.
