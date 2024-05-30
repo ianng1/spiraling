@@ -14,6 +14,9 @@ var jail_offset = 2013
 
 # Level related items to show or hide.
 @onready var clickable_doll = %ClickableDoll
+@onready var doll_map_icon = $"../UserInterface/GameUI/Map_Level_1/doll"
+@onready var wife = $A_wife
+@onready var wife_map_icon = $"../UserInterface/GameUI/Map_Level_1/npc1"
 
 func _ready():
 	pass
@@ -26,7 +29,8 @@ func _process(_delta):
 func update_items_positions():
 	if level == null:
 		return
-
+	
+	# Move items in the screen to left and right
 	for node in level.get_children():
 		var screen_pos = get_viewport().canvas_transform * node.global_position
 		var viewport_x = get_viewport().size.x
@@ -37,7 +41,13 @@ func update_items_positions():
 		
 		# Move assets to left and right.
 		if screen_pos.x < -canvas_size/2:
-			node.position.x += canvas_size
+			# hide wife at level3
+			if (
+				not (GameStates.player_level >= 2 and node.get_name() == "A_wife") 
+				or screen_pos.x < -2 * canvas_size
+				or GameStates.player_max_level != 3
+			):
+				node.position.x += canvas_size
 		# Need to adjust buffer size by window scale
 		elif screen_pos.x > canvas_size/2:
 			node.position.x -= canvas_size
@@ -47,10 +57,19 @@ func update_scene():
 	match GameStates.player_level:
 		3: 
 			clickable_doll.visible = true
+			doll_map_icon.visible = true
+			wife.visible = false
+			wife_map_icon.visible = false
 		2:
 			clickable_doll.visible = true
+			doll_map_icon.visible = true
+			wife.visible = true
+			wife_map_icon.visible = true
 		1:
 			clickable_doll.visible = false
+			doll_map_icon.visible = false
+			wife.visible = true
+			wife_map_icon.visible = true
 		_:
 			# default, should not be here.
 			pass

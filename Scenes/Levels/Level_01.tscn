@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://cjanwm3sy2x37"]
+[gd_scene load_steps=97 format=3 uid="uid://cjanwm3sy2x37"]
 
 [ext_resource type="Script" path="res://Scripts/Level_01.gd" id="1_iaili"]
 [ext_resource type="PackedScene" uid="uid://bvkfp0ufwcrm" path="res://Scenes/npc/a_husband.tscn" id="2_irrk8"]
@@ -59,6 +59,7 @@
 [ext_resource type="Texture2D" uid="uid://ltindicws031" path="res://Assets/Images/clock.png" id="41_eev72"]
 [ext_resource type="Texture2D" uid="uid://bcdocdhfrfl5b" path="res://Assets/Images/help_icon.png" id="47_jatsm"]
 [ext_resource type="Texture2D" uid="uid://474ptokboh7t" path="res://Assets/Images/onboarding.png" id="47_k0rku"]
+[ext_resource type="Texture2D" uid="uid://nr217cqtclqn" path="res://Assets/doll/doll_clickable_clear.png" id="48_grmyc"]
 [ext_resource type="Script" path="res://Scripts/Help_Icon.gd" id="48_nrs0c"]
 [ext_resource type="Script" path="res://Scripts/flickering_light.gd" id="56_sh8rw"]
 
@@ -1080,7 +1081,7 @@ physics_layer_0/collision_layer = 1
 sources/3 = SubResource("TileSetAtlasSource_s0osg")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_alnvl"]
-size = Vector2(773.042, 817.261)
+size = Vector2(111.081, 129.257)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_35k3y"]
 
@@ -1405,10 +1406,11 @@ text = "x 3"
 [node name="clock_node2D_UI" parent="UserInterface/GameUI" instance=ExtResource("9_0fim8")]
 unique_name_in_owner = true
 visible = false
-position = Vector2(559, 272)
+position = Vector2(540, 272)
 scale = Vector2(0.8, 0.8)
 
 [node name="clock_exit_button" type="Sprite2D" parent="UserInterface/GameUI/clock_node2D_UI"]
+modulate = Color(0, 0, 0, 1)
 position = Vector2(261.25, -193.75)
 scale = Vector2(0.135706, 0.115224)
 texture = ExtResource("26_h60ld")
@@ -1428,6 +1430,13 @@ stream = ExtResource("30_pg6qo")
 unique_name_in_owner = true
 stream = ExtResource("15_cpbr3")
 volume_db = 1.034
+
+[node name="Help" type="Sprite2D" parent="UserInterface/GameUI/clock_node2D_UI"]
+z_index = -1
+texture_filter = 1
+position = Vector2(8.43745, 27.5)
+scale = Vector2(1.2703, 1.19231)
+texture = ExtResource("32_1bi1n")
 
 [node name="poster" type="Sprite2D" parent="UserInterface/GameUI"]
 unique_name_in_owner = true
@@ -1676,6 +1685,12 @@ scale = Vector2(0.046, 0.043)
 texture = ExtResource("35_tu7gf")
 offset = Vector2(0, -2800)
 
+[node name="doll" type="Sprite2D" parent="UserInterface/GameUI/Map_Level_1"]
+visible = false
+position = Vector2(190, -13)
+scale = Vector2(0.0263555, 0.0263554)
+texture = ExtResource("48_grmyc")
+
 [node name="npc1" type="Sprite2D" parent="UserInterface/GameUI/Map_Level_1"]
 position = Vector2(168, -86)
 scale = Vector2(0.5, 0.5)
@@ -1809,12 +1824,16 @@ color = Color(0.347817, 0.347817, 0.347817, 1)
 [connection signal="mouse_exited" from="Level/Chest/Area2D2" to="." method="change_to_idle_cursor"]
 [connection signal="mouse_exited" from="Level/Chest/Area2D2" to="Level/Chest" method="_mouse_off_box"]
 [connection signal="timeout" from="Level/Chest/ClickCooldownTimer" to="Level/Chest" method="_on_click_cooldown_timer_timeout"]
+[connection signal="mouse_entered" from="Level/Clock_Node2D/clock_bg_no_hand/clock_Area2D" to="Level/Clock_Node2D" method="_on_clock_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Level/Clock_Node2D/clock_bg_no_hand/clock_Area2D" to="." method="change_to_idle_cursor"]
 [connection signal="input_event" from="Level/Clock_Node2D/Area2D_clock" to="Level/Clock_Node2D" method="_on_area_2d_clock_input_event"]
 [connection signal="input_event" from="UserInterface/GameUI/clock_node2D_UI/clock_exit_button/clock_exit_Area2D" to="Level/Chest" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="UserInterface/GameUI/clock_node2D_UI/clock_exit_button/clock_exit_Area2D" to="Level/Clock_Node2D" method="_on_clock_exit_area_2d_input_event"]
 [connection signal="mouse_entered" from="UserInterface/GameUI/clock_node2D_UI/clock_exit_button/clock_exit_Area2D" to="." method="change_to_action_cursor"]
 [connection signal="mouse_exited" from="UserInterface/GameUI/clock_node2D_UI/clock_exit_button/clock_exit_Area2D" to="." method="change_to_idle_cursor"]
 [connection signal="input_event" from="UserInterface/GameUI/poster/Area2D_poster" to="Level/Chest" method="_on_area_2d_poster_input_event"]
+[connection signal="mouse_entered" from="UserInterface/GameUI/poster/Area2D_poster" to="." method="change_to_action_cursor"]
+[connection signal="mouse_exited" from="UserInterface/GameUI/poster/Area2D_poster" to="." method="change_to_idle_cursor"]
 [connection signal="input_event" from="UserInterface/GameUI/DollInterface/Doll_Eyes/Area2D" to="UserInterface/GameUI/DollInterface/Doll_Eyes" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="UserInterface/GameUI/DollInterface/Doll_Hair/Area2D" to="UserInterface/GameUI/DollInterface/Doll_Hair" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="UserInterface/GameUI/DollInterface/Doll_Exit/Area2D" to="Level/ClickableDoll" method="_on_area_2d_exit_input_event"]
@@ -1834,11 +1853,15 @@ color = Color(0.347817, 0.347817, 0.347817, 1)
 [connection signal="mouse_entered" from="UserInterface/GameUI/ChestInterface/exit_button/Area2D" to="." method="change_to_action_cursor"]
 [connection signal="mouse_exited" from="UserInterface/GameUI/ChestInterface/exit_button/Area2D" to="." method="change_to_idle_cursor"]
 [connection signal="input_event" from="UserInterface/GameUI/Map_Icon/Area2D" to="UserInterface/GameUI/Map_Icon" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="UserInterface/GameUI/Map_Icon/Area2D" to="." method="change_to_action_cursor"]
 [connection signal="mouse_entered" from="UserInterface/GameUI/Map_Icon/Area2D" to="UserInterface/GameUI/Map_Icon" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="UserInterface/GameUI/Map_Icon/Area2D" to="." method="change_to_idle_cursor"]
 [connection signal="mouse_exited" from="UserInterface/GameUI/Map_Icon/Area2D" to="UserInterface/GameUI/Map_Icon" method="_on_area_2d_mouse_exited"]
 [connection signal="input_event" from="UserInterface/GameUI/Map_Level_1/Exit_Map/Area2D_Exit" to="UserInterface/GameUI/Map_Icon" method="_on_area_2d_exit_input_event"]
 [connection signal="input_event" from="UserInterface/GameUI/Help_Icon/Area2D" to="UserInterface/GameUI/Help_Icon" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="UserInterface/GameUI/Help_Icon/Area2D" to="." method="change_to_action_cursor"]
 [connection signal="mouse_entered" from="UserInterface/GameUI/Help_Icon/Area2D" to="UserInterface/GameUI/Help_Icon" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="UserInterface/GameUI/Help_Icon/Area2D" to="." method="change_to_idle_cursor"]
 [connection signal="mouse_exited" from="UserInterface/GameUI/Help_Icon/Area2D" to="UserInterface/GameUI/Help_Icon" method="_on_area_2d_mouse_exited"]
 [connection signal="input_event" from="UserInterface/GameUI/Help/Exit_Map/Area2D_Exit_Map" to="UserInterface/GameUI/Help_Icon" method="_on_area_2d_exit_map_input_event"]
 [connection signal="area_entered" from="Player/Area2D" to="Level/Chest" method="_on_area_2d_area_entered"]

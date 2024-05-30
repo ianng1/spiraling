@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b3lep270jdeyv"]
 
 [ext_resource type="Script" path="res://Scripts/npc.gd" id="1_v2j4p"]
-[ext_resource type="Texture2D" path="res://Assets/Spritesheet/side_Sprite.png" id="2_m0miu"]
+[ext_resource type="Texture2D" uid="uid://rjyjoq4lc80c" path="res://Assets/Spritesheet/side_Sprite.png" id="2_m0miu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q6jvb"]
 atlas = ExtResource("2_m0miu")
@@ -19,7 +19,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ik2oj"]
-size = Vector2(148.886, 324.5)
+size = Vector2(118.182, 324.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1u0f8"]
 radius = 38.9487

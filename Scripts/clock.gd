@@ -4,27 +4,25 @@ extends Node2D
 
 var hand_short 
 var hand_short_degree
-var hand_short_hover = false
 
 var hand_long
 var hand_long_degree
-var hand_long_hover = false
 
 var is_dragging = false
 var success = false
 var movement_delta : Vector2
 var click_position : Vector2
-var clock_hover = false
 
 var clockwise_hover = false
 var counter_clockwise_hover = false
 @onready var audio_bang_player = $bang_player
 
 # Elements to unlock when done.
-
 @onready var c_kidnapped = $"../../../Level/C_kidnapped"
 @onready var flicker_light = $"../flickering_light"
 @onready var audio_player = $clock_player
+@onready var counter_clockwisc_btn = $"counter-clockwise_sprite"
+@onready var clockwisc_btn = $clockwise_sprite
 
 # Set up the hands to rotate.
 func _ready():
@@ -40,7 +38,6 @@ func _process(_delta):
 	
 	var degree_to_rotate = 12
 
-	#if clock_hover:
 	if counter_clockwise_hover:
 		degree_to_rotate = -degree_to_rotate
 	
@@ -98,20 +95,26 @@ func _input(event):
 
 # --------- SIGNALS ---------- #
 
-func _on_clock_area_2d_mouse_entered():
-	clock_hover = true
-
-func _on_clock_area_2d_mouse_exited():
-	clock_hover = false
-
 func _on_counterclockwise_area_2d_mouse_entered():
 	clockwise_hover = true
-
+	if not success:
+		counter_clockwisc_btn.modulate = "#cf0000"
+		GameStates.set_action_cursor()
+	
 func _on_counterclockwise_area_2d_mouse_exited():
 	clockwise_hover = false
+	if not success:
+		counter_clockwisc_btn.modulate = "#000000"
+		GameStates.set_idle_cursor()
 
 func _on_clockwise_area_2d_mouse_entered():
 	counter_clockwise_hover = true
+	if not success:
+		clockwisc_btn.modulate = "#cf0000"
+		GameStates.set_action_cursor()
 
 func _on_clockwise_area_2d_mouse_exited():
 	counter_clockwise_hover = false
+	if not success:
+		clockwisc_btn.modulate = "#000000"
+		GameStates.set_idle_cursor()

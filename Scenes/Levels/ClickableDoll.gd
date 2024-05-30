@@ -20,3 +20,9 @@ func _on_area_2d_exit_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and is_interface_open:
 		interface.visible = false
 		is_interface_open = false
+
+func _on_area_2d_mouse_entered():
+	GameStates.set_action_cursor()
+
+func _on_area_2d_mouse_exited():
+	GameStates.set_idle_cursor()

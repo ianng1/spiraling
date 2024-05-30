@@ -31,7 +31,11 @@ func _on_area_2d_clock_input_event(viewport, event, shape_idx):
 		clock.visible = true
 		is_interface_open = true
 
-
 func _on_clock_exit_area_2d_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and is_interface_open:
 		_close_clock()
+
+# When not success, change to action cursor on hover.
+func _on_clock_area_2d_mouse_entered():
+	if not clock.success:
+		GameStates.set_action_cursor()

@@ -29,7 +29,6 @@ enum {
 }
 
 func _ready():
-	print("Randomizing")
 	randomize()
 	
 	# Set npc and level based on metadata.

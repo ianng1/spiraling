@@ -104,6 +104,8 @@ func start_or_stop_light_flicker():
 # Detect whetehr the mouse is hover on NPC
 func _on_chat_detection_area_2d_mouse_entered():
 	is_mouse_hover = true
+	GameStates.set_action_cursor()
 
 func _on_chat_detection_area_2d_mouse_exited():
 	is_mouse_hover = false
+	GameStates.set_idle_cursor()

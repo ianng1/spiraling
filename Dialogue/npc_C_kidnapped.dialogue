@@ -3,7 +3,7 @@ if (not GameStates.level_unlocked["C_kidnapped"]) and GameStates.player_max_leve
 	if GameStates.l1_box_opened:
 		# clues for time and clock
 		kidnapped: June 17... I remembered there was a party then...
-		kidnapped: WHEN IS THE PARTY??? That's the only thing I remember. I can not forget!
+		kidnapped: WHEN IS THE PARTY??? That's the only thing I remember. I can not forget! I REALLY WANT TO GO BACK TO THAT TIME!
 	else:
 		# clue for chest
 		kidnapped: ...when is it? How can I forget my own birthday?

@@ -1,4 +1,6 @@
 extends Node
+# This file contains global states and functions
+# TODO: rename the file to game globals if have time.
 
 # Level related states
 var l1_box_opened = false
@@ -29,6 +31,10 @@ var level_unlocked = {
 	"D_phych": false,
 }
 
+# cursoe images
+var action_cursor = preload("res://Assets/Images/action_cursor.png")
+var idle_cursor = preload("res://Assets/Images/idle_cursor.png")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -36,3 +42,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	
+func set_action_cursor():
+	Input.set_custom_mouse_cursor(action_cursor)
+
+func set_idle_cursor():
+	Input.set_custom_mouse_cursor(idle_cursor)
+
