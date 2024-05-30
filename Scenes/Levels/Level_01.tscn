@@ -1081,7 +1081,7 @@ physics_layer_0/collision_layer = 1
 sources/3 = SubResource("TileSetAtlasSource_s0osg")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_alnvl"]
-size = Vector2(111.081, 129.257)
+size = Vector2(786.318, 840.344)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_35k3y"]
 
@@ -1621,7 +1621,8 @@ texture = ExtResource("26_h60ld")
 collision_layer = 256
 
 [node name="exitcollision" type="CollisionShape2D" parent="UserInterface/GameUI/ChestInterface/exit_button/Area2D"]
-position = Vector2(-44.2997, -16.3603)
+position = Vector2(-38.7666, -16.3659)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_alnvl")
 
 [node name="Minimap" type="Node2D" parent="UserInterface/GameUI"]

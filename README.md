@@ -4,16 +4,21 @@ Work in progress...
 - Only stop flickering light after talking to the wife on the expected level, revert the light direction when the player goes past the wife but does not talk to her
 - Fix a bug on disappearing doll
 - Add a hint to skip dialogue loading by clicking
+- Update clock UI to make the button more intuitive (color and cursor change on hover)
+- Set cursor to action cursor when hovering on all clickable items
+- Have A(wife) disapper on level 3 as designed
+- Update C's dialogue on solving the chest with clues to change the clock
 
 ## Iteration 3 Lecture 9A
 - Enable leveling and add a doll for the puzzle in level 2
-- Add flickering light to direct the player to talk to wife
-- Add onboarding screen, onboarding video with skip button, helper screen with a help icon in-game
-- Update the map to click to show more details on where players are at
-- Update the loading screen to have a bit higher fidelity
 - Add background music and sound effects (e.g. walking, open chest, etc.)
+- Add onboarding screen, onboarding video with skip button, helper screen with a help icon in-game
+- Add flickering light to direct the player to talk to wife
+- Update the map to click to show more details on where players are at
 - Updates and add dialogues for upper levels, enable dialogue on the same floor to be different when the player goes to higher levels
 - Add portraits to the dialogue balloon to show which character the player is talking to
+- Update the loading screen to have a bit higher fidelity
+- Set cursor to action cursor when hovering on the chest
 
 ## Iteration 2 Lecture 8A
 
