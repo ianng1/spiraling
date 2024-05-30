@@ -46,10 +46,9 @@ else:
 		wife: ... It had beautiful, brown hair.
 		wife: ... It looked just like...
 	else:
-		wife: YOU!
-				WHY ARE YOU HERE?
-				You haunt my memories. You stalk this hall. Week after week after week. 
-				WHO ARE YOU? WHY DO YOU LOOK LIKE HIM?		
+		wife: YOU! WHY ARE YOU HERE?
+			You haunt my memories. You stalk this hall. Week after week after week. 
+			WHO ARE YOU? WHY DO YOU LOOK LIKE HIM?		
 => END
 
 ~ floor2_repeat
@@ -61,8 +60,7 @@ else:
 		wife: Brown hair. I picked it specifically for its brown hair. It looked just like...
 	else:
 		# after solve
-		wife: YOU!
-				WHY ARE YOU HERE?
+		wife: YOU! WHY ARE YOU HERE?
 				You haunt my memories. You stalk this hall. Week after week after week. 
 				WHO ARE YOU? WHY DO YOU LOOK LIKE HIM?
 => END

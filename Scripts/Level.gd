@@ -13,7 +13,6 @@ var jail_offset = 2013
 @onready var level = $"../Level"
 
 # Level related items to show or hide.
-@onready var bang_Sprite2D = %bang_Sprite2D_UI
 @onready var clickable_doll = %ClickableDoll
 
 func _ready():
@@ -46,9 +45,13 @@ func update_items_positions():
 # Update items in the scene for each levels.
 func update_scene():
 	match GameStates.player_level:
-		2:
-			bang_Sprite2D.visible = false
+		3: 
 			clickable_doll.visible = true
-		_:
+		2:
+			clickable_doll.visible = true
+		1:
 			clickable_doll.visible = false
+		_:
+			# default, should not be here.
+			pass
 		

@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://cjanwm3sy2x37"]
+[gd_scene load_steps=96 format=3 uid="uid://cjanwm3sy2x37"]
 
 [ext_resource type="Script" path="res://Scripts/Level_01.gd" id="1_iaili"]
 [ext_resource type="PackedScene" uid="uid://bvkfp0ufwcrm" path="res://Scenes/npc/a_husband.tscn" id="2_irrk8"]
@@ -29,7 +29,6 @@
 [ext_resource type="AudioStream" uid="uid://c80bpp2xg7ylb" path="res://Assets/Music/bang_sound.mp3" id="15_cpbr3"]
 [ext_resource type="PackedScene" uid="uid://35qculf7vxrt" path="res://Scenes/Levels/chest.tscn" id="15_x4ydl"]
 [ext_resource type="Texture2D" uid="uid://kce0kr4wu0yr" path="res://Assets/Images/darkbackground.png" id="16_s0hr7"]
-[ext_resource type="Texture2D" uid="uid://bpiagwfga4rr8" path="res://Assets/Textures/bang.png" id="17_aahwe"]
 [ext_resource type="Texture2D" uid="uid://bt4ch0h1fcup3" path="res://Assets/Images/finalfoor.png" id="17_tq01t"]
 [ext_resource type="Texture2D" uid="uid://bycdnqvgludoc" path="res://Assets/doll/doll_body.png" id="21_bbspu"]
 [ext_resource type="PackedScene" uid="uid://xyq0nbibm7mp" path="res://clickable_doll.tscn" id="21_jhfqm"]
@@ -1402,13 +1401,6 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("8_gwcy2")
 theme_override_font_sizes/font_size = 32
 text = "x 3"
-
-[node name="bang_Sprite2D_UI" type="Sprite2D" parent="UserInterface/GameUI"]
-unique_name_in_owner = true
-visible = false
-position = Vector2(849, 106)
-scale = Vector2(0.234642, 0.234642)
-texture = ExtResource("17_aahwe")
 
 [node name="clock_node2D_UI" parent="UserInterface/GameUI" instance=ExtResource("9_0fim8")]
 unique_name_in_owner = true

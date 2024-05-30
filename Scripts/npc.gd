@@ -86,15 +86,19 @@ func load_dialogue():
 		GameStates.active_dialogue_balloon = DialogueManager.show_dialogue_balloon(load(dialogue_file), dialogue_level)
 		dialogue_completed[level] = true
 	
-	self.start_light_flicker()
+	self.start_or_stop_light_flicker()
 	
-func start_light_flicker():
+func start_or_stop_light_flicker():
+	# Turn off the lights after the player talk to the expected wife
+	if npcId == "A_wife":
+		flicker_light.check_and_turn_off_at_wife()
+	
 	# Start light flickering when player talk to level 2 wife
 	if npcId == "A_wife" and level == "2" and !GameStates.l2_doll_solved:
 		flicker_light.turn_on_flickering = true
 		flicker_light.target_wife_level = 1
 		flicker_light.revert_h = true
-			
+
 
 # --------- SIGNALS ---------- #
 # Detect whetehr the mouse is hover on NPC
