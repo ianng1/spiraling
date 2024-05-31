@@ -1,7 +1,8 @@
 ~ floor1
 if GameStates.player_max_level == 2:
 	wife: ...Wait. I remember more.
-	wife: ...Blue eyes. So blue. Just like...
+	wife: ...Purple coat... 
+	wife: ...And Blue eyes. So blue. Just like...
 	wife: ...My husband.
 	wife: I remember them from before.
 	wife: Reminds me of your eyes, too, actually. Such a striking blue. 

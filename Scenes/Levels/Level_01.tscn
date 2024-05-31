@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://cjanwm3sy2x37"]
+[gd_scene load_steps=108 format=3 uid="uid://cjanwm3sy2x37"]
 
 [ext_resource type="Script" path="res://Scripts/Level_01.gd" id="1_iaili"]
 [ext_resource type="PackedScene" uid="uid://bvkfp0ufwcrm" path="res://Scenes/npc/a_husband.tscn" id="2_irrk8"]
@@ -35,7 +35,6 @@
 [ext_resource type="Texture2D" uid="uid://cphd0kpkeoj4m" path="res://Assets/Images/Group 167.png" id="22_lqeui"]
 [ext_resource type="Texture2D" uid="uid://7nc4mdm5ep0t" path="res://Assets/Images/poster.png" id="23_6ig1y"]
 [ext_resource type="Script" path="res://Scenes/Levels/Doll_Eyes.gd" id="23_rogv6"]
-[ext_resource type="Texture2D" uid="uid://ttm25adtpgd6" path="res://Assets/doll/red_hair.png" id="24_aoth5"]
 [ext_resource type="Script" path="res://Scenes/Levels/Doll_Hair.gd" id="25_q6lbb"]
 [ext_resource type="Texture2D" uid="uid://r1xi8kqkq3hs" path="res://Assets/Images/close_x.png" id="26_h60ld"]
 [ext_resource type="Texture2D" uid="uid://bxtxixate6gbn" path="res://Assets/Textures/map/map_circle.jpeg" id="27_5ghgl"]
@@ -45,18 +44,24 @@
 [ext_resource type="AudioStream" uid="uid://cy3u7ag7cl1ln" path="res://Assets/Music/clock_winding.mp3" id="30_pg6qo"]
 [ext_resource type="Script" path="res://Scenes/Levels/Map_Icon.gd" id="31_karw2"]
 [ext_resource type="Texture2D" uid="uid://chkp18ab0au1n" path="res://Assets/Images/L1Map.png" id="32_1bi1n"]
-[ext_resource type="Texture2D" uid="uid://ddmpeu70axfb" path="res://Assets/doll/grey_eyes.png" id="32_xgyj4"]
 [ext_resource type="Texture2D" uid="uid://teactwk3pb0q" path="res://Assets/Images/cross.png" id="33_t513p"]
+[ext_resource type="Script" path="res://Scenes/Levels/DollInterface.gd" id="34_jk5vm"]
 [ext_resource type="Texture2D" uid="uid://chqbl5340h65b" path="res://Assets/Images/map_circle-removebg-preview.png" id="34_mgc6f"]
 [ext_resource type="Texture2D" uid="uid://djwf3xo1br83v" path="res://Assets/Images/npc-pink.png" id="35_b5ks3"]
 [ext_resource type="Texture2D" uid="uid://c3rrkxpub1fwd" path="res://Assets/Images/new-moon (1) (1).png" id="35_tu7gf"]
 [ext_resource type="Texture2D" uid="uid://ijt2befmqcsg" path="res://Assets/Images/npc-blue.png" id="36_448eb"]
 [ext_resource type="AudioStream" uid="uid://fl4vh87033bc" path="res://Assets/Music/walking.wav" id="37_ebhll"]
+[ext_resource type="Texture2D" uid="uid://en1f34wa1n46" path="res://Assets/doll/white_eyes.png" id="37_ocmpy"]
 [ext_resource type="Texture2D" uid="uid://2fxqv88nbgdx" path="res://Assets/Images/npc-red.png" id="37_tcg6t"]
+[ext_resource type="Texture2D" uid="uid://bd2vvxkvjqtk0" path="res://Assets/doll/arrow-right.png" id="37_uqsn6"]
 [ext_resource type="Texture2D" uid="uid://b7b8w801rwb7u" path="res://Assets/Images/npc-green.png" id="38_hopuj"]
+[ext_resource type="Texture2D" uid="uid://24ux0j1h4ncs" path="res://Assets/doll/arrow-left.png" id="38_ix77r"]
+[ext_resource type="Texture2D" uid="uid://cjf3ie4olc3b6" path="res://Assets/doll/white_hair.png" id="39_ebguf"]
 [ext_resource type="Texture2D" uid="uid://bfnsje8vnmlvd" path="res://Assets/Images/npc-dark-blue.png" id="39_iirdv"]
 [ext_resource type="Texture2D" uid="uid://b30hhqqptedqb" path="res://Assets/Images/treasure-chest.png" id="39_krob3"]
 [ext_resource type="Texture2D" uid="uid://ltindicws031" path="res://Assets/Images/clock.png" id="41_eev72"]
+[ext_resource type="Texture2D" uid="uid://x2c6ontyskox" path="res://Assets/doll/white_coat.png" id="41_mpo78"]
+[ext_resource type="Script" path="res://Scenes/Levels/Doll_Coat.gd" id="42_ba103"]
 [ext_resource type="Texture2D" uid="uid://bcdocdhfrfl5b" path="res://Assets/Images/help_icon.png" id="47_jatsm"]
 [ext_resource type="Texture2D" uid="uid://474ptokboh7t" path="res://Assets/Images/onboarding.png" id="47_k0rku"]
 [ext_resource type="Texture2D" uid="uid://nr217cqtclqn" path="res://Assets/doll/doll_clickable_clear.png" id="48_grmyc"]
@@ -1085,6 +1090,24 @@ size = Vector2(786.318, 840.344)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_35k3y"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsvh1"]
+size = Vector2(45.9682, 44.3432)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imd6a"]
+size = Vector2(39.4013, 42.1801)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3uyh"]
+size = Vector2(50.1633, 44.7783)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3l81"]
+size = Vector2(43.6203, 42.646)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pt6bu"]
+size = Vector2(39.9467, 45.856)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_msvfk"]
+size = Vector2(46.4244, 51.7348)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8vux"]
 size = Vector2(707.164, 39.1454)
 
@@ -1463,6 +1486,7 @@ unique_name_in_owner = true
 visible = false
 position = Vector2(563, 303)
 scale = Vector2(0.735109, 0.639466)
+script = ExtResource("34_jk5vm")
 
 [node name="Doll_Body" type="Sprite2D" parent="UserInterface/GameUI/DollInterface"]
 position = Vector2(-1, -4)
@@ -1474,15 +1498,94 @@ texture = ExtResource("21_bbspu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UserInterface/GameUI/DollInterface/Doll_Body/Area2D"]
 shape = SubResource("RectangleShape2D_35k3y")
 
+[node name="arrows" type="Node2D" parent="UserInterface/GameUI/DollInterface"]
+position = Vector2(-1, -4)
+scale = Vector2(0.35743, 0.374654)
+
+[node name="arrow_right_hair" type="Sprite2D" parent="UserInterface/GameUI/DollInterface/arrows"]
+texture_filter = 1
+position = Vector2(474.73, -611.249)
+scale = Vector2(3.47736, 3.85931)
+texture = ExtResource("37_uqsn6")
+
+[node name="Area2D_Right_Hair" type="Area2D" parent="UserInterface/GameUI/DollInterface/arrows/arrow_right_hair"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UserInterface/GameUI/DollInterface/arrows/arrow_right_hair/Area2D_Right_Hair"]
+position = Vector2(-2.18896, -0.540771)
+shape = SubResource("RectangleShape2D_vsvh1")
+
+[node name="arrow_left_hair" type="Sprite2D" parent="UserInterface/GameUI/DollInterface/arrows"]
+texture_filter = 1
+position = Vector2(-522.417, -611.249)
+scale = Vector2(3.47736, 3.85931)
+texture = ExtResource("38_ix77r")
+
+[node name="Area2D_Left_Hair" type="Area2D" parent="UserInterface/GameUI/DollInterface/arrows/arrow_left_hair"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UserInterface/GameUI/DollInterface/arrows/arrow_left_hair/Area2D_Left_Hair"]
+position = Vector2(-2.18896, -0.540771)
+shape = SubResource("RectangleShape2D_imd6a")
+
+[node name="arrow_right_eye" type="Sprite2D" parent="UserInterface/GameUI/DollInterface/arrows"]
+texture_filter = 1
+position = Vector2(474.729, -402.549)
+scale = Vector2(3.49003, 3.91502)
+texture = ExtResource("37_uqsn6")
+
+[node name="Area2D_Right_Eye" type="Area2D" parent="UserInterface/GameUI/DollInterface/arrows/arrow_right_eye"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UserInterface/GameUI/DollInterface/arrows/arrow_right_eye/Area2D_Right_Eye"]
+position = Vector2(-1.09052, -2.13231)
+shape = SubResource("RectangleShape2D_w3uyh")
+
+[node name="arrow_left_eye" type="Sprite2D" parent="UserInterface/GameUI/DollInterface/arrows"]
+texture_filter = 1
+position = Vector2(-518.61, -406.723)
+scale = Vector2(3.49003, 3.91502)
+texture = ExtResource("38_ix77r")
+
+[node name="Area2D_Left_Eye" type="Area2D" parent="UserInterface/GameUI/DollInterface/arrows/arrow_left_eye"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UserInterface/GameUI/DollInterface/arrows/arrow_left_eye/Area2D_Left_Eye"]
+position = Vector2(-1.09052, -2.13231)
+shape = SubResource("RectangleShape2D_i3l81")
+
+[node name="arrow_left_coat" type="Sprite2D" parent="UserInterface/GameUI/DollInterface/arrows"]
+texture_filter = 1
+position = Vector2(-522.417, 19.0245)
+scale = Vector2(3.52517, 3.54994)
+texture = ExtResource("38_ix77r")
+
+[node name="Area2D_Left_Coat" type="Area2D" parent="UserInterface/GameUI/DollInterface/arrows/arrow_left_coat"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UserInterface/GameUI/DollInterface/arrows/arrow_left_coat/Area2D_Left_Coat"]
+position = Vector2(-0.539856, -0.587891)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_pt6bu")
+
+[node name="arrow_right_coat" type="Sprite2D" parent="UserInterface/GameUI/DollInterface/arrows"]
+texture_filter = 1
+position = Vector2(470.923, 23.1985)
+scale = Vector2(3.52517, 3.54994)
+texture = ExtResource("37_uqsn6")
+
+[node name="Area2D_Right_Coat" type="Area2D" parent="UserInterface/GameUI/DollInterface/arrows/arrow_right_coat"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UserInterface/GameUI/DollInterface/arrows/arrow_right_coat/Area2D_Right_Coat"]
+position = Vector2(-0.539673, -1.17575)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_msvfk")
+
 [node name="Doll_Eyes" type="Sprite2D" parent="UserInterface/GameUI/DollInterface"]
 unique_name_in_owner = true
 light_mask = 3
-position = Vector2(-7.5, -175)
+position = Vector2(-1.36036, 15.638)
 scale = Vector2(0.356412, 0.419079)
-texture = ExtResource("32_xgyj4")
+texture = ExtResource("37_ocmpy")
 script = ExtResource("23_rogv6")
 
 [node name="Area2D" type="Area2D" parent="UserInterface/GameUI/DollInterface/Doll_Eyes"]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UserInterface/GameUI/DollInterface/Doll_Eyes/Area2D"]
 position = Vector2(0.0509033, 1.51709)
@@ -1492,12 +1595,13 @@ shape = SubResource("RectangleShape2D_r8vux")
 [node name="Doll_Hair" type="Sprite2D" parent="UserInterface/GameUI/DollInterface"]
 unique_name_in_owner = true
 light_mask = 3
-position = Vector2(-7.5, -175)
-scale = Vector2(1.03576, 1.20492)
-texture = ExtResource("24_aoth5")
+position = Vector2(-1.36033, -4.4657)
+scale = Vector2(0.355109, 0.372853)
+texture = ExtResource("39_ebguf")
 script = ExtResource("25_q6lbb")
 
 [node name="Area2D" type="Area2D" parent="UserInterface/GameUI/DollInterface/Doll_Hair"]
+visible = false
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="UserInterface/GameUI/DollInterface/Doll_Hair/Area2D"]
 position = Vector2(-69.9969, 16.1375)
@@ -1510,6 +1614,13 @@ shape = SubResource("RectangleShape2D_vpql1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UserInterface/GameUI/DollInterface/Doll_Hair/Area2D"]
 position = Vector2(4.21112, -46.0035)
 shape = SubResource("RectangleShape2D_d0ils")
+
+[node name="Doll_Coat" type="Sprite2D" parent="UserInterface/GameUI/DollInterface"]
+unique_name_in_owner = true
+position = Vector2(-1.36035, -3.12762)
+scale = Vector2(0.36, 0.38)
+texture = ExtResource("41_mpo78")
+script = ExtResource("42_ba103")
 
 [node name="Doll_Exit" type="Sprite2D" parent="UserInterface/GameUI/DollInterface"]
 unique_name_in_owner = true
@@ -1834,6 +1945,24 @@ color = Color(0.347817, 0.347817, 0.347817, 1)
 [connection signal="input_event" from="UserInterface/GameUI/poster/Area2D_poster" to="Level/Chest" method="_on_area_2d_poster_input_event"]
 [connection signal="mouse_entered" from="UserInterface/GameUI/poster/Area2D_poster" to="." method="change_to_action_cursor"]
 [connection signal="mouse_exited" from="UserInterface/GameUI/poster/Area2D_poster" to="." method="change_to_idle_cursor"]
+[connection signal="input_event" from="UserInterface/GameUI/DollInterface/arrows/arrow_right_hair/Area2D_Right_Hair" to="UserInterface/GameUI/DollInterface/Doll_Hair" method="_on_area_2d_right_hair_input_event"]
+[connection signal="mouse_entered" from="UserInterface/GameUI/DollInterface/arrows/arrow_right_hair/Area2D_Right_Hair" to="." method="change_to_action_cursor"]
+[connection signal="mouse_exited" from="UserInterface/GameUI/DollInterface/arrows/arrow_right_hair/Area2D_Right_Hair" to="." method="change_to_idle_cursor"]
+[connection signal="input_event" from="UserInterface/GameUI/DollInterface/arrows/arrow_left_hair/Area2D_Left_Hair" to="UserInterface/GameUI/DollInterface/Doll_Hair" method="_on_area_2d_left_hair_input_event"]
+[connection signal="mouse_entered" from="UserInterface/GameUI/DollInterface/arrows/arrow_left_hair/Area2D_Left_Hair" to="." method="change_to_action_cursor"]
+[connection signal="mouse_exited" from="UserInterface/GameUI/DollInterface/arrows/arrow_left_hair/Area2D_Left_Hair" to="." method="change_to_idle_cursor"]
+[connection signal="input_event" from="UserInterface/GameUI/DollInterface/arrows/arrow_right_eye/Area2D_Right_Eye" to="UserInterface/GameUI/DollInterface/Doll_Eyes" method="_on_area_2d_right_eye_input_event"]
+[connection signal="mouse_entered" from="UserInterface/GameUI/DollInterface/arrows/arrow_right_eye/Area2D_Right_Eye" to="." method="change_to_action_cursor"]
+[connection signal="mouse_exited" from="UserInterface/GameUI/DollInterface/arrows/arrow_right_eye/Area2D_Right_Eye" to="." method="change_to_idle_cursor"]
+[connection signal="input_event" from="UserInterface/GameUI/DollInterface/arrows/arrow_left_eye/Area2D_Left_Eye" to="UserInterface/GameUI/DollInterface/Doll_Eyes" method="_on_area_2d_left_eye_input_event"]
+[connection signal="mouse_entered" from="UserInterface/GameUI/DollInterface/arrows/arrow_left_eye/Area2D_Left_Eye" to="." method="change_to_action_cursor"]
+[connection signal="mouse_exited" from="UserInterface/GameUI/DollInterface/arrows/arrow_left_eye/Area2D_Left_Eye" to="." method="change_to_idle_cursor"]
+[connection signal="input_event" from="UserInterface/GameUI/DollInterface/arrows/arrow_left_coat/Area2D_Left_Coat" to="UserInterface/GameUI/DollInterface/Doll_Coat" method="_on_area_2d_left_coat_input_event"]
+[connection signal="mouse_entered" from="UserInterface/GameUI/DollInterface/arrows/arrow_left_coat/Area2D_Left_Coat" to="." method="change_to_action_cursor"]
+[connection signal="mouse_exited" from="UserInterface/GameUI/DollInterface/arrows/arrow_left_coat/Area2D_Left_Coat" to="." method="change_to_idle_cursor"]
+[connection signal="input_event" from="UserInterface/GameUI/DollInterface/arrows/arrow_right_coat/Area2D_Right_Coat" to="UserInterface/GameUI/DollInterface/Doll_Coat" method="_on_area_2d_right_coat_input_event"]
+[connection signal="mouse_entered" from="UserInterface/GameUI/DollInterface/arrows/arrow_right_coat/Area2D_Right_Coat" to="." method="change_to_action_cursor"]
+[connection signal="mouse_exited" from="UserInterface/GameUI/DollInterface/arrows/arrow_right_coat/Area2D_Right_Coat" to="." method="change_to_idle_cursor"]
 [connection signal="input_event" from="UserInterface/GameUI/DollInterface/Doll_Eyes/Area2D" to="UserInterface/GameUI/DollInterface/Doll_Eyes" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="UserInterface/GameUI/DollInterface/Doll_Hair/Area2D" to="UserInterface/GameUI/DollInterface/Doll_Hair" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="UserInterface/GameUI/DollInterface/Doll_Exit/Area2D" to="Level/ClickableDoll" method="_on_area_2d_exit_input_event"]
