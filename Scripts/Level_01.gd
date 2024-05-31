@@ -44,3 +44,7 @@ func change_to_action_cursor():
 	
 func change_to_idle_cursor():
 	Input.set_custom_mouse_cursor(idle_cursor)
+
+
+func _on_area_2d_left_coat_mouse_entered():
+	pass # Replace with function body.
