@@ -79,7 +79,7 @@ func flicker_env_light_to_final():
 			env_light.visible = true
 			env_light_flicker_times += 1
 	else:
-		get_tree().change_scene_to_file("res://Scenes/Levels/Level_final.tscn")
+		get_tree().change_scene_to_file("res://Scenes/last_level_video.tscn")
 
 # Update items in the scene for each levels.
 func update_scene():

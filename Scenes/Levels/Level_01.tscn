@@ -58,7 +58,7 @@
 [ext_resource type="Texture2D" uid="uid://ltindicws031" path="res://Assets/Images/clock.png" id="41_eev72"]
 [ext_resource type="Texture2D" uid="uid://x2c6ontyskox" path="res://Assets/doll/white_coat.png" id="41_mpo78"]
 [ext_resource type="Script" path="res://Scenes/Levels/Doll_Coat.gd" id="42_ba103"]
-[ext_resource type="Texture2D" path="res://Assets/doll/confirm.png" id="44_coe1p"]
+[ext_resource type="Texture2D" uid="uid://djlelfuffe7qy" path="res://Assets/doll/confirm.png" id="44_coe1p"]
 [ext_resource type="Script" path="res://Scenes/Levels/Doll_Confirm.gd" id="45_lyeqf"]
 [ext_resource type="Texture2D" uid="uid://bcdocdhfrfl5b" path="res://Assets/Images/help_icon.png" id="47_jatsm"]
 [ext_resource type="Texture2D" uid="uid://474ptokboh7t" path="res://Assets/Images/onboarding.png" id="47_k0rku"]

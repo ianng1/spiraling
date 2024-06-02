@@ -171,7 +171,6 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="PointLight2D2" type="PointLight2D" parent="Player"]
-visible = false
 position = Vector2(-22, 11)
 scale = Vector2(0.172005, 0.236877)
 energy = 1.92
