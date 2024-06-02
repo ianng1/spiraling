@@ -115,6 +115,7 @@ func check_mc_trigger_dialogue():
 func trigger_end_game():
 	var jail_x = player_jail.position.x
 	var cur_x = position.x
-	if mc_triggered and cur_x >= jail_x - 2  and cur_x <= jail_x + 2:
+	var buffer = 50
+	if mc_triggered and cur_x >= jail_x - buffer  and cur_x <= jail_x + buffer:
 		get_tree().change_scene_to_file("res://Scenes/end_game.tscn")
 		

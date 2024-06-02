@@ -117,6 +117,7 @@ if GameStates.player_max_level == 3:
 			sibling: Brother.
 			sibling: 'Brother'. You. It was you.
 			set GameStates.l3_dialogue_solved = true
+			do GameStates.unlock_level3()
 		else:
 			sibling: Huh...That doesn't make sense. The message...it's so broken. Maybe try again?
 			set GameStates.l3_step = 1

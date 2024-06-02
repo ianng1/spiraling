@@ -49,6 +49,10 @@ func _ready():
 func _process(delta):
 	pass
 	
+func unlock_level3():
+	player_max_level = 4
+	print("Level 3 clear.")
+	
 func set_action_cursor():
 	Input.set_custom_mouse_cursor(action_cursor)
 
