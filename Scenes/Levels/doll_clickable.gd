@@ -14,7 +14,7 @@ func _ready():
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if !(event is InputEventMouseButton) or event.button_index != MOUSE_BUTTON_LEFT:
 		return
-	if not is_interface_open:
+	if not is_interface_open and !GameStates.l2_doll_solved:
 		%DollInterface.visible = true
 		is_interface_open = true
 		

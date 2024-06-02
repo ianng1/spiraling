@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/intro_video.gd" id="1_74igg"]
 [ext_resource type="Texture2D" uid="uid://jaegp53ccc7w" path="res://Assets/Spritesheet/platformPack_tilesheet.png" id="1_76bm1"]
-[ext_resource type="VideoStream" path="res://Assets/video/intro_vid.ogv" id="1_q70ig"]
+[ext_resource type="VideoStream" path="res://Assets/video/intro_vid_4.ogv" id="3_kcr5s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rhprl"]
 texture = ExtResource("1_76bm1")
@@ -1021,7 +1021,7 @@ offset_top = -4.0
 offset_right = 931.0
 offset_bottom = 492.0
 scale = Vector2(0.56539, 0.610653)
-stream = ExtResource("1_q70ig")
+stream = ExtResource("3_kcr5s")
 autoplay = true
 
 [node name="Button" type="Button" parent="."]
