@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvbwtjt2irwn8"]
+
+[ext_resource type="VideoStream" path="res://Assets/video/last_scene_vid.ogv" id="1_2s5w4"]
+[ext_resource type="Script" path="res://Scripts/last_level_video.gd" id="1_n217d"]
+
+[node name="LastLevelVideo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n217d")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1088.0
+scale = Vector2(0.559999, 0.57998)
+stream = ExtResource("1_2s5w4")
+autoplay = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

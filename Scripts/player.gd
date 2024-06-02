@@ -46,6 +46,7 @@ func _process(_delta):
 	# On final level, triger mc's dialogue when close
 	if get_parent().name == "Level_final":
 		check_mc_trigger_dialogue()
+		trigger_end_game()
 	
 # --------- CUSTOM FUNCTIONS ---------- #
 
@@ -110,3 +111,10 @@ func check_mc_trigger_dialogue():
 		mc.load_dialogue()
 		mc_triggered = true
 		GameStates.player_movement_freeze = true
+
+func trigger_end_game():
+	var jail_x = player_jail.position.x
+	var cur_x = position.x
+	if mc_triggered and cur_x >= jail_x - 2  and cur_x <= jail_x + 2:
+		get_tree().change_scene_to_file("res://Scenes/end_game.tscn")
+		

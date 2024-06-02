@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://kts5ru3roe83"]
+
+[ext_resource type="Script" path="res://Scripts/end_game.gd" id="1_o5t4g"]
+[ext_resource type="VideoStream" path="res://Assets/video/last_vid.ogv" id="1_vrk0n"]
+
+[node name="EndGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o5t4g")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 1.0
+offset_right = 1908.0
+offset_bottom = 1089.0
+scale = Vector2(0.547896, 0.553841)
+stream = ExtResource("1_vrk0n")
+autoplay = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

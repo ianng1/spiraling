@@ -82,7 +82,7 @@ func set_protrait_and_label(char_label) -> void:
 	
 	# set protrait based on label
 	var protrait_path = "res://Assets/npc_protraits/%s.png" % char_label
-	if FileAccess.file_exists(protrait_path):
+	if ResourceLoader.exists(protrait_path):
 		protrait.texture = load(protrait_path)
 	else:
 		var icon = "res://icon_no_word.jpeg"
