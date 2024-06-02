@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvomcbien5ihb"]
+
+[ext_resource type="Script" path="res://Scripts/npc.gd" id="1_kshdx"]
+[ext_resource type="Texture2D" uid="uid://rjyjoq4lc80c" path="res://Assets/Spritesheet/side_Sprite.png" id="2_g3p2j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r860y"]
+atlas = ExtResource("2_g3p2j")
+region = Rect2(0, 768, 192, 384)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rtgj3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r860y")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ik2oj"]
+size = Vector2(113.636, 324.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1u0f8"]
+radius = 38.9487
+
+[node name="mc_clone" type="CharacterBody2D"]
+scale = Vector2(-1, 1)
+script = ExtResource("1_kshdx")
+metadata/npcId = "mc_clone"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rtgj3")
+animation = &"Idle"
+
+[node name="chat_detection_area2D" type="Area2D" parent="."]
+position = Vector2(-1, 52)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chat_detection_area2D"]
+position = Vector2(-0.999998, -1)
+scale = Vector2(0.88, 0.88)
+shape = SubResource("RectangleShape2D_ik2oj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_1u0f8")
+disabled = true
+
+[connection signal="mouse_entered" from="chat_detection_area2D" to="." method="_on_chat_detection_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="chat_detection_area2D" to="." method="_on_chat_detection_area_2d_mouse_exited"]

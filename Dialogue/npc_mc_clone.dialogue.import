@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://csowe638d2b77"
+path="res://.godot/imported/npc_mc_clone.dialogue-c35ca2eb4eec8d417e0a21c34d2cfc1a.tres"
+
+[deps]
+
+source_file="res://Dialogue/npc_mc_clone.dialogue"
+dest_files=["res://.godot/imported/npc_mc_clone.dialogue-c35ca2eb4eec8d417e0a21c34d2cfc1a.tres"]
+
+[params]
+
+defaults=true

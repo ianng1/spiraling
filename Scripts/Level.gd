@@ -10,8 +10,6 @@ var stretch_scale = 2
 # Offset jail from tilemap position.
 var jail_offset = 2013
 
-@onready var level = $"../Level"
-
 # Level related items to show or hide.
 @onready var clickable_doll = %ClickableDoll
 @onready var doll_map_icon = $"../UserInterface/GameUI/Map_Level_1/doll"
@@ -23,15 +21,14 @@ func _ready():
 
 func _process(_delta):
 	update_items_positions()
-	update_scene()
+	if name != "Level_final_scene":
+		# Update leveling when going left and right on first 3 levels.
+		update_scene()
 
 # Move nodes to left and rights when they are outsides the scene for looping.
 func update_items_positions():
-	if level == null:
-		return
-	
 	# Move items in the screen to left and right
-	for node in level.get_children():
+	for node in get_children():
 		var screen_pos = get_viewport().canvas_transform * node.global_position
 		var viewport_x = get_viewport().size.x
 
@@ -55,6 +52,8 @@ func update_items_positions():
 # Update items in the scene for each levels.
 func update_scene():
 	match GameStates.player_level:
+		4:
+			get_tree().change_scene_to_file("res://Scenes/Levels/Level_final.tscn")
 		3: 
 			clickable_doll.visible = true
 			doll_map_icon.visible = true

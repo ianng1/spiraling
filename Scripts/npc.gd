@@ -26,8 +26,10 @@ var is_special_movement = false
 var npc_clues = {
 	"1": ["C_kidnapped"],
 	"2": ["A_wife"],
-	"3": ["B_sibling"]
+	"3": ["B_sibling"],
+	"4": ["MC", "mc_clone"]
 }
+var npc_dialogue_all_same = ["MC", "mc_clone"]
 # Whether the current level is unlocked.
 var level_unlocked = false
 var repeat_dialogue_id = "repeat"
@@ -48,13 +50,13 @@ func _ready():
 	dialogue_file = "res://Dialogue/npc_" + npcId + ".dialogue"
 
 func _process(_delta):
-	if level_globals.freeze_player_movement:
+	if level_globals != null and level_globals.freeze_player_movement:
 		return
 	
 	# Update level from status
 	level = str(GameStates.player_level)
 	# Some NPC will have dialogue different before orafter the next level is unlocked.
-	GameStates.level_unlocked[npcId] = level_globals.max_level > int(level)
+	GameStates.level_unlocked[npcId] = GameStates.player_max_level > int(level)
 	
 	if cur_state == IDLE:
 		$AnimatedSprite2D.play("Idle")
@@ -79,7 +81,10 @@ func load_dialogue():
 	# Only play the full dialogue for NPCs related to the puzzle
 	# or whose dialogue is not played before.
 	dialogue_level = "floor" + level
-	if (not npcId in npc_clues[str(level_globals.max_level)]) and completed_dialogue:
+	if npcId in npc_dialogue_all_same:
+		# Npcs with only one sets of dialogue.
+		GameStates.active_dialogue_balloon = DialogueManager.show_dialogue_balloon(load(dialogue_file), "all")
+	elif (not npcId in npc_clues[str(GameStates.player_max_level)]) and completed_dialogue:
 		var title = dialogue_level + "_" + repeat_dialogue_id
 		GameStates.active_dialogue_balloon = DialogueManager.show_dialogue_balloon(load(dialogue_file), title)
 	else:
