@@ -9,29 +9,33 @@ var canvas_size = 3260
 var stretch_scale = 2
 # Offset jail from tilemap position.
 var jail_offset = 2013
-
-@onready var level = $"../Level"
+var env_light_flicker_times = 0
 
 # Level related items to show or hide.
 @onready var clickable_doll = %ClickableDoll
 @onready var doll_map_icon = $"../UserInterface/GameUI/Map_Level_1/doll"
 @onready var wife = $A_wife
 @onready var wife_map_icon = $"../UserInterface/GameUI/Map_Level_1/npc1"
+# Variables for lighting to change to final screens
+@onready var env_light = $"../CanvasModulate"
+@onready var player_point_light = $"../Player/PointLight2D"
+@onready var player_directional_light = $"../Player/PointLight2D2"
 
 func _ready():
 	pass
 
 func _process(_delta):
 	update_items_positions()
-	update_scene()
+	if name != "Level_final_scene":
+		# Update leveling when going left and right on first 3 levels.
+		update_scene()
 
 # Move nodes to left and rights when they are outsides the scene for looping.
 func update_items_positions():
-	if level == null:
-		return
-	
 	# Move items in the screen to left and right
-	for node in level.get_children():
+	for node in get_children():
+		if "timer" in node.name:
+			continue
 		var screen_pos = get_viewport().canvas_transform * node.global_position
 		var viewport_x = get_viewport().size.x
 
@@ -51,10 +55,38 @@ func update_items_positions():
 		# Need to adjust buffer size by window scale
 		elif screen_pos.x > canvas_size/2:
 			node.position.x -= canvas_size
-			
+
+func start_flicker_env_light():
+	# Timer for next flickering
+	print("start triggered")
+	env_light_flicker_times += 1
+	env_light.color = "#000000"
+	player_point_light.visible = false
+	player_directional_light.visible = false
+	# Start the timer.
+	var timer = Timer.new()
+	add_child(timer)
+	timer.name = "timer"
+	timer.wait_time = 0.1
+	timer.start()
+	timer.connect("timeout", self.flicker_env_light_to_final)
+
+func flicker_env_light_to_final():
+	if env_light_flicker_times <= 10:
+		if env_light.visible:
+			env_light.visible = false
+		else:
+			env_light.visible = true
+			env_light_flicker_times += 1
+	else:
+		get_tree().change_scene_to_file("res://Scenes/Levels/Level_final.tscn")
+
 # Update items in the scene for each levels.
 func update_scene():
 	match GameStates.player_level:
+		4:
+			if env_light_flicker_times == 0:
+				start_flicker_env_light()
 		3: 
 			clickable_doll.visible = true
 			doll_map_icon.visible = true

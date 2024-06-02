@@ -3,7 +3,7 @@ extends CharacterBody2D
 # --------- VARIABLES ---------- #
 
 @export_category("Player Properties") # You can tweak these changes according to your likings
-@export var move_speed : float = 400
+@export var move_speed : float = 500
 
 @export_category("Toggle Functions") # Double jump feature is disable by default (Can be toggled from inspector)
 #@export var double_jump : = false
@@ -14,12 +14,15 @@ var freeze_player_movement = false
 var level = 1
 var max_level = 1
 var prev_x
+# whether triggered mc dialogue before.
+var mc_triggered = false
 
 @onready var player_sprite = $AnimatedSprite2D
 @onready var particle_trails = $ParticleTrails
 @onready var level_globals = get_node("/root/Level_01")
 @onready var player_jail = %mc_jail
 @onready var audio_player = $footstep_player
+@onready var mc = $"../Level_final_scene/mc"
 # --------- BUILT-IN FUNCTIONS ---------- #
 
 func _ready():
@@ -28,16 +31,21 @@ func _ready():
 
 func _process(_delta):
 	# Calling functions
-	if(get_parent().name == "Level_01" and !get_parent().freeze_player_movement):
-		movement()
-		player_animations()
-	else:
+	if GameStates.player_movement_freeze or (get_parent().name == "Level_01" and get_parent().freeze_player_movement):
 		# Freeze movement, play idle.
 		player_sprite.play("Idle")
+	else:
+		movement()
+		player_animations()
+		
 	flip_player()
 	
 	# Determine player's level
 	update_level()
+	
+	# On final level, triger mc's dialogue when close
+	if get_parent().name == "Level_final":
+		check_mc_trigger_dialogue()
 	
 # --------- CUSTOM FUNCTIONS ---------- #
 
@@ -86,3 +94,19 @@ func update_level():
 		level -= 1
 	GameStates.player_level = level
 	prev_x = cur_x
+	
+func check_mc_trigger_dialogue():
+	if mc == null:
+		return
+	var mc_x = mc.position.x
+	var buffer = 100
+	var player_x = position.x
+	# Turn MC to face player
+	if player_x > mc_x:
+		mc.scale.x = -1
+	else:
+		mc.scale.x = 1
+	if !mc_triggered and player_x > mc_x - buffer and player_x < mc_x + buffer:
+		mc.load_dialogue()
+		mc_triggered = true
+		GameStates.player_movement_freeze = true

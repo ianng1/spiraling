@@ -1,0 +1,19 @@
+~ all
+
+MC: …Ah. You’ve made it up here, finally.
+MC: It seems that the experiment is beginning to work. You don’t remember anything, do you? After this whole test?
+MC: Good. That’s what this whole place is for. To make sure that you don’t remember anything. 
+MC: You know, it’s always so nice to see you outside the mirror. Outside the corner of my eye. You were always lurking, weren’t you?
+MC: They kept telling me I was crazy. That no one else could see themselves hiding just on the edge of their vision, or waving at them in the mirror.
+MC: My parents, my brother…even that damn therapist they sent me to. 
+MC: Always telling me that it wasn’t normal, that they were just trying to fix me.
+MC: I DON’T NEED TO BE FIXED!
+MC: So I decided that I would show them. Show them that it’s not just me that can see themselves everywhere they go.
+MC: The other was collateral. Unfortunate, really. But I needed a patient zero. To test out my machinery and my theories.
+MC: And then I took them. One by one, I took them. 
+MC: It has been a bumpy road. Even now, sometimes their mind wipes never last. So I have to…terminate them. And copy them again. And replace them. 
+MC: But what does that matter? It’s so beautiful. I have shown them I’m not crazy. 
+MC: We can all see ourselves. I have simply freed you from the mirror. 
+MC: Don’t you feel free?
+set GameStates.player_movement_freeze = false
+=> END

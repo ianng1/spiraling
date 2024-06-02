@@ -48,6 +48,8 @@ func check_and_turn_off_at_wife():
 	
 # revert lighting to direct to wife.	
 func revert_at_wife():
+	if wife == null or player == null:
+		return
 	if not prev_player_x:
 		prev_player_x = player.position.x 
 		return

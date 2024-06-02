@@ -26,6 +26,7 @@ var active_dialogue_balloon
 # TODO: clearer naming when not need to worry about merge conflict
 var player_level = 1
 var player_max_level = 1
+var player_movement_freeze = false
 
 # Whether the level where each NPC are is unlocked.
 var level_unlocked = {

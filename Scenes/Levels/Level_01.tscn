@@ -1,19 +1,15 @@
-[gd_scene load_steps=111 format=3 uid="uid://cjanwm3sy2x37"]
+[gd_scene load_steps=107 format=3 uid="uid://cjanwm3sy2x37"]
 
 [ext_resource type="Script" path="res://Scripts/Level_01.gd" id="1_iaili"]
 [ext_resource type="PackedScene" uid="uid://bvkfp0ufwcrm" path="res://Scenes/npc/a_husband.tscn" id="2_irrk8"]
 [ext_resource type="PackedScene" uid="uid://w7m6tehvvy3g" path="res://Scenes/Prefabs/player.tscn" id="2_pay8t"]
-[ext_resource type="PackedScene" uid="uid://bfmh3fm2de78o" path="res://Scenes/Prefabs/Coin.tscn" id="3_rrh80"]
 [ext_resource type="Texture2D" uid="uid://mlk8x2l6arr0" path="res://Assets/Spritesheet/side_TestMap.png" id="4_clgdb"]
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="4_v2uxj"]
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="4_vgfkr"]
 [ext_resource type="PackedScene" uid="uid://b3lep270jdeyv" path="res://Scenes/npc/a_wife.tscn" id="5_7cr6o"]
 [ext_resource type="AudioStream" uid="uid://dd2rscapjb3vy" path="res://Assets/Music/chest_open.mp3" id="5_pov5v"]
 [ext_resource type="Texture2D" uid="uid://jaegp53ccc7w" path="res://Assets/Spritesheet/platformPack_tilesheet.png" id="5_wqbaa"]
-[ext_resource type="Script" path="res://Scripts/GameUI.gd" id="6_66mfc"]
 [ext_resource type="PackedScene" uid="uid://3ycmmp474166" path="res://Scenes/npc/b_sibling.tscn" id="6_xye2r"]
-[ext_resource type="Texture2D" uid="uid://clreg520jah1j" path="res://Assets/platformPack_item008.png" id="7_j7jun"]
-[ext_resource type="FontFile" uid="uid://qgc4vi5osk7v" path="res://Assets/Fonts/Star Choco.ttf" id="8_gwcy2"]
 [ext_resource type="PackedScene" uid="uid://cfhgdldvpdf8m" path="res://Scenes/Prefabs/clock.tscn" id="9_0fim8"]
 [ext_resource type="Texture2D" uid="uid://cssr3xx5j3dsl" path="res://Assets/Textures/godot_neutral_point_light.webp" id="10_23jwq"]
 [ext_resource type="Texture2D" uid="uid://8m3gr3g088b8" path="res://Assets/Textures/clock_no_hand-removebg-preview.png" id="10_j6082"]
@@ -62,7 +58,7 @@
 [ext_resource type="Texture2D" uid="uid://ltindicws031" path="res://Assets/Images/clock.png" id="41_eev72"]
 [ext_resource type="Texture2D" uid="uid://x2c6ontyskox" path="res://Assets/doll/white_coat.png" id="41_mpo78"]
 [ext_resource type="Script" path="res://Scenes/Levels/Doll_Coat.gd" id="42_ba103"]
-[ext_resource type="Texture2D" uid="uid://djlelfuffe7qy" path="res://Assets/doll/confirm.png" id="44_coe1p"]
+[ext_resource type="Texture2D" path="res://Assets/doll/confirm.png" id="44_coe1p"]
 [ext_resource type="Script" path="res://Scenes/Levels/Doll_Confirm.gd" id="45_lyeqf"]
 [ext_resource type="Texture2D" uid="uid://bcdocdhfrfl5b" path="res://Assets/Images/help_icon.png" id="47_jatsm"]
 [ext_resource type="Texture2D" uid="uid://474ptokboh7t" path="res://Assets/Images/onboarding.png" id="47_k0rku"]
@@ -1190,18 +1186,6 @@ size = Vector2(273, 287)
 [node name="Level_01" type="Node2D"]
 script = ExtResource("1_iaili")
 
-[node name="Coins" type="Node2D" parent="."]
-visible = false
-
-[node name="Coin" parent="Coins" instance=ExtResource("3_rrh80")]
-position = Vector2(576, 406)
-
-[node name="Coin2" parent="Coins" instance=ExtResource("3_rrh80")]
-position = Vector2(712, 353)
-
-[node name="Coin3" parent="Coins" instance=ExtResource("3_rrh80")]
-position = Vector2(844, 408)
-
 [node name="Level" type="Node2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("4_v2uxj")
@@ -1398,38 +1382,6 @@ offset_bottom = -360.4
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("6_66mfc")
-
-[node name="Score" type="Control" parent="UserInterface/GameUI"]
-unique_name_in_owner = true
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ScoreTexture" type="TextureRect" parent="UserInterface/GameUI/Score"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 116.0
-offset_bottom = 116.0
-texture = ExtResource("7_j7jun")
-stretch_mode = 4
-
-[node name="ScoreLabel" type="Label" parent="UserInterface/GameUI/Score"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 104.0
-offset_top = 42.0
-offset_right = 148.0
-offset_bottom = 84.0
-theme_override_colors/font_color = Color(0.910156, 0.730469, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("8_gwcy2")
-theme_override_font_sizes/font_size = 32
-text = "x 3"
 
 [node name="clock_node2D_UI" parent="UserInterface/GameUI" instance=ExtResource("9_0fim8")]
 unique_name_in_owner = true
@@ -1904,7 +1856,7 @@ unique_name_in_owner = true
 z_index = 7
 position = Vector2(55, 282)
 collision_layer = 9
-move_speed = 1200.0
+move_speed = 500.0
 metadata/_edit_lock_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="Player"]
