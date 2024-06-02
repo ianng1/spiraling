@@ -21,6 +21,8 @@ func unlock_level1():
 	print("unlocked")
 	
 func unlock_level2():
+	if GameStates.l2_doll_solved:
+		return
 	GameStates.l2_doll_solved = true
 	max_level = 3
 	wife_bang_player.play()

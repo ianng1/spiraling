@@ -11,7 +11,7 @@ extends CharacterBody2D
 # Indicator of movement direction to set animation.
 var move_right : bool = true
 var freeze_player_movement = false
-var level = 3
+var level = 1
 var max_level = 1
 var prev_x
 # whether triggered mc dialogue before.

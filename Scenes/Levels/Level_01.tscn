@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://cjanwm3sy2x37"]
+[gd_scene load_steps=107 format=3 uid="uid://cjanwm3sy2x37"]
 
 [ext_resource type="Script" path="res://Scripts/Level_01.gd" id="1_iaili"]
 [ext_resource type="PackedScene" uid="uid://bvkfp0ufwcrm" path="res://Scenes/npc/a_husband.tscn" id="2_irrk8"]
@@ -58,6 +58,8 @@
 [ext_resource type="Texture2D" uid="uid://ltindicws031" path="res://Assets/Images/clock.png" id="41_eev72"]
 [ext_resource type="Texture2D" uid="uid://x2c6ontyskox" path="res://Assets/doll/white_coat.png" id="41_mpo78"]
 [ext_resource type="Script" path="res://Scenes/Levels/Doll_Coat.gd" id="42_ba103"]
+[ext_resource type="Texture2D" path="res://Assets/doll/confirm.png" id="44_coe1p"]
+[ext_resource type="Script" path="res://Scenes/Levels/Doll_Confirm.gd" id="45_lyeqf"]
 [ext_resource type="Texture2D" uid="uid://bcdocdhfrfl5b" path="res://Assets/Images/help_icon.png" id="47_jatsm"]
 [ext_resource type="Texture2D" uid="uid://474ptokboh7t" path="res://Assets/Images/onboarding.png" id="47_k0rku"]
 [ext_resource type="Texture2D" uid="uid://nr217cqtclqn" path="res://Assets/doll/doll_clickable_clear.png" id="48_grmyc"]
@@ -1116,6 +1118,9 @@ size = Vector2(134.771, 37.2548)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ajsb4"]
 size = Vector2(404.147, 464.295)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjd08"]
+size = Vector2(1004.56, 258.629)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ciuj"]
 size = Vector2(30.5557, 10.0305)
 
@@ -1585,6 +1590,20 @@ position = Vector2(-26.3789, -21.746)
 scale = Vector2(1.67811, 1.7075)
 shape = SubResource("RectangleShape2D_ajsb4")
 
+[node name="Doll_Confirm" type="Sprite2D" parent="UserInterface/GameUI/DollInterface"]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(-10.8828, 278.357)
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("44_coe1p")
+script = ExtResource("45_lyeqf")
+
+[node name="Doll_Area2D_Confirm" type="Area2D" parent="UserInterface/GameUI/DollInterface/Doll_Confirm"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UserInterface/GameUI/DollInterface/Doll_Confirm/Doll_Area2D_Confirm"]
+position = Vector2(5.23218, -201.49)
+shape = SubResource("RectangleShape2D_rjd08")
+
 [node name="DollClickCooldownTimer" type="Timer" parent="UserInterface/GameUI/DollInterface"]
 unique_name_in_owner = true
 wait_time = 0.25
@@ -1916,6 +1935,9 @@ color = Color(0.347817, 0.347817, 0.347817, 1)
 [connection signal="input_event" from="UserInterface/GameUI/DollInterface/Doll_Eyes/Area2D" to="UserInterface/GameUI/DollInterface/Doll_Eyes" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="UserInterface/GameUI/DollInterface/Doll_Hair/Area2D" to="UserInterface/GameUI/DollInterface/Doll_Hair" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="UserInterface/GameUI/DollInterface/Doll_Exit/Area2D" to="Level/ClickableDoll" method="_on_area_2d_exit_input_event"]
+[connection signal="input_event" from="UserInterface/GameUI/DollInterface/Doll_Confirm/Doll_Area2D_Confirm" to="UserInterface/GameUI/DollInterface/Doll_Confirm" method="_on_doll_area_2d_confirm_input_event"]
+[connection signal="mouse_entered" from="UserInterface/GameUI/DollInterface/Doll_Confirm/Doll_Area2D_Confirm" to="UserInterface/GameUI/DollInterface/Doll_Confirm" method="_on_doll_area_2d_confirm_mouse_entered"]
+[connection signal="mouse_exited" from="UserInterface/GameUI/DollInterface/Doll_Confirm/Doll_Area2D_Confirm" to="UserInterface/GameUI/DollInterface/Doll_Confirm" method="_on_doll_area_2d_confirm_mouse_exited"]
 [connection signal="input_event" from="UserInterface/GameUI/ChestInterface/Area2D_clear" to="Level/Chest" method="_on_area_2d_clear_input_event"]
 [connection signal="input_event" from="UserInterface/GameUI/ChestInterface/Area2D_one" to="Level/Chest" method="_on_area_2d_one_input_event"]
 [connection signal="input_event" from="UserInterface/GameUI/ChestInterface/Area2D_two" to="Level/Chest" method="_on_area_2d_two_input_event"]

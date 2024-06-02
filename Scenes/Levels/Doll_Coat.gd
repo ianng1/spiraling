@@ -20,11 +20,7 @@ func _on_area_2d_right_coat_input_event(viewport, event, shape_idx):
 			spriteIdx += 1
 			spriteIdx %= 5
 			modulate = sprites[spriteIdx]
-			
 			%DollClickCooldownTimer.start()
-			if spriteIdx == 4 and %Doll_Hair.spriteIdx == 2 and %Doll_Eyes.spriteIdx == 3:
-				GameStates.l2_doll_solved = true
-				get_node("/root/Level_01/").unlock_level2()
 
 
 func _on_area_2d_left_coat_input_event(viewport, event, shape_idx):
@@ -33,8 +29,4 @@ func _on_area_2d_left_coat_input_event(viewport, event, shape_idx):
 			spriteIdx += 4
 			spriteIdx %= 5
 			modulate = sprites[spriteIdx]
-			
 			%DollClickCooldownTimer.start()
-			if spriteIdx == 4 and %Doll_Hair.spriteIdx == 2 and %Doll_Eyes.spriteIdx == 3:
-				GameStates.l2_doll_solved = true
-				get_node("/root/Level_01/").unlock_level2()
