@@ -7,8 +7,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
-	if %Doll_Hair.spriteIdx == 2 and %Doll_Eyes.spriteIdx == 3 and %Doll_Coat.spriteIdx == 4:
+	if GameStates.l2_doll_solved:
 		visible = false
 		$"../../../Level/ClickableDoll".is_interface_open = false
 		$"../../../Level/ClickableDoll".is_opened = true
