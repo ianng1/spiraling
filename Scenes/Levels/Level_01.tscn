@@ -1650,7 +1650,6 @@ script = ExtResource("45_lyeqf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UserInterface/GameUI/DollInterface/Doll_Confirm/Doll_Area2D_Confirm"]
 position = Vector2(5.23218, -201.49)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_rjd08")
 
 [node name="DollClickCooldownTimer" type="Timer" parent="UserInterface/GameUI/DollInterface"]
