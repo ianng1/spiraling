@@ -1,4 +1,6 @@
 Work in progress...
+## Iteration 4 Lecture 10A
+- Modified Intro video
 
 ## Iteration 3.1 Lecture 9B
 - Only stop flickering light after talking to the wife on the expected level, revert the light direction when the player goes past the wife but does not talk to her
