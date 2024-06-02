@@ -24,10 +24,6 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 			#spriteIdx %= 5
 			modulate = sprites[spriteIdx]
 			%DollClickCooldownTimer.start()
-			if spriteIdx == 2 and %Doll_Eyes.spriteIdx == 3 and %Doll_Coat.spriteIdx == 4:
-				GameStates.l2_doll_solved = true
-				get_node("/root/Level_01/").unlock_level2()
-
 
 func _on_area_2d_right_hair_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -36,10 +32,6 @@ func _on_area_2d_right_hair_input_event(viewport, event, shape_idx):
 			spriteIdx %= 5
 			modulate = sprites[spriteIdx]
 			%DollClickCooldownTimer.start()
-			if spriteIdx == 2 and %Doll_Eyes.spriteIdx == 3 and %Doll_Coat.spriteIdx == 4:
-				GameStates.l2_doll_solved = true
-				get_node("/root/Level_01/").unlock_level2()
-
 
 func _on_area_2d_left_hair_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -48,6 +40,3 @@ func _on_area_2d_left_hair_input_event(viewport, event, shape_idx):
 			spriteIdx %= 5
 			modulate = sprites[spriteIdx]
 			%DollClickCooldownTimer.start()
-			if spriteIdx == 2 and %Doll_Eyes.spriteIdx == 3 and %Doll_Coat.spriteIdx == 4:
-				GameStates.l2_doll_solved = true
-				get_node("/root/Level_01/").unlock_level2()
