@@ -31,7 +31,7 @@ func _ready():
 
 func _process(_delta):
 	# Calling functions
-	if (get_parent().name == "Level_01" and get_parent().freeze_player_movement):
+	if GameStates.player_movement_freeze or (get_parent().name == "Level_01" and get_parent().freeze_player_movement):
 		# Freeze movement, play idle.
 		player_sprite.play("Idle")
 	else:
@@ -109,3 +109,4 @@ func check_mc_trigger_dialogue():
 	if !mc_triggered and player_x > mc_x - buffer and player_x < mc_x + buffer:
 		mc.load_dialogue()
 		mc_triggered = true
+		GameStates.player_movement_freeze = true

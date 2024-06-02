@@ -15,5 +15,5 @@ MC: It has been a bumpy road. Even now, sometimes their mind wipes never last. S
 MC: But what does that matter? It’s so beautiful. I have shown them I’m not crazy. 
 MC: We can all see ourselves. I have simply freed you from the mirror. 
 MC: Don’t you feel free?
-
+set GameStates.player_movement_freeze = false
 => END
