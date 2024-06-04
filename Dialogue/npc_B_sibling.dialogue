@@ -31,7 +31,7 @@ if GameStates.player_max_level == 3:
 			sibling: The voice far above me is whispering something...we're so close. I can almost remember.
 			set GameStates.l3_step = 5			
 		else:
-			sibling: Huh...That doesn't make sense. The message...it's so broken. Maybe try again?
+			sibling: Huh...That doesn't make sense. The story...it's all wrong. Maybe start again?
 			set GameStates.l3_step = 1
 	else:
 		sibling: You. It was you.
@@ -73,8 +73,11 @@ if GameStates.player_max_level == 3:
 		elif GameStates.l3_step == 4:
 			sibling: The whispering...it's coming from below me again. Scratching my brain. I can almost remember what happened...
 			set GameStates.l3_step = 4
+		else:
+			sibling: Huh...That doesn't make sense. The story...it's missing something. Maybe start again?
+			set GameStates.l3_step = 1
 	else:
-		sibling: "Brother". You. It was you. yeer
+		sibling: You. It was you.
 else:
 	# level 2 or others
 	sibling: The voices are quiet today. Sometimes they're just quiet, though. That's nothing special. 
@@ -86,7 +89,7 @@ if GameStates.player_max_level == 3:
 		# TODO: puzzle for level 3
 		sibling: Maybe I can talk to them. Can you help?
 	else:
-		sibling: You. It was you. YAAAA
+		sibling: You. It was you.
 else:
 	# level 2 or others
 	sibling: The voices are quiet today. Sometimes 	 they're just quiet, though. That's nothing special. 
@@ -115,10 +118,10 @@ if GameStates.player_max_level == 3:
 			set GameStates.l3_dialogue_solved = true
 			do GameStates.unlock_level3()
 		else:
-			sibling: Huh...That doesn't make sense. The message...it's so broken. Maybe try again?
+			sibling: Huh...That doesn't make sense. The story...it's off somehow. Maybe start again?
 			set GameStates.l3_step = 1
 	else:
-		sibling: "Brother". You. It was you.
+		sibling: You. It was you.
 else:
 	# level 2 or others
 	sibling: The voices are quiet today. Sometimes they're just quiet, though. That's nothing special. 
