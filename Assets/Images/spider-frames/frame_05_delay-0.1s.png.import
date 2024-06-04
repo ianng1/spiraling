@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6aus6i6x4vmk"
-path="res://.godot/imported/Icon.png-33e63688031d53466d4d656c73cf10ca.ctex"
+uid="uid://bom3gur02byr5"
+path="res://.godot/imported/frame_05_delay-0.1s.png-b0f6dcec8bff9a8d847f974f4ce45c8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Icon.png"
-dest_files=["res://.godot/imported/Icon.png-33e63688031d53466d4d656c73cf10ca.ctex"]
+source_file="res://Assets/Images/spider-frames/frame_05_delay-0.1s.png"
+dest_files=["res://.godot/imported/frame_05_delay-0.1s.png-b0f6dcec8bff9a8d847f974f4ce45c8f.ctex"]
 
 [params]
 

@@ -20,6 +20,15 @@ var env_light_flicker_times = 0
 @onready var env_light = $"../CanvasModulate"
 @onready var player_point_light = $"../Player/PointLight2D"
 @onready var player_directional_light = $"../Player/PointLight2D2"
+@onready var level_two_painting = $level_two_painting
+@onready var level_three_painting = $level_three_painting
+@onready var spider_web = $spider_web
+@onready var tv_level_two = $"tv-level-two"
+@onready var tv_level_three = $"tv-level-three"
+@onready var wallscratches_one = $"wall-scratches"
+@onready var wallscratches_two = $"wall-scratches2"
+@onready var moving_spider = $"moving-spider"
+
 
 func _ready():
 	pass
@@ -27,6 +36,10 @@ func _ready():
 func _process(_delta):
 	update_items_positions()
 	if name != "Level_final_scene":
+		spider_web.play()
+		tv_level_two.play()
+		tv_level_three.play()
+		moving_spider.play()
 		# Update leveling when going left and right on first 3 levels.
 		update_scene()
 
@@ -92,16 +105,37 @@ func update_scene():
 			doll_map_icon.visible = true
 			wife.visible = false
 			wife_map_icon.visible = false
+			level_two_painting.visible = false
+			tv_level_two.visible = false
+			level_three_painting.visible = true
+			tv_level_three.visible = true
+			wallscratches_one.visible = true
+			wallscratches_two.visible = true
+			moving_spider.visible = true
 		2:
 			clickable_doll.visible = true
 			doll_map_icon.visible = true
 			wife.visible = true
 			wife_map_icon.visible = true
+			level_two_painting.visible = true
+			level_three_painting.visible = false
+			tv_level_two.visible = true
+			tv_level_three.visible = false
+			wallscratches_one.visible = true
+			wallscratches_two.visible = false
+			moving_spider.visible = true
 		1:
 			clickable_doll.visible = false
 			doll_map_icon.visible = false
 			wife.visible = true
 			wife_map_icon.visible = true
+			level_two_painting.visible = false
+			level_three_painting.visible = false
+			tv_level_two.visible = false
+			tv_level_three.visible = false
+			wallscratches_one.visible = false
+			wallscratches_two.visible = false
+			moving_spider.visible = false
 		_:
 			# default, should not be here.
 			pass
