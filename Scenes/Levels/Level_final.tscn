@@ -1,7 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://5b8mjbceuiux"]
+[gd_scene load_steps=16 format=3 uid="uid://ccrkm43e8bfrw"]
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="3_b3bv2"]
-[ext_resource type="PackedScene" uid="uid://dvomcbien5ihb" path="res://Scenes/npc/npc_black.tscn" id="4_bxo5b"]
+[ext_resource type="PackedScene" uid="uid://co45in2mqgii5" path="res://Scenes/npc/npc_black.tscn" id="4_bxo5b"]
 [ext_resource type="Texture2D" uid="uid://kce0kr4wu0yr" path="res://Assets/Images/darkbackground.png" id="17_vog6x"]
 [ext_resource type="Texture2D" uid="uid://cuw4mq1lw5uwx" path="res://Assets/Images/jailbaropen.png" id="19_xo3qd"]
 [ext_resource type="Texture2D" uid="uid://8wlua1thpqin" path="res://Assets/Images/jailbardark.png" id="20_qntnv"]

@@ -6,24 +6,35 @@ if GameStates.player_max_level == 3:
 			sibling: I wonder..can I pass messages to them?
 			
 		elif GameStates.l3_step == 2:
-			sibling: "B"? Okay. There's a voice...right above me. For some reason, I think I need to tell him..."R".
+			sibling: The kidnappings? 
+			sibling: Yes. I remember them. 
+			sibling: They shook our small town. At first, it was just some isolated incident. Some guy got kidnapped before his birthday party. Kept people on edge. But it didn’t stop there, did it? 
+			sibling: ...Agh...I can’t remember. 
+			sibling: The voice just above me is whispering something...I just can’t make it out...Maybe it’ll help.
+
 			set GameStates.l3_step = 3
 		elif GameStates.l3_step == 3:
-			sibling: "B"? Okay. There's a voice...right above me. For some reason, I think I need to tell him..."R".
-			set GameStates.l3_step = 3			
+			sibling: ...Agh...I can’t remember. 
+			sibling: But the voice just above me is whispering something...I just can’t make it out...Maybe it’ll help.
+			set GameStates.l3_step = 3
 			
-		elif GameStates.l3_step == 6
-			sibling: "H." Now the voice is so far away...so far above me. I think I need to tell him..."E".
-			set GameStates.l3_step = 7
-		elif GameStates.l3_step == 7
-			sibling: "H." Now the voice is so far away...so far above me. I think I need to tell him..."E".
-			set GameStates.l3_step = 7
-			
+		elif GameStates.l3_step == 4:
+			sibling: Skeletons in the closet...of course. Yes.
+			sibling: We thought he’d disappeared. Finally. After years of rambling on about mirror images.
+			sibling: We’d tried so hard to fix bim. Sent him to therapy to get rid of those damn hallucinations. But it didn’t get rid of them.
+			sibling: And then one day…he was just gone. And we thought our troubles were over. 
+			sibling: But then...but then...what?
+			sibling: The voice far above me is whispering something...we're so close. I can almost remember.
+
+			set GameStates.l3_step = 5
+		elif GameStates.l3_step == 5:
+			sibling: The voice far above me is whispering something...we're so close. I can almost remember.
+			set GameStates.l3_step = 5			
 		else:
 			sibling: Huh...That doesn't make sense. The message...it's so broken. Maybe try again?
 			set GameStates.l3_step = 1
 	else:
-		sibling: "Brother". You. It was you.
+		sibling: You. It was you.
 else:
 	# level 1, 2, and others
 	sibling: ...Am I alone here?
@@ -40,7 +51,7 @@ if GameStates.player_max_level == 3:
 		# TODO: puzzle for level 3
 		sibling: Maybe I can talk to them. Can you help?
 	else:
-		sibling: "Brother". You. It was you.
+		sibling: You. It was you.
 else:
 	# level 1, 2, or others
 	% sibling: voices...voices everywhere...
@@ -54,21 +65,14 @@ if GameStates.player_max_level == 3:
 			sibling: Some of the voices sound like me. I wonder why.
 			sibling: I wonder..can I pass messages to them?
 		elif GameStates.l3_step == 3:
-			sibling: The voice said "R"? ... There's another one. Above me. My mind says I need to tell him..."O".
+			sibling: Yes...it's coming back. After that, there was another kidnapping. A psychiatrist in our town.
+			sibling: We were so scared. Everyone was, but it felt like the attacks were getting closer to me. Like the skeletons in my closet were coming out.
+			sibling: ...Why did I say that? What does that mean? …What skeletons?
+			sibling: The whispering...it's coming from below me again. Scratching my brain. I can almost remember...
 			set GameStates.l3_step = 4
 		elif GameStates.l3_step == 4:
-			sibling: The voice said "R"? ... There's another one. Above me. My mind says I need to tell him..."O".
+			sibling: The whispering...it's coming from below me again. Scratching my brain. I can almost remember what happened...
 			set GameStates.l3_step = 4
-			
-		elif GameStates.l3_step == 5:
-			sibling: "T." Now the voice is below me. Tell it..."H".
-			set GameStates.l3_step = 6
-		elif GameStates.l3_step == 6:
-			sibling: "T." Now the voice is below me. Tell it..."H".
-			set GameStates.l3_step = 6
-		else:
-			sibling: Huh...That doesn't make sense. The message...it's so broken. Maybe try again?
-			set GameStates.l3_step = 1
 	else:
 		sibling: "Brother". You. It was you. yeer
 else:
@@ -82,7 +86,7 @@ if GameStates.player_max_level == 3:
 		# TODO: puzzle for level 3
 		sibling: Maybe I can talk to them. Can you help?
 	else:
-		sibling: "Brother". You. It was you. YAAAA
+		sibling: You. It was you. YAAAA
 else:
 	# level 2 or others
 	sibling: The voices are quiet today. Sometimes 	 they're just quiet, though. That's nothing special. 
@@ -94,28 +98,20 @@ if GameStates.player_max_level == 3:
 		if GameStates.l3_step == 0:
 			sibling: Some of the voices sound like me. I wonder why.
 			sibling: I wonder..can I pass messages to them?
-			sibling: I can hear one...so far below me. Far away. But I think... I should tell him..."B".
+			sibling: I can hear one...so far below me. Far away. Ask him... if he remembers the kidnappings.
 			set GameStates.l3_step = 2
 			
 		elif GameStates.l3_step == 1:
-			sibling: I can hear one...so far below me. Far away. But I think... I should tell him..."B".		
+			sibling: I can hear one...so far below me. Far away. Ask him... if he remembers the kidnappings.
 			set GameStates.l3_step = 2
 		elif GameStates.l3_step == 2:
-			sibling: I can hear one...so far below me. Far away. But I think... I should tell him..."B".		
+			sibling: I can hear one...so far below me. Far away. Ask him... if he remembers the kidnappings.
 			set GameStates.l3_step = 2
-			
-		elif GameStates.l3_step == 4:
-			sibling: The voice said "O"? ... There's another one. Just below me. My mind says I need to tell him..."T".
-			set GameStates.l3_step = 5
 		elif GameStates.l3_step == 5:
-			sibling: The voice said "O"? ... There's another one. Just below me. My mind says I need to tell him..."T".
-			set GameStates.l3_step = 5
-		elif GameStates.l3_step == 7:
-			sibling: 'E.'
-			sibling: "B-R-O-T-H-E-"...
-			sibling: R.
-			sibling: Brother.
-			sibling: 'Brother'. You. It was you.
+			sibling: Yes... we thought that, didn't we?
+			sibling: Then my parents disappeared. And I realized the truth.
+			sibling: It was him.
+			sibling: ...It was you.
 			set GameStates.l3_dialogue_solved = true
 			do GameStates.unlock_level3()
 		else:
@@ -133,5 +129,5 @@ if not GameStates.l3_dialogue_solved:
 	# TODO: puzzle for level 3
 	sibling: Maybe I can talk to them. Can you help?
 else:
-	sibling: "Brother". You. It was you.
+	sibling: You. It was you.
 => END
