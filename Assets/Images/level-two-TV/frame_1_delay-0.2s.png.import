@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6aus6i6x4vmk"
-path="res://.godot/imported/Icon.png-33e63688031d53466d4d656c73cf10ca.ctex"
+uid="uid://cy2rkhyul1llp"
+path="res://.godot/imported/frame_1_delay-0.2s.png-8b6ef02962e3f4a9bf4d88fa0e1f28df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Icon.png"
-dest_files=["res://.godot/imported/Icon.png-33e63688031d53466d4d656c73cf10ca.ctex"]
+source_file="res://Assets/Images/level-two-TV/frame_1_delay-0.2s.png"
+dest_files=["res://.godot/imported/frame_1_delay-0.2s.png-8b6ef02962e3f4a9bf4d88fa0e1f28df.ctex"]
 
 [params]
 
