@@ -23,6 +23,8 @@ func _process(delta):
 func _close_clock():
 	clock.visible = false
 	is_interface_open = false
+	if not clock.success:
+		clock.reset_clock()
 	
 func _on_area_2d_clock_input_event(viewport, event, shape_idx):
 	if !(event is InputEventMouseButton) or event.button_index != MOUSE_BUTTON_LEFT:

@@ -1499,6 +1499,7 @@ scale = Vector2(1, -0.913739)
 shape = SubResource("CircleShape2D_tv78g")
 
 [node name="617scratchmark" type="TileMap" parent="Level"]
+modulate = Color(0, 1, 1, 1)
 scale = Vector2(0.1, 0.1)
 tile_set = SubResource("TileSet_qs7cg")
 format = 2

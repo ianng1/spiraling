@@ -4,9 +4,11 @@ extends Node2D
 
 var hand_short 
 var hand_short_degree
+var original_hand_short_degree
 
 var hand_long
 var hand_long_degree
+var original_hand_long_degree
 
 var is_dragging = false
 var success = false
@@ -28,8 +30,16 @@ var counter_clockwise_hover = false
 func _ready():
 	hand_short = get_node("clock_hand_short")
 	hand_short_degree = int(hand_short.get_rotation_degrees())
+	original_hand_short_degree = int(hand_short.get_rotation_degrees())
 	hand_long = get_node("clock_hand_long")
 	hand_long_degree = int(hand_long.get_rotation_degrees())
+	original_hand_long_degree = int(hand_long.get_rotation_degrees())
+
+func reset_clock():
+	hand_long_degree = original_hand_long_degree
+	hand_short_degree = original_hand_short_degree
+	hand_short.set_rotation_degrees(hand_short_degree)
+	hand_long.set_rotation_degrees(hand_long_degree)
 
 # Rotate hands when user click on them.
 func _process(_delta):
@@ -74,7 +84,7 @@ func _input(event):
 		# so checking mod here and keep float actual degree for accuracy.
 		var hand_short_deg_360 = int(hand_short_degree + (floor(abs(hand_short_degree/360)) + 1) * 360) % 360
 		var hand_long_deg_360 = int(hand_long_degree + (floor(abs(hand_long_degree/360)) + 1) * 360) % 360
-		if (
+		if GameStates.l1_box_opened and (
 			125 < hand_short_deg_360
 			and hand_short_deg_360 < 145
 			and 75 < hand_long_deg_360
@@ -89,7 +99,8 @@ func _input(event):
 			audio_bang_player.play()
 			get_node("/root/Level_01/").unlock_level1()
 			flicker_light.turn_on_flickering = true
-			flicker_light.target_wife_level = 2
+			flicker_light.target_level = 2
+			flicker_light.cur_target = "A_wife"
 			# Auto load dialogue for C
 			c_kidnapped.load_dialogue()
 

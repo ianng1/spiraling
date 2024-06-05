@@ -33,6 +33,7 @@ if GameStates.player_max_level == 3:
 		else:
 			sibling: Huh...That doesn't make sense. The story...it's all wrong. Maybe start again?
 			set GameStates.l3_step = 1
+			do GameStates.reset_level3()
 	else:
 		sibling: You. It was you.
 else:
@@ -76,6 +77,7 @@ if GameStates.player_max_level == 3:
 		else:
 			sibling: Huh...That doesn't make sense. The story...it's missing something. Maybe start again?
 			set GameStates.l3_step = 1
+			do GameStates.reset_level3()
 	else:
 		sibling: You. It was you.
 else:
@@ -120,6 +122,7 @@ if GameStates.player_max_level == 3:
 		else:
 			sibling: Huh...That doesn't make sense. The story...it's off somehow. Maybe start again?
 			set GameStates.l3_step = 1
+			do GameStates.reset_level3()
 	else:
 		sibling: You. It was you.
 else:

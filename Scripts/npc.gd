@@ -95,14 +95,13 @@ func load_dialogue():
 	
 func start_or_stop_light_flicker():
 	# Turn off the lights after the player talk to the expected wife
-	if npcId == "A_wife":
-		flicker_light.check_and_turn_off_at_wife()
+	flicker_light.check_and_turn_off_at_target(npcId)
 	
 	# Start light flickering when player talk to level 2 wife
 	if npcId == "A_wife" and level == "2" and !GameStates.l2_doll_solved:
 		flicker_light.turn_on_flickering = true
-		flicker_light.target_wife_level = 1
-		flicker_light.revert_h = true
+		flicker_light.target_level = 1
+		flicker_light.cur_target = "A_wife"
 
 
 # --------- SIGNALS ---------- #

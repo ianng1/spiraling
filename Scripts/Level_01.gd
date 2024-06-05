@@ -8,6 +8,7 @@ var idle_cursor = preload("res://Assets/Images/idle_cursor.png")
 @onready var a_wife = $"Level/A_wife"
 @onready var player = $Player
 @onready var wife_bang_player = $"Level/ClickableDoll/WifeBangPlayer"
+@onready var flicker_light = $UserInterface/GameUI/flickering_light
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -28,6 +29,10 @@ func unlock_level2():
 	wife_bang_player.play()
 	a_wife.load_dialogue()
 	GameStates.player_max_level = 3
+	# Start light until talk to sibling
+	flicker_light.turn_on_flickering = true
+	flicker_light.target_level = 3
+	flicker_light.cur_target = "B_sibling"
 
 func _process(delta):
 	if ($"Level/Chest".is_interface_open or $"Level/Chest".is_poster_open or 

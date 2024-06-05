@@ -7,9 +7,8 @@ if (not GameStates.level_unlocked["C_kidnapped"]) and GameStates.player_max_leve
 	else:
 		# clue for chest
 		kidnapped: ...when is it? How can I forget my own birthday?
-		kidnapped: ...
 		kidnapped: ...no. I can't forget. I can't forget.
-		kidnapped: I CAN'T FORGET!
+		kidnapped: I CAN'T FORGET! WHEN IS MY BIRTHDAY?
 else:
 	# After solve, same for all levels
 	kidnapped: June 17... June 17... June 17 ...
